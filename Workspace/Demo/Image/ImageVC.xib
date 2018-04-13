@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ImageVC" customModule="CommonSwift" customModuleProvider="target">
+            <connections>
+                <outlet property="collectionView" destination="hjb-GQ-LpF" id="Pdo-Sp-uVr"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="hjb-GQ-LpF">
+                    <rect key="frame" x="0.0" y="50" width="375" height="617"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="l15-xT-o7T">
+                        <size key="itemSize" width="250" height="250"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
+                    </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="Rxc-eD-vUp"/>
+                        <outlet property="delegate" destination="-1" id="YFJ-c1-057"/>
+                    </connections>
+                </collectionView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ylc-6k-Ws7">
+                    <rect key="frame" x="15" y="0.0" width="80" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="ej7-R6-uoG"/>
+                    </constraints>
+                    <state key="normal" title="ClearCache"/>
+                    <connections>
+                        <action selector="clearCacheWithSender:" destination="-1" eventType="touchUpInside" id="L2r-7L-VPf"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U2v-Xb-xbz">
+                    <rect key="frame" x="313" y="0.0" width="47" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="AYy-cl-iKa"/>
+                    </constraints>
+                    <state key="normal" title="Reload"/>
+                    <connections>
+                        <action selector="reloadWithSender:" destination="-1" eventType="touchUpInside" id="a2h-bD-n3C"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="hjb-GQ-LpF" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="50" id="Kdy-gQ-LgC"/>
+                <constraint firstAttribute="bottom" secondItem="hjb-GQ-LpF" secondAttribute="bottom" id="QIC-aT-Pxj"/>
+                <constraint firstAttribute="trailing" secondItem="hjb-GQ-LpF" secondAttribute="trailing" id="U3l-Xd-uvZ"/>
+                <constraint firstItem="ylc-6k-Ws7" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Xqz-n6-cXY"/>
+                <constraint firstAttribute="trailing" secondItem="U2v-Xb-xbz" secondAttribute="trailing" constant="15" id="gXj-QM-zLz"/>
+                <constraint firstItem="U2v-Xb-xbz" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="k7B-3r-wNl"/>
+                <constraint firstItem="hjb-GQ-LpF" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="o64-CG-NHp"/>
+                <constraint firstItem="ylc-6k-Ws7" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="oEn-xI-ApT"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <point key="canvasLocation" x="33.5" y="60.5"/>
+        </view>
+    </objects>
+</document>

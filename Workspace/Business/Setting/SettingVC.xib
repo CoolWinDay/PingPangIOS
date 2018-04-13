@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingVC" customModule="CommonSwift" customModuleProvider="target">
+            <connections>
+                <outlet property="updateSeg" destination="Qgs-63-T7E" id="3R2-06-9KO"/>
+                <outlet property="updateText" destination="Ll9-hm-wn9" id="ycA-Xv-XOw"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="设置升级版本" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ll9-hm-wn9">
+                    <rect key="frame" x="84" y="60" width="206" height="30"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="CEO-SR-fH7"/>
+                    </connections>
+                </textField>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Qgs-63-T7E">
+                    <rect key="frame" x="84.5" y="130" width="206" height="29"/>
+                    <segments>
+                        <segment title="不升级"/>
+                        <segment title="可选升级"/>
+                        <segment title="强制升级"/>
+                    </segments>
+                    <connections>
+                        <action selector="updateTypeWithSegment:" destination="-1" eventType="valueChanged" id="GiN-FK-epF"/>
+                    </connections>
+                </segmentedControl>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Ll9-hm-wn9" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="60" id="8xr-Mj-rUP"/>
+                <constraint firstItem="Qgs-63-T7E" firstAttribute="width" secondItem="Ll9-hm-wn9" secondAttribute="width" id="M7N-d3-7gJ"/>
+                <constraint firstItem="Qgs-63-T7E" firstAttribute="top" secondItem="Ll9-hm-wn9" secondAttribute="bottom" constant="40" id="RXj-KS-7fo"/>
+                <constraint firstItem="Qgs-63-T7E" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="dKV-Z0-7P4"/>
+                <constraint firstItem="Ll9-hm-wn9" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="qWR-bA-ATn"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <point key="canvasLocation" x="-105.5" y="42.5"/>
+        </view>
+    </objects>
+</document>
