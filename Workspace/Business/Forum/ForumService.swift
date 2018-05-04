@@ -14,7 +14,8 @@ class ForumService: NSObject {
     class func forumList(_ response: @escaping ([PP_ForumModel?]) -> ()) {
         let url = "http://www.pingpangwang.com/mobcent/app/web/index.php?r=forum/forumlist"
         Alamofire.request(url).responseData(completionHandler: { (handler) in
-            let json = JSON(data: handler.result.value!)
+            guard let value = handler.result.value else { return }
+            let json = JSON(data: value)
             print(json)
             
             if let modelList = [PP_ForumModel].deserialize(from: json.rawString(), designatedPath: "list") {
@@ -22,6 +23,43 @@ class ForumService: NSObject {
             }
         })
     }
+    
+    class func topicListEx(boardId: String, _ response: @escaping ([PP_TopicModel?]) -> ()) {
+        let url = "http://www.pingpangwang.com/mobcent/app/web/index.php?r=forum/topiclistex"
+        let parameters: Parameters = ["boardId": boardId]
+        
+//        $boardId, $page = 1, $pageSize = 10, $orderby = 'all',  $sortid = '', $sorts = '', $circle = 0
+        
+        Alamofire.request(url, parameters: parameters).responseData(completionHandler: { (handler) in
+            guard let value = handler.result.value else { return }
+            let json = JSON(data: value)
+            print(json)
+            
+            if let modelList = [PP_TopicModel].deserialize(from: json.rawString(), designatedPath: "list") {
+                response(modelList)
+            }
+        })
+    }
+    
+    
+//    http://www.pingpangwang.com//mobcent/app/web/index.php?r=forum/postlist
+//    packageName=com.appbyme.app163160&forumType=7&pageSize=10&appName=%E4%B9%92%E4%B9%93%E7%BD%91&topicId=29805&authorId=0&egnVersion=v2102.5&sdkVersion=2.5.0.0&imei=a000005551a593&apphash=9d215201&boardId=65&forumKey=pMvx2iqKu3lITwzCjp&page=1&platType=1&imsi=&sdkType=
+    
+    class func postList(boardId: String, topicId: String, _ response: @escaping (TopicDetailModel?) -> ()) {
+        let url = "http://www.pingpangwang.com//mobcent/app/web/index.php?r=forum/postlist"
+        let parameters: Parameters = ["boardId": boardId, "topicId": topicId]
+        
+        Alamofire.request(url, parameters: parameters).responseData(completionHandler: { (handler) in
+            guard let value = handler.result.value else { return }
+            let json = JSON(data: value)
+            print(json)
+            
+            if let topicDetail = TopicDetailModel.deserialize(from: json.rawString(), designatedPath: "topic") {
+                response(topicDetail)
+            }
+        })
+    }
+    
 }
 
 

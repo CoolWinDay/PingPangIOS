@@ -79,11 +79,11 @@ class DemoHomeVC: CMBaseVC {
 //        webVC.webUrl = "https://www.baidu.com"
 //        cmPushViewController(webVC)
         
-//        cmPushViewController("CMWebVC") { (vc) in
-//            vc.title = "WebView"
-//            if let vcInstance = vc as? CMWebVC {
-//                vcInstance.webUrl = "https://www.baidu.com"
-//            }
-//        }
+        cmPushViewController("CMWebVC") { (vc) in
+            vc.title = "WebView"
+            if let vcInstance = vc as? CMWebVC {
+                vcInstance.webUrl = "https://www.baidu.com"
+            }
+        }
     }
 }

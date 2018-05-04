@@ -6,16 +6,9 @@
 //  Copyright © 2018年 com.jsinda. All rights reserved.
 //
 
-import UIKit
-import HandyJSON
-
-class PP_ForumModel: HandyJSON {
+class PP_ForumModel: CMJsonModel {
     var board_category_id = ""
     var board_category_name = ""
     var board_category_type = ""
-    
-//    var board_list = ""
-    
-    
-    required init() {}
+    var board_list: [PP_BoardModel] = []
 }

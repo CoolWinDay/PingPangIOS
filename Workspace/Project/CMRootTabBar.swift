@@ -29,9 +29,9 @@ class CMRootTabBar: UITabBarController, UITabBarControllerDelegate {
         vc1.tabBarItem.image = UIImage(named: "tab_shopping")
         vc1.tabBarItem.title = "功能"
         
-        let vc2 = DemoMeVC()
+        let vc2 = PP_ForumVC()
         vc2.tabBarItem.image = UIImage(named: "tab_me")
-        vc2.tabBarItem.title = "我的"
+        vc2.tabBarItem.title = "论坛"
         
         self.viewControllers = [vc0, vc3, vc1, vc2]
         self.title = vc0.tabBarItem.title

@@ -81,21 +81,21 @@ class CMWebVC: CMBaseVC, WKNavigationDelegate {
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         // 加载进度
         if keyPath == "estimatedProgress" {
-            let newprogress = change?[.newKey]! as! Float
-            let oldprogress = change?[.oldKey] as? Float ?? 0.0
+            let newprogress = change?[.newKey] as? NSNumber ?? 0.0
+            let oldprogress = change?[.oldKey] as? NSNumber ?? 0.0
             
             //不要让进度条倒着走...有时候goback会出现这种情况
-            if newprogress < oldprogress {
+            if newprogress.floatValue < oldprogress.floatValue {
                 return
             }
             
-            if newprogress == 1 {
+            if abs(newprogress.floatValue - 1) < 0.000001 {
                 progressView.isHidden = true
                 progressView.setProgress(0, animated: false)
             }
             else {
                 progressView.isHidden = false
-                progressView.setProgress(newprogress, animated: true)
+                progressView.setProgress(newprogress.floatValue, animated: true)
             }
         }
     }
