@@ -11,7 +11,7 @@ target 'CommonSwift' do
     pod 'ESPullToRefresh', '~> 2.6'
     pod 'Kingfisher', '~> 3.5.1'
     pod 'IQKeyboardManagerSwift', '~> 4.0.9'
-    pod 'SwiftDate', '~> 4.1.1'
+    pod 'SwiftDate', '~> 4.1.2'
     
     # U-Share SDK UI模块（分享面板，建议添加）
     pod 'UMengUShare/UI'
