@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PP_ForumVC: UIViewController {
+class PP_ForumVC: CMBaseVC {
     
     @IBOutlet weak var tableView: UITableView!
     

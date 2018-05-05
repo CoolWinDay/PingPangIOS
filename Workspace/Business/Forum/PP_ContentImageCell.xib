@@ -20,14 +20,14 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NX4-kj-ODU">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="170.5"/>
+                        <rect key="frame" x="12" y="10" width="296" height="160.5"/>
                     </imageView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="NX4-kj-ODU" secondAttribute="trailing" id="L5P-UN-fe2"/>
+                    <constraint firstAttribute="trailing" secondItem="NX4-kj-ODU" secondAttribute="trailing" constant="12" id="L5P-UN-fe2"/>
                     <constraint firstAttribute="bottom" secondItem="NX4-kj-ODU" secondAttribute="bottom" id="Zi5-El-xpm"/>
-                    <constraint firstItem="NX4-kj-ODU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="h6N-HJ-dZv"/>
-                    <constraint firstItem="NX4-kj-ODU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="k0C-V6-jtl"/>
+                    <constraint firstItem="NX4-kj-ODU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="h6N-HJ-dZv"/>
+                    <constraint firstItem="NX4-kj-ODU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="k0C-V6-jtl"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

@@ -9,7 +9,7 @@
 import UIKit
 import Kingfisher
 
-class PP_TopicVC: UIViewController {
+class PP_TopicVC: CMBaseVC {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -36,12 +36,9 @@ extension PP_TopicVC: UITableViewDataSource, UITableViewDelegate {
         return topicList.count
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 320
-    }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as! PP_TopicCell
+        cell.selectionStyle = .none
         
         let model = topicList[indexPath.row]
         cell.loadWithModel(model)
@@ -52,6 +49,7 @@ extension PP_TopicVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let model = topicList[indexPath.row] {
             let vc = PP_TopicContent()
+            vc.title = self.title
             vc.boardId = self.board_id
             vc.topicId = model.topic_id
             cmPushViewController(vc)

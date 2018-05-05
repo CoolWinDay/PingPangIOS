@@ -19,25 +19,25 @@
                 <rect key="frame" x="0.0" y="0.0" width="330" height="113.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kuy-x9-tiN">
-                        <rect key="frame" x="0.0" y="0.0" width="330" height="113.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我的世界是" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kuy-x9-tiN">
+                        <rect key="frame" x="12" y="10" width="306" height="103.5"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="kuy-x9-tiN" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="AGS-ua-a3i"/>
+                    <constraint firstItem="kuy-x9-tiN" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="AGS-ua-a3i"/>
                     <constraint firstAttribute="bottom" secondItem="kuy-x9-tiN" secondAttribute="bottom" id="EHz-z2-1ex"/>
-                    <constraint firstItem="kuy-x9-tiN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="bdh-tR-e3F"/>
-                    <constraint firstAttribute="trailing" secondItem="kuy-x9-tiN" secondAttribute="trailing" id="cFb-O8-3MB"/>
+                    <constraint firstItem="kuy-x9-tiN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="bdh-tR-e3F"/>
+                    <constraint firstAttribute="trailing" secondItem="kuy-x9-tiN" secondAttribute="trailing" constant="12" id="cFb-O8-3MB"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="textView" destination="kuy-x9-tiN" id="n1q-sb-PH3"/>
             </connections>
-            <point key="canvasLocation" x="43" y="-5"/>
+            <point key="canvasLocation" x="-43" y="-10"/>
         </tableViewCell>
     </objects>
 </document>

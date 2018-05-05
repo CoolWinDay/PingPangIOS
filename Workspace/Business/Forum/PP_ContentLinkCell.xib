@@ -19,17 +19,17 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="152.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vwU-Y7-xga">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="152.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vwU-Y7-xga">
+                        <rect key="frame" x="12" y="10" width="296" height="142.5"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                         <color key="textColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="vwU-Y7-xga" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="H4K-Tt-wx9"/>
-                    <constraint firstAttribute="trailing" secondItem="vwU-Y7-xga" secondAttribute="trailing" id="JJW-MX-Lfa"/>
-                    <constraint firstItem="vwU-Y7-xga" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="NHW-LJ-QDU"/>
+                    <constraint firstItem="vwU-Y7-xga" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="H4K-Tt-wx9"/>
+                    <constraint firstAttribute="trailing" secondItem="vwU-Y7-xga" secondAttribute="trailing" constant="12" id="JJW-MX-Lfa"/>
+                    <constraint firstItem="vwU-Y7-xga" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="NHW-LJ-QDU"/>
                     <constraint firstAttribute="bottom" secondItem="vwU-Y7-xga" secondAttribute="bottom" id="zWs-K7-4yb"/>
                 </constraints>
             </tableViewCellContentView>

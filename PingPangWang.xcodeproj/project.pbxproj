@@ -88,6 +88,10 @@
 		E84D477A209D485400117138 /* PP_ContentLinkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84D4778209D485400117138 /* PP_ContentLinkCell.swift */; };
 		E84D477B209D485400117138 /* PP_ContentLinkCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E84D4779209D485400117138 /* PP_ContentLinkCell.xib */; };
 		E84D477D209D530800117138 /* PP_ContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84D477C209D530800117138 /* PP_ContentCell.swift */; };
+		E84D4780209DECBE00117138 /* PP_CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84D477E209DECBE00117138 /* PP_CommentCell.swift */; };
+		E84D4781209DECBE00117138 /* PP_CommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E84D477F209DECBE00117138 /* PP_CommentCell.xib */; };
+		E84D4783209DED3600117138 /* PP_CommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84D4782209DED3600117138 /* PP_CommentModel.swift */; };
+		E84D4785209DF96D00117138 /* dz_posts_manage_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E84D4784209DF96D00117138 /* dz_posts_manage_btn@2x.png */; };
 		E85E861C2095D8E000895376 /* dz_list_circle_replies@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E85E861A2095D8DF00895376 /* dz_list_circle_replies@2x.png */; };
 		E85E861D2095D8E000895376 /* dz_list_circle_pv@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E85E861B2095D8DF00895376 /* dz_list_circle_pv@2x.png */; };
 		E85E86202095D9F100895376 /* dz_personal_icon_woman@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E85E861E2095D9F100895376 /* dz_personal_icon_woman@2x.png */; };
@@ -266,6 +270,10 @@
 		E84D4778209D485400117138 /* PP_ContentLinkCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PP_ContentLinkCell.swift; sourceTree = "<group>"; };
 		E84D4779209D485400117138 /* PP_ContentLinkCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PP_ContentLinkCell.xib; sourceTree = "<group>"; };
 		E84D477C209D530800117138 /* PP_ContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PP_ContentCell.swift; sourceTree = "<group>"; };
+		E84D477E209DECBE00117138 /* PP_CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PP_CommentCell.swift; sourceTree = "<group>"; };
+		E84D477F209DECBE00117138 /* PP_CommentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PP_CommentCell.xib; sourceTree = "<group>"; };
+		E84D4782209DED3600117138 /* PP_CommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PP_CommentModel.swift; sourceTree = "<group>"; };
+		E84D4784209DF96D00117138 /* dz_posts_manage_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dz_posts_manage_btn@2x.png"; sourceTree = "<group>"; };
 		E85E861A2095D8DF00895376 /* dz_list_circle_replies@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dz_list_circle_replies@2x.png"; sourceTree = "<group>"; };
 		E85E861B2095D8DF00895376 /* dz_list_circle_pv@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dz_list_circle_pv@2x.png"; sourceTree = "<group>"; };
 		E85E861E2095D9F100895376 /* dz_personal_icon_woman@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dz_personal_icon_woman@2x.png"; sourceTree = "<group>"; };
@@ -405,6 +413,7 @@
 				E85E8625209861A900895376 /* PP_TopicContent.xib */,
 				E85E862A2098665400895376 /* TopicDetailModel.swift */,
 				E85E8628209865C400895376 /* PP_ContentModel.swift */,
+				E84D4782209DED3600117138 /* PP_CommentModel.swift */,
 				E8B43CB4209C797D0085DB2A /* PP_ContentTextCell.swift */,
 				E8B43CB5209C797D0085DB2A /* PP_ContentTextCell.xib */,
 				E8B43CB8209C9C6E0085DB2A /* PP_ContentImageCell.swift */,
@@ -414,6 +423,8 @@
 				E84D4778209D485400117138 /* PP_ContentLinkCell.swift */,
 				E84D4779209D485400117138 /* PP_ContentLinkCell.xib */,
 				E84D477C209D530800117138 /* PP_ContentCell.swift */,
+				E84D477E209DECBE00117138 /* PP_CommentCell.swift */,
+				E84D477F209DECBE00117138 /* PP_CommentCell.xib */,
 			);
 			path = Forum;
 			sourceTree = "<group>";
@@ -673,6 +684,7 @@
 				E85E861F2095D9F100895376 /* dz_personal_icon_man@2x.png */,
 				E85E861E2095D9F100895376 /* dz_personal_icon_woman@2x.png */,
 				E85E86222095DDEA00895376 /* dz_posts_grade_default@2x.png */,
+				E84D4784209DF96D00117138 /* dz_posts_manage_btn@2x.png */,
 			);
 			path = Forum;
 			sourceTree = "<group>";
@@ -1006,6 +1018,7 @@
 				E8C477BC1E8D004200543846 /* 1.jpg in Resources */,
 				E85E8627209861A900895376 /* PP_TopicContent.xib in Resources */,
 				E84D4777209CB1FC00117138 /* PP_ContentVideoCell.xib in Resources */,
+				E84D4781209DECBE00117138 /* PP_CommentCell.xib in Resources */,
 				E82946C51E5EAE0B00D62A86 /* DemoHomeVC.xib in Resources */,
 				37679FFB1E9C5F8E00FE0D49 /* ImagePickerVC.xib in Resources */,
 				E82CCEB11EB31F0500A3E379 /* ShareDefault@3x.png in Resources */,
@@ -1013,6 +1026,7 @@
 				E839EF4B1E7BC04C006C78B7 /* ImageVC.xib in Resources */,
 				E839EF251E7B936B006C78B7 /* bulb_light@2x.png in Resources */,
 				E8C477B01E8CDB4500543846 /* SegmentVC.xib in Resources */,
+				E84D4785209DF96D00117138 /* dz_posts_manage_btn@2x.png in Resources */,
 				E839EF231E7B936B006C78B7 /* bulb@2x.png in Resources */,
 				E8470AD31EBDC3F400D86916 /* LocationVC.xib in Resources */,
 				E8C477BF1E8D004200543846 /* 4.jpg in Resources */,
@@ -1132,12 +1146,14 @@
 				786706C4207F449F0079CD44 /* Moya.swift in Sources */,
 				E84D4776209CB1FC00117138 /* PP_ContentVideoCell.swift in Sources */,
 				E82CBEDB1E76BF7100DEF744 /* NetWorkingVC.swift in Sources */,
+				E84D4783209DED3600117138 /* PP_CommentModel.swift in Sources */,
 				E82CCEA91EB31EB200A3E379 /* CMRequest.swift in Sources */,
 				E8F9D7E01EBEF9360005C5E8 /* main.swift in Sources */,
 				37679FFD1E9C6C0B00FE0D49 /* CMUIImageUtils.swift in Sources */,
 				E839EF111E7B9332006C78B7 /* SMSegment.swift in Sources */,
 				E87575731E4C686C00BFDCB7 /* CMColorUtils.swift in Sources */,
 				E82CBED91E76BF7100DEF744 /* BookRequest.swift in Sources */,
+				E84D4780209DECBE00117138 /* PP_CommentCell.swift in Sources */,
 				E875754F1E4C566700BFDCB7 /* AppDelegate.swift in Sources */,
 				E8B43CBA209C9C6E0085DB2A /* PP_ContentImageCell.swift in Sources */,
 				E87575691E4C638100BFDCB7 /* DemoMeVC.swift in Sources */,

@@ -45,7 +45,7 @@ class ForumService: NSObject {
 //    http://www.pingpangwang.com//mobcent/app/web/index.php?r=forum/postlist
 //    packageName=com.appbyme.app163160&forumType=7&pageSize=10&appName=%E4%B9%92%E4%B9%93%E7%BD%91&topicId=29805&authorId=0&egnVersion=v2102.5&sdkVersion=2.5.0.0&imei=a000005551a593&apphash=9d215201&boardId=65&forumKey=pMvx2iqKu3lITwzCjp&page=1&platType=1&imsi=&sdkType=
     
-    class func postList(boardId: String, topicId: String, _ response: @escaping (TopicDetailModel?) -> ()) {
+    class func postList(boardId: String, topicId: String, _ response: @escaping (TopicDetailModel?, [PP_CommentModel?]?) -> ()) {
         let url = "http://www.pingpangwang.com//mobcent/app/web/index.php?r=forum/postlist"
         let parameters: Parameters = ["boardId": boardId, "topicId": topicId]
         
@@ -54,9 +54,9 @@ class ForumService: NSObject {
             let json = JSON(data: value)
             print(json)
             
-            if let topicDetail = TopicDetailModel.deserialize(from: json.rawString(), designatedPath: "topic") {
-                response(topicDetail)
-            }
+            let topic = TopicDetailModel.deserialize(from: json.rawString(), designatedPath: "topic")
+            let list = [PP_CommentModel].deserialize(from: json.rawString(), designatedPath: "list")
+            response(topic, list)
         })
     }
     

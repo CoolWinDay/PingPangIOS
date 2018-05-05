@@ -14,6 +14,7 @@ class TopicDetailModel: CMJsonModel {
     var icon = ""
     var user_nick_name = ""
     var userTitle = ""
+    var gender = ""
     var create_date = ""
     var content: [PP_ContentModel] = []
 }

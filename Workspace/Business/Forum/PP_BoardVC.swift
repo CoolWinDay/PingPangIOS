@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PP_BoardVC: UIViewController {
+class PP_BoardVC: CMBaseVC {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -45,6 +45,7 @@ extension PP_BoardVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = PP_TopicVC()
         let model = boardList[indexPath.row]
+        vc.title = model.board_name
         vc.board_id = model.board_id
         cmPushViewController(vc)
     }
