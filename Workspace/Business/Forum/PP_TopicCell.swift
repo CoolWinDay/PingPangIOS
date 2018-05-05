@@ -59,6 +59,9 @@ class PP_TopicCell: UITableViewCell {
             titleView.text = model.title
             subjectView.text = model.subject
             
+            imageView0.image = nil
+            imageView1.image = nil
+            imageView2.image = nil
             if model.imageList.count > 0 {
                 imageView0.kf.setImage(with: URL(string: model.imageList[0]))
             }
