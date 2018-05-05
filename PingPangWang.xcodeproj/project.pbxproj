@@ -83,6 +83,11 @@
 		E8470ACC1EBDC17C00D86916 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8470ACB1EBDC17C00D86916 /* CoreLocation.framework */; };
 		E8470AD21EBDC3F400D86916 /* LocationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8470AD01EBDC3F400D86916 /* LocationVC.swift */; };
 		E8470AD31EBDC3F400D86916 /* LocationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8470AD11EBDC3F400D86916 /* LocationVC.xib */; };
+		E84D4776209CB1FC00117138 /* PP_ContentVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84D4774209CB1FC00117138 /* PP_ContentVideoCell.swift */; };
+		E84D4777209CB1FC00117138 /* PP_ContentVideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E84D4775209CB1FC00117138 /* PP_ContentVideoCell.xib */; };
+		E84D477A209D485400117138 /* PP_ContentLinkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84D4778209D485400117138 /* PP_ContentLinkCell.swift */; };
+		E84D477B209D485400117138 /* PP_ContentLinkCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E84D4779209D485400117138 /* PP_ContentLinkCell.xib */; };
+		E84D477D209D530800117138 /* PP_ContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84D477C209D530800117138 /* PP_ContentCell.swift */; };
 		E85E861C2095D8E000895376 /* dz_list_circle_replies@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E85E861A2095D8DF00895376 /* dz_list_circle_replies@2x.png */; };
 		E85E861D2095D8E000895376 /* dz_list_circle_pv@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E85E861B2095D8DF00895376 /* dz_list_circle_pv@2x.png */; };
 		E85E86202095D9F100895376 /* dz_personal_icon_woman@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E85E861E2095D9F100895376 /* dz_personal_icon_woman@2x.png */; };
@@ -109,6 +114,10 @@
 		E892A08E2095D0290068DEA7 /* PP_TopicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E892A08C2095D0290068DEA7 /* PP_TopicCell.swift */; };
 		E892A08F2095D0290068DEA7 /* PP_TopicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E892A08D2095D0290068DEA7 /* PP_TopicCell.xib */; };
 		E8A19F1D1EBF346C0054C4FD /* CMDateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A19F1C1EBF346C0054C4FD /* CMDateUtils.swift */; };
+		E8B43CB6209C797D0085DB2A /* PP_ContentTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B43CB4209C797D0085DB2A /* PP_ContentTextCell.swift */; };
+		E8B43CB7209C797D0085DB2A /* PP_ContentTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8B43CB5209C797D0085DB2A /* PP_ContentTextCell.xib */; };
+		E8B43CBA209C9C6E0085DB2A /* PP_ContentImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B43CB8209C9C6E0085DB2A /* PP_ContentImageCell.swift */; };
+		E8B43CBB209C9C6E0085DB2A /* PP_ContentImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8B43CB9209C9C6E0085DB2A /* PP_ContentImageCell.xib */; };
 		E8C477A71E8CD9D200543846 /* PPTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C477A61E8CD9D200543846 /* PPTView.swift */; };
 		E8C477AF1E8CDB4500543846 /* SegmentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C477AD1E8CDB4500543846 /* SegmentVC.swift */; };
 		E8C477B01E8CDB4500543846 /* SegmentVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8C477AE1E8CDB4500543846 /* SegmentVC.xib */; };
@@ -252,6 +261,11 @@
 		E8470ACB1EBDC17C00D86916 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		E8470AD01EBDC3F400D86916 /* LocationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationVC.swift; sourceTree = "<group>"; };
 		E8470AD11EBDC3F400D86916 /* LocationVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocationVC.xib; sourceTree = "<group>"; };
+		E84D4774209CB1FC00117138 /* PP_ContentVideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PP_ContentVideoCell.swift; sourceTree = "<group>"; };
+		E84D4775209CB1FC00117138 /* PP_ContentVideoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PP_ContentVideoCell.xib; sourceTree = "<group>"; };
+		E84D4778209D485400117138 /* PP_ContentLinkCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PP_ContentLinkCell.swift; sourceTree = "<group>"; };
+		E84D4779209D485400117138 /* PP_ContentLinkCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PP_ContentLinkCell.xib; sourceTree = "<group>"; };
+		E84D477C209D530800117138 /* PP_ContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PP_ContentCell.swift; sourceTree = "<group>"; };
 		E85E861A2095D8DF00895376 /* dz_list_circle_replies@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dz_list_circle_replies@2x.png"; sourceTree = "<group>"; };
 		E85E861B2095D8DF00895376 /* dz_list_circle_pv@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dz_list_circle_pv@2x.png"; sourceTree = "<group>"; };
 		E85E861E2095D9F100895376 /* dz_personal_icon_woman@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dz_personal_icon_woman@2x.png"; sourceTree = "<group>"; };
@@ -280,6 +294,10 @@
 		E892A08D2095D0290068DEA7 /* PP_TopicCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PP_TopicCell.xib; sourceTree = "<group>"; };
 		E89A8D841EC1F207005FE6BF /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		E8A19F1C1EBF346C0054C4FD /* CMDateUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMDateUtils.swift; sourceTree = "<group>"; };
+		E8B43CB4209C797D0085DB2A /* PP_ContentTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PP_ContentTextCell.swift; sourceTree = "<group>"; };
+		E8B43CB5209C797D0085DB2A /* PP_ContentTextCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PP_ContentTextCell.xib; sourceTree = "<group>"; };
+		E8B43CB8209C9C6E0085DB2A /* PP_ContentImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PP_ContentImageCell.swift; sourceTree = "<group>"; };
+		E8B43CB9209C9C6E0085DB2A /* PP_ContentImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PP_ContentImageCell.xib; sourceTree = "<group>"; };
 		E8B8564F1EC1F8FF0014F7BD /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		E8B856521EC1F8FF0014F7BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		E8B856541EC1F8FF0014F7BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -387,6 +405,15 @@
 				E85E8625209861A900895376 /* PP_TopicContent.xib */,
 				E85E862A2098665400895376 /* TopicDetailModel.swift */,
 				E85E8628209865C400895376 /* PP_ContentModel.swift */,
+				E8B43CB4209C797D0085DB2A /* PP_ContentTextCell.swift */,
+				E8B43CB5209C797D0085DB2A /* PP_ContentTextCell.xib */,
+				E8B43CB8209C9C6E0085DB2A /* PP_ContentImageCell.swift */,
+				E8B43CB9209C9C6E0085DB2A /* PP_ContentImageCell.xib */,
+				E84D4774209CB1FC00117138 /* PP_ContentVideoCell.swift */,
+				E84D4775209CB1FC00117138 /* PP_ContentVideoCell.xib */,
+				E84D4778209D485400117138 /* PP_ContentLinkCell.swift */,
+				E84D4779209D485400117138 /* PP_ContentLinkCell.xib */,
+				E84D477C209D530800117138 /* PP_ContentCell.swift */,
 			);
 			path = Forum;
 			sourceTree = "<group>";
@@ -933,15 +960,18 @@
 				E8C477B61E8CFAF900543846 /* CycleViewVC.xib in Resources */,
 				E82CCEAD1EB31EB200A3E379 /* CMWebVC.xib in Resources */,
 				E82CCE9E1EB1DD5300A3E379 /* ShareVC.xib in Resources */,
+				E8B43CBB209C9C6E0085DB2A /* PP_ContentImageCell.xib in Resources */,
 				E839EF2B1E7B936B006C78B7 /* cloud@2x.png in Resources */,
 				E8CCA8BD2080D13B00D72E5E /* PP_ForumVC.xib in Resources */,
 				E84514F41D80480800D57CE3 /* Info.plist in Resources */,
+				E8B43CB7209C797D0085DB2A /* PP_ContentTextCell.xib in Resources */,
 				E839EF261E7B936B006C78B7 /* clip.png in Resources */,
 				E82E42FA1E5A8C4C00679FAE /* DemoStudyVC.xib in Resources */,
 				E839EF2C1E7B936B006C78B7 /* cloud_light.png in Resources */,
 				E82CCEB01EB31F0500A3E379 /* ShareDefault@2x.png in Resources */,
 				E892A08F2095D0290068DEA7 /* PP_TopicCell.xib in Resources */,
 				E85E86212095D9F100895376 /* dz_personal_icon_man@2x.png in Resources */,
+				E84D477B209D485400117138 /* PP_ContentLinkCell.xib in Resources */,
 				E82C2FFB1E5FBBA300CE08F7 /* nav_share@2x.png in Resources */,
 				E82B2B461EAEF7FB0078F9EF /* LoginVC.xib in Resources */,
 				E8470AC51EBD844900D86916 /* NotificationVC.xib in Resources */,
@@ -975,6 +1005,7 @@
 				E8CCA8C92080DEC300D72E5E /* PP_TopicVC.xib in Resources */,
 				E8C477BC1E8D004200543846 /* 1.jpg in Resources */,
 				E85E8627209861A900895376 /* PP_TopicContent.xib in Resources */,
+				E84D4777209CB1FC00117138 /* PP_ContentVideoCell.xib in Resources */,
 				E82946C51E5EAE0B00D62A86 /* DemoHomeVC.xib in Resources */,
 				37679FFB1E9C5F8E00FE0D49 /* ImagePickerVC.xib in Resources */,
 				E82CCEB11EB31F0500A3E379 /* ShareDefault@3x.png in Resources */,
@@ -1094,10 +1125,12 @@
 				37679FFA1E9C5F8E00FE0D49 /* ImagePickerVC.swift in Sources */,
 				E8470AC41EBD844900D86916 /* NotificationVC.swift in Sources */,
 				E8D9903A1E5333F000AFB8F5 /* CMAppDefine.swift in Sources */,
+				E8B43CB6209C797D0085DB2A /* PP_ContentTextCell.swift in Sources */,
 				E875756D1E4C646A00BFDCB7 /* DemoBusinessVC.swift in Sources */,
 				E839EF4A1E7BC04C006C78B7 /* ImageVC.swift in Sources */,
 				E839EF141E7B9332006C78B7 /* SMSegmentViewConstants.swift in Sources */,
 				786706C4207F449F0079CD44 /* Moya.swift in Sources */,
+				E84D4776209CB1FC00117138 /* PP_ContentVideoCell.swift in Sources */,
 				E82CBEDB1E76BF7100DEF744 /* NetWorkingVC.swift in Sources */,
 				E82CCEA91EB31EB200A3E379 /* CMRequest.swift in Sources */,
 				E8F9D7E01EBEF9360005C5E8 /* main.swift in Sources */,
@@ -1106,6 +1139,7 @@
 				E87575731E4C686C00BFDCB7 /* CMColorUtils.swift in Sources */,
 				E82CBED91E76BF7100DEF744 /* BookRequest.swift in Sources */,
 				E875754F1E4C566700BFDCB7 /* AppDelegate.swift in Sources */,
+				E8B43CBA209C9C6E0085DB2A /* PP_ContentImageCell.swift in Sources */,
 				E87575691E4C638100BFDCB7 /* DemoMeVC.swift in Sources */,
 				E82AC5D71E63D82700621A3A /* CMAppUtils.swift in Sources */,
 				E82E42F91E5A8C4C00679FAE /* DemoStudyVC.swift in Sources */,
@@ -1150,6 +1184,8 @@
 				E839EF121E7B9332006C78B7 /* SMSegmentAppearance.swift in Sources */,
 				E8CCA8BF2080D78400D72E5E /* PP_BoardModel.swift in Sources */,
 				E8E803C91EA5C4AD0095EFD8 /* CMUITextFieldUtils.swift in Sources */,
+				E84D477D209D530800117138 /* PP_ContentCell.swift in Sources */,
+				E84D477A209D485400117138 /* PP_ContentLinkCell.swift in Sources */,
 				E87575651E4C630300BFDCB7 /* DemoHomeVC.swift in Sources */,
 				E85E862B2098665400895376 /* TopicDetailModel.swift in Sources */,
 				E882A6681E779B1A002AC531 /* CMUIAlertViewUtils.swift in Sources */,

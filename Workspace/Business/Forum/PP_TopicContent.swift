@@ -13,8 +13,16 @@ class PP_TopicContent: CMBaseVC {
     var boardId: String = ""
     var topicId: String = ""
     var topicDetail: TopicDetailModel?
+    var cellHeightCache: [CGFloat] = []
     
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var tableView: UITableView!
+    
+    let cellRICell = "UITableViewCell"
+    let cellRIText = "PP_ContentTextCell"
+    let cellRIImage = "PP_ContentImageCell"
+    let cellRIVideo = "PP_ContentVideoCell"
+    let cellRILink = "PP_ContentLinkCell"
     
     deinit {
         
@@ -23,87 +31,91 @@ class PP_TopicContent: CMBaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellRICell)
+        tableView.register(UINib(nibName: cellRIText, bundle: Bundle.main), forCellReuseIdentifier: cellRIText)
+        tableView.register(UINib(nibName: cellRIImage, bundle: Bundle.main), forCellReuseIdentifier: cellRIImage)
+        tableView.register(UINib(nibName: cellRIVideo, bundle: Bundle.main), forCellReuseIdentifier: cellRIVideo)
+        tableView.register(UINib(nibName: cellRILink, bundle: Bundle.main), forCellReuseIdentifier: cellRILink)
+        
         ForumService.postList(boardId: boardId, topicId: topicId) { (topicDetail) in
             self.topicDetail = topicDetail
-            self.buildView(topicDetail)
+            if let content = topicDetail?.content {
+                for model in content {
+                    if model.type == "2" {
+                        self.cellHeightCache.append((UIScreen.ScreenWidth()-20)*0.57)
+                    }
+                    else {
+                        self.cellHeightCache.append(UITableViewAutomaticDimension)
+                    }
+                }
+            }
+            
+            self.tableView.reloadData()
         }
     }
+}
+
+extension PP_TopicContent: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if let content = topicDetail?.content {
+            return content.count
+        }
+        return 0
+    }
     
-    func buildView(_ topicDetail: TopicDetailModel?) {
-        guard let content = topicDetail?.content else { return }
-        var subviews: [UIView] = []
-        for model in content {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return cellHeightCache[indexPath.row]
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let model = topicDetail?.content[indexPath.row] {
             switch model.type {
             case "0":
-                let textView = UILabel()
-                textView.numberOfLines = 0
-                textView.text = model.infor
-                subviews.append(textView)
-                break
+                let cell = tableView.dequeueReusableCell(withIdentifier: cellRIText) as! PP_ContentTextCell
+                cell.textView.text = model.infor
+                return cell
             case "1":
-                let imageView = UIImageView()
-                imageView.kf.setImage(with: URL(string: model.infor), completionHandler: { (image, error, cacheType, imageURL) in
-                    if let image = imageView.image {
-                        imageView.snp.makeConstraints({ (maker) in
-                            maker.height.equalTo(imageView.snp.width).multipliedBy(image.size.height/image.size.width)
-                        })
+                let cell = tableView.dequeueReusableCell(withIdentifier: cellRIImage) as! PP_ContentImageCell
+                cell.imgView.kf.setImage(with: URL(string: model.infor), completionHandler: { (image, error, cacheType, imageURL) in
+                    if let image = cell.imgView.image {
+                        if self.cellHeightCache[indexPath.row] == UITableViewAutomaticDimension {
+                            let imageHeight = cell.imgView.bounds.width*image.size.height/image.size.width
+                            self.cellHeightCache[indexPath.row] = imageHeight
+                            tableView.reloadRows(at: [indexPath], with: .none)
+                        }
                     }
                 })
-                subviews.append(imageView)
-                break
+                return cell
             case "2":
+                let cell = tableView.dequeueReusableCell(withIdentifier: cellRIVideo) as! PP_ContentVideoCell
                 if let url = URL(string: model.infor) {
-                    let videoView = UIWebView()
-                    videoView.scrollView.bounces = false
-                    videoView.allowsInlineMediaPlayback = true
-                    videoView.loadRequest(URLRequest(url: url))
-                    videoView.snp.makeConstraints { (maker) in
-                        maker.height.equalTo(videoView.snp.width).multipliedBy(0.57)
-                    }
-                    subviews.append(videoView)
+                    cell.videoView.loadRequest(URLRequest(url: url))
                 }
-                break
+                return cell
             case "4":
-                let textView = UILabel()
-                textView.numberOfLines = 0
-                textView.text = model.infor
-                textView.textColor = UIColor.blue
+                let cell = tableView.dequeueReusableCell(withIdentifier: cellRILink) as! PP_ContentLinkCell
+                cell.linkView.text = model.infor
                 let underlineAttribute = [NSUnderlineStyleAttributeName: NSUnderlineStyle.styleSingle.rawValue]
                 let underlineAttributedString = NSAttributedString(string: model.infor, attributes: underlineAttribute)
-                textView.attributedText = underlineAttributedString
-                textView.isUserInteractionEnabled = true
-                textView.tapAction { (view) in
+                cell.linkView.attributedText = underlineAttributedString
+                cell.linkView.tapAction { (view) in
                     let webView = CMWebVC()
                     webView.webUrl = model.url
                     cmPushViewController(webView)
                 }
-                subviews.append(textView)
-                break
+                return cell
             default:
                 break
             }
         }
         
-        var lastView: UIView!
-        for (index, view) in subviews.enumerated() {
-            self.scrollView.addSubview(view)
-            view.snp.makeConstraints { (maker) in
-                if index == 0 {
-                    maker.top.equalToSuperview().offset(10)
-                }
-                else {
-                    maker.top.equalTo(lastView.snp.bottom).offset(10)
-                }
-                
-                if index == subviews.count-1 {
-                    maker.bottom.equalToSuperview().offset(-10)
-                }
-                
-                maker.left.equalToSuperview()
-                maker.right.equalToSuperview()
-                maker.width.equalToSuperview()
-            }
-            lastView = view
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellRICell)!
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if cell.isKind(of: PP_ContentImageCell.self) {
+            (cell as! PP_ContentImageCell).imgView.kf.cancelDownloadTask()
         }
     }
 }
