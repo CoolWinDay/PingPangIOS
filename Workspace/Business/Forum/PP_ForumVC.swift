@@ -10,48 +10,82 @@ import UIKit
 
 class PP_ForumVC: CMBaseVC {
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var collectionView: UICollectionView!
     
-    let cellReuseIdentifier = "UITableViewCell"
+    let cellRICell = "PP_ForumCell"
+    let cellRIHeader = "PP_ForumHeaderView"
     
     var forumList: [PP_ForumModel?] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
+//        collectionView.contentInset = UIEdgeInsetsMake(0, 0, 0, 10)
+        collectionView.register(UINib(nibName: cellRICell, bundle: Bundle.main), forCellWithReuseIdentifier: cellRICell)
+        collectionView.register(UINib(nibName: cellRIHeader, bundle: Bundle.main), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: cellRIHeader)
         
         ForumService.forumList { (forumList) in
             self.forumList = forumList
-            self.tableView.reloadData()
+            self.collectionView.reloadData()
         }
     }
 
 }
 
-extension PP_ForumVC: UITableViewDataSource, UITableViewDelegate {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+extension PP_ForumVC: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         return forumList.count
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier)
-        
-        let model = forumList[indexPath.row]
-        cell?.textLabel?.text = model?.board_category_name
-        
-        return cell!
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = PP_BoardVC()
-        if let model = forumList[indexPath.row] {
-            vc.boardList = model.board_list
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if let model = forumList[section] {
+            return model.board_list.count
         }
-        cmPushViewController(vc)
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: collectionView.bounds.width, height: 40)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let cellWidth = floor((collectionView.bounds.width-1)*0.5)
+        return CGSize(width: cellWidth, height: 80)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsetsMake(0, 0, 0, 0)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellRICell, for: indexPath) as! PP_ForumCell
+        cell.cellWithModel(forumList[indexPath.section]?.board_list[indexPath.row])
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: cellRIHeader, for: indexPath) as! PP_ForumHeaderView
+        if let model = forumList[indexPath.section] {
+            headerView.titleView.text = model.board_category_name
+        }
+        return headerView
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let model = forumList[indexPath.section]?.board_list[indexPath.row] {
+            let vc = PP_TopicVC()
+            vc.title = model.board_name
+            vc.board_id = model.board_id
+            cmPushViewController(vc)
+        }
     }
 }

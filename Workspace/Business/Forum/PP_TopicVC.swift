@@ -13,7 +13,8 @@ class PP_TopicVC: CMBaseVC {
     
     @IBOutlet weak var tableView: UITableView!
     
-    let cellReuseIdentifier = "PP_TopicCell"
+    let cellRICell = "PP_TopicCell"
+    let cellRICell2 = "PP_TopicCell2"
     
     var board_id: String = ""
     var topicList: [PP_TopicModel?] = []
@@ -21,7 +22,8 @@ class PP_TopicVC: CMBaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.register(UINib(nibName: cellReuseIdentifier, bundle: Bundle.main), forCellReuseIdentifier: cellReuseIdentifier)
+        tableView.register(UINib(nibName: cellRICell, bundle: Bundle.main), forCellReuseIdentifier: cellRICell)
+        tableView.register(UINib(nibName: cellRICell2, bundle: Bundle.main), forCellReuseIdentifier: cellRICell2)
         tableView.tableFooterView = UIView()
         
         ForumService.topicListEx(boardId: board_id) { (topicList) in
@@ -37,13 +39,19 @@ extension PP_TopicVC: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as! PP_TopicCell
-        cell.selectionStyle = .none
-        
-        let model = topicList[indexPath.row]
-        cell.loadWithModel(model)
-        
-        return cell
+        let model = topicList[indexPath.row]!
+        if model.imageList.count > 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: cellRICell) as! PP_TopicCell
+            cell.selectionStyle = .none
+            cell.loadWithModel(model)
+            return cell
+        }
+        else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: cellRICell2) as! PP_TopicCell2
+            cell.selectionStyle = .none
+            cell.loadWithModel(model)
+            return cell
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
