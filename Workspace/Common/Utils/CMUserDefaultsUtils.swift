@@ -10,6 +10,9 @@ import UIKit
 
 extension UserDefaults {
     
+    // user
+    public static let UDK_UserModel = "UDK_UserModel"
+    
     // update
     public static let UDKey_UpdateType = "UDKey_UpdateType"
     public static let UDKey_UpdateVersion = "UDKey_UpdateVersion"

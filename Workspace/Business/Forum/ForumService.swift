@@ -11,9 +11,12 @@ import Alamofire
 import SwiftyJSON
 
 class ForumService: NSObject {
+    
+    static let server = "http://www.pingpangwang.com"
+    
     class func forumList(_ response: @escaping ([PP_ForumModel?]) -> ()) {
-        let url = "http://www.pingpangwang.com/mobcent/app/web/index.php?r=forum/forumlist"
-        Alamofire.request(url).responseData(completionHandler: { (handler) in
+        let url = "/mobcent/app/web/index.php?r=forum/forumlist"
+        Alamofire.request(server+url).responseData(completionHandler: { (handler) in
             guard let value = handler.result.value else { return }
             let json = JSON(data: value)
             print(json)
@@ -25,12 +28,12 @@ class ForumService: NSObject {
     }
     
     class func topicListEx(boardId: String, _ response: @escaping ([PP_TopicModel?]) -> ()) {
-        let url = "http://www.pingpangwang.com/mobcent/app/web/index.php?r=forum/topiclistex"
+        let url = "/mobcent/app/web/index.php?r=forum/topiclistex"
         let parameters: Parameters = ["boardId": boardId]
         
 //        $boardId, $page = 1, $pageSize = 10, $orderby = 'all',  $sortid = '', $sorts = '', $circle = 0
         
-        Alamofire.request(url, parameters: parameters).responseData(completionHandler: { (handler) in
+        Alamofire.request(server+url, parameters: parameters).responseData(completionHandler: { (handler) in
             guard let value = handler.result.value else { return }
             let json = JSON(data: value)
             print(json)
@@ -46,10 +49,10 @@ class ForumService: NSObject {
 //    packageName=com.appbyme.app163160&forumType=7&pageSize=10&appName=%E4%B9%92%E4%B9%93%E7%BD%91&topicId=29805&authorId=0&egnVersion=v2102.5&sdkVersion=2.5.0.0&imei=a000005551a593&apphash=9d215201&boardId=65&forumKey=pMvx2iqKu3lITwzCjp&page=1&platType=1&imsi=&sdkType=
     
     class func postList(boardId: String, topicId: String, _ response: @escaping (TopicDetailModel?, [PP_CommentModel?]?) -> ()) {
-        let url = "http://www.pingpangwang.com//mobcent/app/web/index.php?r=forum/postlist"
+        let url = "/mobcent/app/web/index.php?r=forum/postlist"
         let parameters: Parameters = ["boardId": boardId, "topicId": topicId]
         
-        Alamofire.request(url, parameters: parameters).responseData(completionHandler: { (handler) in
+        Alamofire.request(server+url, parameters: parameters).responseData(completionHandler: { (handler) in
             guard let value = handler.result.value else { return }
             let json = JSON(data: value)
             print(json)
@@ -60,81 +63,84 @@ class ForumService: NSObject {
         })
     }
     
+    class func registUser(boardId: String, topicId: String, _ response: @escaping (TopicDetailModel?, [PP_CommentModel?]?) -> ()) {
+        let url = "/mobcent/app/web/index.php?r=user/register"
+        let parameters: Parameters = ["username": boardId, "password": topicId]
+        
+        Alamofire.request(server+url, parameters: parameters).responseData(completionHandler: { (handler) in
+            guard let value = handler.result.value else { return }
+            let json = JSON(data: value)
+            print(json)
+            
+            let topic = TopicDetailModel.deserialize(from: json.rawString(), designatedPath: "topic")
+            let list = [PP_CommentModel].deserialize(from: json.rawString(), designatedPath: "list")
+            response(topic, list)
+        })
+    }
+    
+    class func loginUser(username: String, password: String, _ response: @escaping (PP_UserModel?) -> ()) {
+        let url = "/mobcent/app/web/index.php?r=user/login"
+        let parameters: Parameters = ["username": username, "password": password]
+        
+        Alamofire.request(server+url, parameters: parameters).responseData(completionHandler: { (handler) in
+            guard let value = handler.result.value else {
+                let des = handler.error?.localizedDescription
+                cmShowToast(des)
+                return
+            }
+            let json = JSON(data: value)
+            print(json)
+            let model = PP_UserModel.deserialize(from: json.rawString())
+            response(model)
+        })
+    }
+    
 }
 
 
-
-//enum ForumService {
-//    case forumlist
-//    case showUser(id: Int)
-//    case createUser(firstName: String, lastName: String)
-//    case updateUser(id: Int, firstName: String, lastName: String)
-//    case showAccounts
-//}
+//{
+//    "score" : 10,
+//    "body" : {
+//        "externInfo" : {2018-05-17 00:10:59.428342+0800 PingPangWang[13592:1461670] [BoringSSL] Function boringssl_session_errorlog: line 2881 [boringssl_session_read] SSL_ERROR_ZERO_RETURN(6): operation failed because the connection was cleanly shut down with a close_notify alert
 //
-//extension ForumService: TargetType {
-//    var baseURL: URL { return URL(string: "http://www.pingpangwang.com/mobcent/app/web/index.php?r=forum/forumlist")! }
-//    var path: String {
-//        switch self {
-//        case .forumlist:
-//            return ""
-//        case .showUser(let id), .updateUser(let id, _, _):
-//            return "/users/\(id)"
-//        case .createUser(_, _):
-//            return "/users"
-//        case .showAccounts:
-//            return "/accounts"
+//            "padding" : ""
 //        }
+//    },
+//    "mobile" : "",
+//    "token" : "b523a0b55c06930cfec15774de9a1",
+//    "groupid" : 11,
+//    "userName" : "18610249537",
+//    "gender" : 0,
+//    "creditShowList" : [
+//    {
+//    "type" : "credits",
+//    "title" : "积分",
+//    "data" : 10
+//    },
+//    {
+//    "type" : "extcredits2",
+//    "title" : "乒乓币",
+//    "data" : 4
 //    }
-//    var method: Moya.Method {
-//        switch self {
-//        case .forumlist, .showUser, .showAccounts:
-//            return .get
-//        case .createUser, .updateUser:
-//            return .post
-//        }
-//    }
-//    var task: Task {
-//        switch self {
-//        case .forumlist, .showUser, .showAccounts: // Send no parameters
-//            return .requestPlain
-//        case let .updateUser(_, firstName, lastName):  // Always sends parameters in URL, regardless of which HTTP method is used
-//            return .requestParameters(parameters: ["first_name": firstName, "last_name": lastName], encoding: URLEncoding.queryString)
-//        case let .createUser(firstName, lastName): // Always send parameters as JSON in request body
-//            return .requestParameters(parameters: ["first_name": firstName, "last_name": lastName], encoding: JSONEncoding.default)
-//        }
-//    }
-//    var sampleData: Data {
-//        switch self {
-//        case .forumlist:
-//            return "Half measures are as bad as nothing at all.".utf8Encoded
-//        case .showUser(let id):
-//            return "{\"id\": \(id), \"first_name\": \"Harry\", \"last_name\": \"Potter\"}".utf8Encoded
-//        case .createUser(let firstName, let lastName):
-//            return "{\"id\": 100, \"first_name\": \"\(firstName)\", \"last_name\": \"\(lastName)\"}".utf8Encoded
-//        case .updateUser(let id, let firstName, let lastName):
-//            return "{\"id\": \(id), \"first_name\": \"\(firstName)\", \"last_name\": \"\(lastName)\"}".utf8Encoded
-//        case .showAccounts:
-//            // Provided you have a file named accounts.json in your bundle.
-//            guard let url = Bundle.main.url(forResource: "accounts", withExtension: "json"),
-//                let data = try? Data(contentsOf: url) else {
-//                    return Data()
-//            }
-//            return data
-//        }
-//    }
-//    var headers: [String: String]? {
-//        return ["Content-type": "application/json"]
-//    }
-//}
-//// MARK: - Helpers
-//private extension String {
-//    var urlEscaped: String {
-//        return addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
-//    }
+//    ],
+//    "head" : {
+//        "errInfo" : "调用成功,没有任何错误",
+//        "alert" : 0,
+//        "errCode" : "00000000",
+//        "version" : "2.8.1.5"
+//    },
+//    "uid" : 348978,
+//    "isValidation" : 0,
+//    "repeatList" : [
 //
-//    var utf8Encoded: Data {
-//        return data(using: .utf8)!
-//    }
+//    ],
+//    "userTitle" : "LV2乒乓爱好者",
+//    "errcode" : "",
+//    "secret" : "29fbd6e15beb6b88af05520347a23",
+//    "rs" : 1,
+//    "verify" : [
+//
+//    ],
+//    "avatar" : "http:\/\/www.pingpangwang.com\/uc_server\/avatar.php?uid=348978&size=middle"
 //}
 

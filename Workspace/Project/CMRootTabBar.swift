@@ -17,21 +17,21 @@ class CMRootTabBar: UITabBarController, UITabBarControllerDelegate {
         self.tabBar.tintColor = UIColor.ColorBgTheme()
         self.delegate = self;
         
-        let vc0 = DemoHomeVC()
+        let vc0 = UIViewController()
         vc0.tabBarItem.image = UIImage(named: "tab_home")
-        vc0.tabBarItem.title = "首页"
+        vc0.tabBarItem.title = "汇总"
         
-        let vc3 = DemoStudyVC()
+        let vc3 = PP_ForumVC()
         vc3.tabBarItem.image = UIImage(named: "tab_shopping")
-        vc3.tabBarItem.title = "学习"
+        vc3.tabBarItem.title = "论坛"
         
-        let vc1 = DemoBusinessVC()
+        let vc1 = UIViewController()
         vc1.tabBarItem.image = UIImage(named: "tab_shopping")
-        vc1.tabBarItem.title = "功能"
+        vc1.tabBarItem.title = "消息"
         
-        let vc2 = PP_ForumVC()
+        let vc2 = LoginVC()
         vc2.tabBarItem.image = UIImage(named: "tab_me")
-        vc2.tabBarItem.title = "论坛"
+        vc2.tabBarItem.title = "发现"
         
         self.viewControllers = [vc0, vc3, vc1, vc2]
         self.title = vc0.tabBarItem.title

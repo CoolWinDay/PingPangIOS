@@ -123,6 +123,7 @@
 		E882A6681E779B1A002AC531 /* CMUIAlertViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E882A6671E779B1A002AC531 /* CMUIAlertViewUtils.swift */; };
 		E892A08E2095D0290068DEA7 /* PP_TopicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E892A08C2095D0290068DEA7 /* PP_TopicCell.swift */; };
 		E892A08F2095D0290068DEA7 /* PP_TopicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E892A08D2095D0290068DEA7 /* PP_TopicCell.xib */; };
+		E8A11DF320B705610092D0C6 /* PP_UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A11DF220B705610092D0C6 /* PP_UserModel.swift */; };
 		E8A19F1D1EBF346C0054C4FD /* CMDateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A19F1C1EBF346C0054C4FD /* CMDateUtils.swift */; };
 		E8B43CB6209C797D0085DB2A /* PP_ContentTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B43CB4209C797D0085DB2A /* PP_ContentTextCell.swift */; };
 		E8B43CB7209C797D0085DB2A /* PP_ContentTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8B43CB5209C797D0085DB2A /* PP_ContentTextCell.xib */; };
@@ -311,6 +312,7 @@
 		E892A08C2095D0290068DEA7 /* PP_TopicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PP_TopicCell.swift; sourceTree = "<group>"; };
 		E892A08D2095D0290068DEA7 /* PP_TopicCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PP_TopicCell.xib; sourceTree = "<group>"; };
 		E89A8D841EC1F207005FE6BF /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		E8A11DF220B705610092D0C6 /* PP_UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PP_UserModel.swift; sourceTree = "<group>"; };
 		E8A19F1C1EBF346C0054C4FD /* CMDateUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMDateUtils.swift; sourceTree = "<group>"; };
 		E8B43CB4209C797D0085DB2A /* PP_ContentTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PP_ContentTextCell.swift; sourceTree = "<group>"; };
 		E8B43CB5209C797D0085DB2A /* PP_ContentTextCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PP_ContentTextCell.xib; sourceTree = "<group>"; };
@@ -507,6 +509,7 @@
 			children = (
 				E82B2B431EAEF7FB0078F9EF /* LoginVC.swift */,
 				E82B2B441EAEF7FB0078F9EF /* LoginVC.xib */,
+				E8A11DF220B705610092D0C6 /* PP_UserModel.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -1169,6 +1172,7 @@
 				E87575731E4C686C00BFDCB7 /* CMColorUtils.swift in Sources */,
 				E82CBED91E76BF7100DEF744 /* BookRequest.swift in Sources */,
 				E84D4780209DECBE00117138 /* PP_CommentCell.swift in Sources */,
+				E8A11DF320B705610092D0C6 /* PP_UserModel.swift in Sources */,
 				E875754F1E4C566700BFDCB7 /* AppDelegate.swift in Sources */,
 				E8B43CBA209C9C6E0085DB2A /* PP_ContentImageCell.swift in Sources */,
 				E87575691E4C638100BFDCB7 /* DemoMeVC.swift in Sources */,
@@ -1339,6 +1343,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = CommonSwift.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = TQKKQ9452M;
@@ -1352,7 +1357,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.zhizhen.ybb;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "95c09a70-2db9-4563-820b-2b54ea5f6bc8";
+				PROVISIONING_PROFILE = "13e3a407-2977-44e7-ab0b-66e1f86af85a";
 				PROVISIONING_PROFILE_SPECIFIER = Ybb_Dev;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Workspace/Common/BridgingHeader/Common-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
@@ -1367,6 +1372,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = CommonSwift.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = TQKKQ9452M;
@@ -1380,7 +1386,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.zhizhen.ybb;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a5794c69-807d-4326-8c37-fde6f17ad184";
+				PROVISIONING_PROFILE = "5b82db01-22dd-46dd-b3dd-932a1c089427";
 				PROVISIONING_PROFILE_SPECIFIER = Ybb_AdHoc;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Workspace/Common/BridgingHeader/Common-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
