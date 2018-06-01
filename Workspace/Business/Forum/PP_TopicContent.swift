@@ -13,7 +13,7 @@ class PP_TopicContent: CMBaseVC {
     var boardId: String = ""
     var topicId: String = ""
     var topicDetail: TopicDetailModel?
-    var commentList: [PP_CommentModel?]?
+    var commentList: [PP_CommentModel?] = []
     var cellHeightCache: [CGFloat] = []
     
     @IBOutlet weak var scrollView: UIScrollView!
@@ -32,8 +32,9 @@ class PP_TopicContent: CMBaseVC {
     let cellRIImage = "PP_ContentImageCell"
     let cellRIVideo = "PP_ContentVideoCell"
     let cellRILink = "PP_ContentLinkCell"
-    
     let cellRIComment = "PP_CommentCell"
+    
+    var page = 1
     
     deinit {
         
@@ -52,9 +53,45 @@ class PP_TopicContent: CMBaseVC {
         
         tableView.tableHeaderView = self.headerView
         
-        ForumService.postList(boardId: boardId, topicId: topicId) { (topicDetail, commentList) in
-            self.topicDetail = topicDetail
-            self.commentList = commentList
+        
+        self.tableView.es.addPullToRefresh {
+            self.page = 1
+            self.commentList.removeAll()
+            self.loadData()
+        }
+        
+        self.tableView.es.addInfiniteScrolling {
+            self.page += 1
+            self.loadData()
+        }
+        
+        loadData()
+    }
+    
+    func loadData() {
+        ForumService.postList(boardId: boardId, topicId: topicId, page: page) { (topicDetail, commentList) in
+            if self.page == 1 {
+                self.tableView.es.stopPullToRefresh()
+            }
+            else {
+                self.tableView.es.stopLoadingMore()
+                if let list = commentList, list.count >= 10 {
+                } else {
+                    self.tableView.es.noticeNoMoreData()
+                }
+            }
+            
+            if self.page == 1 {
+                self.topicDetail = topicDetail
+            }
+            
+            let lastIndex = self.commentList.count
+            var newCount = 0
+            if let commentList = commentList {
+                newCount = commentList.count
+                self.commentList.append(contentsOf: commentList)
+            }
+            
             self.initHeaderView(topicDetail)
             if let content = topicDetail?.content {
                 for model in content {
@@ -67,7 +104,16 @@ class PP_TopicContent: CMBaseVC {
                 }
             }
             
-            self.tableView.reloadData()
+            if self.page == 1 {
+                self.tableView.reloadData()
+            }
+            else if newCount > 0 {
+                var indexPaths: [IndexPath] = []
+                for index in 0...newCount-1 {
+                    indexPaths.append(IndexPath(row: lastIndex+index, section: 1))
+                }
+                self.tableView.insertRows(at: indexPaths, with: .none)
+            }
         }
     }
     
@@ -111,9 +157,7 @@ extension PP_TopicContent: UITableViewDelegate, UITableViewDataSource {
             }
         }
         else if section == 1 {
-            if let comment = commentList {
-                return comment.count
-            }
+            return commentList.count
         }
         return 0
     }
@@ -174,7 +218,7 @@ extension PP_TopicContent: UITableViewDelegate, UITableViewDataSource {
         else if indexPath.section == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: cellRIComment) as! PP_CommentCell
             cell.selectionStyle = .none
-            if let comment = commentList?[indexPath.row] {
+            if let comment = commentList[indexPath.row] {
                 cell.cellWithModel(comment)
             }
             return cell

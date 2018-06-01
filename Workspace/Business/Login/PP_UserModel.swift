@@ -17,12 +17,12 @@ class PP_UserModel: CMJsonModel {
     var avatar = ""
     var userTitle = ""
     
-    func save2UserDefaults() {
+    func save2Cache() {
         let jsonStr = self.toJSONString()
         UserDefaults.setUserDefaultsString(jsonStr, forKey: UserDefaults.UDK_UserModel)
     }
     
-    class func modelWithUserDefaults() -> PP_UserModel? {
+    class func modelWithCache() -> PP_UserModel? {
         let jsonStr = UserDefaults.getUserDefaultsString(UserDefaults.UDK_UserModel)
         let model = PP_UserModel.deserialize(from: jsonStr)
         return model

@@ -41,7 +41,7 @@ class PP_CommentCell: UITableViewCell {
         
         if model.reply_content.count > 0 {
             let content = model.reply_content[0]
-            commentView.text = content.infor
+            commentView.attributedText = content.infor.handleMobcentGifText()
         }
     }
     

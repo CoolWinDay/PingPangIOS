@@ -24,12 +24,20 @@ class PP_ForumVC: CMBaseVC {
         collectionView.register(UINib(nibName: cellRICell, bundle: Bundle.main), forCellWithReuseIdentifier: cellRICell)
         collectionView.register(UINib(nibName: cellRIHeader, bundle: Bundle.main), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: cellRIHeader)
         
+        self.collectionView.es.addPullToRefresh {
+            self.loadData()
+        }
+        
+        self.loadData()
+    }
+    
+    func loadData() {
         ForumService.forumList { (forumList) in
+            self.collectionView.es.stopPullToRefresh()
             self.forumList = forumList
             self.collectionView.reloadData()
         }
     }
-
 }
 
 extension PP_ForumVC: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {

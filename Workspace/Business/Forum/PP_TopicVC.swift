@@ -19,6 +19,8 @@ class PP_TopicVC: CMBaseVC {
     var board_id: String = ""
     var topicList: [PP_TopicModel?] = []
     
+    var page = 1
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,8 +28,30 @@ class PP_TopicVC: CMBaseVC {
         tableView.register(UINib(nibName: cellRICell2, bundle: Bundle.main), forCellReuseIdentifier: cellRICell2)
         tableView.tableFooterView = UIView()
         
-        ForumService.topicListEx(boardId: board_id) { (topicList) in
-            self.topicList = topicList
+        self.tableView.es.addPullToRefresh {
+            self.page = 1
+            self.topicList.removeAll()
+            self.loadData()
+        }
+        
+        self.tableView.es.addInfiniteScrolling {
+            self.page += 1
+            self.loadData()
+        }
+        
+        loadData()
+    }
+    
+    func loadData() {
+        ForumService.topicListEx(boardId: board_id, page: page) { (topicList) in
+            if self.page == 1 {
+                self.tableView.es.stopPullToRefresh()
+            }
+            else {
+                self.tableView.es.stopLoadingMore()
+            }
+            
+            self.topicList.append(contentsOf: topicList)
             self.tableView.reloadData()
         }
     }

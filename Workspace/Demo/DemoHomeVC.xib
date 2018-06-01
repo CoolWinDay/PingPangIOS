@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DemoHomeVC" customModule="CommonSwift" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DemoHomeVC" customModule="PingPangWang" customModuleProvider="target">
             <connections>
                 <outlet property="button" destination="HBd-9I-F5k" id="Pta-YL-cg1"/>
+                <outlet property="imageView" destination="U6g-94-xhe" id="J2x-DJ-JP4"/>
+                <outlet property="label" destination="oB6-Nx-5cJ" id="F7k-fP-uxT"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -32,10 +34,29 @@
                         <action selector="btnPredded" destination="-1" eventType="touchUpInside" id="DoI-TY-ckP"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oB6-Nx-5cJ">
+                    <rect key="frame" x="20" y="50" width="335" height="168.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="U6g-94-xhe">
+                    <rect key="frame" x="162" y="448.5" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="0C3-B9-Xj3"/>
+                        <constraint firstAttribute="width" constant="50" id="AZa-yJ-wQt"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="HBd-9I-F5k" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="5PM-EN-AMe"/>
+                <constraint firstItem="HBd-9I-F5k" firstAttribute="top" secondItem="oB6-Nx-5cJ" secondAttribute="bottom" constant="50" id="AhQ-WU-Ey8"/>
+                <constraint firstItem="U6g-94-xhe" firstAttribute="top" secondItem="HBd-9I-F5k" secondAttribute="bottom" constant="50" id="Hll-QN-pbr"/>
+                <constraint firstItem="U6g-94-xhe" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="PGv-OK-5jl"/>
+                <constraint firstAttribute="trailing" secondItem="oB6-Nx-5cJ" secondAttribute="trailing" constant="20" id="STg-Pq-w4U"/>
+                <constraint firstItem="oB6-Nx-5cJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="ZbW-l4-N0F"/>
+                <constraint firstItem="oB6-Nx-5cJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="50" id="cbl-KL-FF9"/>
                 <constraint firstItem="HBd-9I-F5k" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ipf-aj-vQl"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
@@ -44,9 +65,4 @@
             <point key="canvasLocation" x="-65" y="48"/>
         </view>
     </objects>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
-    </simulatedMetricsContainer>
 </document>

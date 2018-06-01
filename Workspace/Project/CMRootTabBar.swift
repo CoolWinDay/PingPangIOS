@@ -14,27 +14,31 @@ class CMRootTabBar: UITabBarController, UITabBarControllerDelegate {
         super.viewDidLoad()
         
         self.tabBar.isTranslucent = false
-        self.tabBar.tintColor = UIColor.ColorBgTheme()
+        self.tabBar.tintColor = UIColor.ColorTextTheme()
         self.delegate = self;
         
-        let vc0 = UIViewController()
+        let vc0 = DemoHomeVC()
         vc0.tabBarItem.image = UIImage(named: "tab_home")
-        vc0.tabBarItem.title = "汇总"
+        vc0.tabBarItem.title = "首页"
         
-        let vc3 = PP_ForumVC()
-        vc3.tabBarItem.image = UIImage(named: "tab_shopping")
-        vc3.tabBarItem.title = "论坛"
-        
-        let vc1 = UIViewController()
+        let vc1 = PP_ForumVC()
         vc1.tabBarItem.image = UIImage(named: "tab_shopping")
-        vc1.tabBarItem.title = "消息"
+        vc1.tabBarItem.title = "论坛"
         
-        let vc2 = LoginVC()
+        let vc2 = UIViewController()
         vc2.tabBarItem.image = UIImage(named: "tab_me")
-        vc2.tabBarItem.title = "发现"
+        vc2.tabBarItem.title = "发帖"
         
-        self.viewControllers = [vc0, vc3, vc1, vc2]
-        self.title = vc0.tabBarItem.title
+        let vc3 = UIViewController()
+        vc3.tabBarItem.image = UIImage(named: "tab_shopping")
+        vc3.tabBarItem.title = "发现"
+        
+        let vc4 = UIViewController()
+        vc4.tabBarItem.image = UIImage(named: "tab_me")
+        vc4.tabBarItem.title = "我的"
+        
+        self.viewControllers = [vc0, vc1, vc2, vc3, vc4]
+//        self.title = vc0.tabBarItem.title
     }
 
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {

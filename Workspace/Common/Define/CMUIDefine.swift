@@ -23,7 +23,7 @@ extension UIScreen {
 extension UIColor {
     // bg
     class func ColorBgTheme() -> UIColor {
-        return self.hexColor(hexInteger: 0x12B0F2)
+        return self.hexColor(hexInteger: 0xDC3237)
     }
     class func ColorBgNormal() -> UIColor {
         return UIColor.white
@@ -31,7 +31,7 @@ extension UIColor {
     
     // text
     class func ColorTextTheme() -> UIColor {
-        return self.hexColor(hexInteger: 0x12B0F2)
+        return self.hexColor(hexInteger: 0xCC4051)
     }
     class func ColorTextDeep() -> UIColor {
         return UIColor.black

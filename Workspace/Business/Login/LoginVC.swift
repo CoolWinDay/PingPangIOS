@@ -13,20 +13,9 @@ class LoginVC: CMBaseVC {
     @IBOutlet weak var nameText: UITextField!
     @IBOutlet weak var pwdText: UITextField!
     @IBOutlet weak var loginBtn: UIButton!
-    @IBOutlet weak var registBtn: UIButton!
-    @IBOutlet weak var findPwdBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        nameText.layer.borderColor = UIColor.ColorTextLight().cgColor
-        nameText.layer.borderWidth = 1.0
-        
-        
-        if let model = PP_UserModel.modelWithUserDefaults() {
-            let a = model.token
-        }
-        
     }
     
     @IBAction
@@ -46,18 +35,13 @@ class LoginVC: CMBaseVC {
                 return
             }
             
-            model.save2UserDefaults()
+            model.save2Cache()
             cmShowToast("登录成功")
         }
     }
     
     @IBAction
     func doRegist() {
-        
-    }
-    
-    @IBAction
-    func doFindPwd() {
         
     }
 }

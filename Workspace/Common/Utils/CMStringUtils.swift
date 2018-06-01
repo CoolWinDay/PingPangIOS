@@ -195,5 +195,64 @@ extension String {
         return String(format: hash as String)
     }
 
+    func toNSRange(_ range: Range<String.Index>) -> NSRange {
+        guard let from = range.lowerBound.samePosition(in: utf16), let to = range.upperBound.samePosition(in: utf16) else {
+            return NSMakeRange(0, 0)
+        }
+        return NSMakeRange(utf16.distance(from: utf16.startIndex, to: from), utf16.distance(from: from, to: to))
+    }
+    
+    func toRange(_ range: NSRange) -> Range<String.Index>? {
+        guard let from16 = utf16.index(utf16.startIndex, offsetBy: range.location, limitedBy: utf16.endIndex) else { return nil }
+        guard let to16 = utf16.index(from16, offsetBy: range.length, limitedBy: utf16.endIndex) else { return nil }
+        guard let from = String.Index(from16, within: self) else { return nil }
+        guard let to = String.Index(to16, within: self) else { return nil }
+        return from ..< to
+    }
+    
+    func handleMobcentGifText() -> NSAttributedString {
+        let str = "[mobcent_phiz="
+        let end = ".gif]"
+        
+        let myAttrString = NSMutableAttributedString(string: self)
+        
+        if !self.contains(str) {
+            return myAttrString
+        }
+        
+        var gifArray: [String] = []
+        var rangeArray: [NSRange] = []
+        
+        var searchRange = self.startIndex ..< self.endIndex
+        var startRange = self.range(of: str, range: searchRange, locale: nil)
+        var endRange = self.range(of: end, range: searchRange, locale: nil)
+        while startRange != nil && endRange != nil {
+            let wordRange = (startRange?.lowerBound)! ..< (endRange?.upperBound)!
+            let gifStr = self.substring(with: wordRange)
+            gifArray.append(gifStr)
+            rangeArray.append(self.toNSRange(wordRange))
+            
+            searchRange = wordRange.upperBound ..< self.endIndex
+            startRange = self.range(of: str, range: searchRange, locale: nil)
+            endRange = self.range(of: end, range: searchRange, locale: nil)
+        }
+        
+        gifArray = gifArray.reversed()
+        rangeArray = rangeArray.reversed()
+        
+        for index in 0 ..< gifArray.count {
+            let gifStr = gifArray[index]
+            let range = rangeArray[index]
+            
+            var html = gifStr.replacingOccurrences(of: str, with: "<img src=\"")
+            html = html.replacingOccurrences(of: end, with: ".gif\"/>")
+            let data = html.data(using: .unicode)
+            let image_text = try! NSAttributedString.init(data: data!, options: [NSDocumentTypeDocumentAttribute : NSHTMLTextDocumentType], documentAttributes: nil)
+            
+            myAttrString.replaceCharacters(in: range, with: image_text)
+        }
+        
+        return myAttrString
+    }
 }
 

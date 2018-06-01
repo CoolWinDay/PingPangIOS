@@ -15,11 +15,16 @@ import Alamofire
 class DemoHomeVC: CMBaseVC {
     
     @IBOutlet weak var button: UIButton!
+    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
 
+    let myString = "abc[mobcent_phiz=http://www.pingpangwang.com/static/image/smiley/default/smile.gif]def[mobcent_phiz=http://www.pingpangwang.com/static/image/smiley/default/cry.gif]ghi"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = UIColor.ColorBgTheme()
+        
+        self.label.text = myString
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -34,6 +39,7 @@ class DemoHomeVC: CMBaseVC {
     
     @IBAction
     func btnPredded() {
+        self.label.attributedText = myString.handleMobcentGifText()
         
 //        ForumService.forumList { (forumList) in
 //
@@ -79,11 +85,11 @@ class DemoHomeVC: CMBaseVC {
 //        webVC.webUrl = "https://www.baidu.com"
 //        cmPushViewController(webVC)
         
-        cmPushViewController("CMWebVC") { (vc) in
-            vc.title = "WebView"
-            if let vcInstance = vc as? CMWebVC {
-                vcInstance.webUrl = "https://www.baidu.com"
-            }
-        }
+//        cmPushViewController("CMWebVC") { (vc) in
+//            vc.title = "WebView"
+//            if let vcInstance = vc as? CMWebVC {
+//                vcInstance.webUrl = "https://www.baidu.com"
+//            }
+//        }
     }
 }
