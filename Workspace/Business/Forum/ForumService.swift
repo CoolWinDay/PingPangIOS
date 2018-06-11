@@ -12,11 +12,13 @@ import SwiftyJSON
 
 class ForumService: NSObject {
     
-    static let server = "http://www.pingpangwang.com"
+    static let ppServer = "http://www.pingpangwang.com"
+//    static let gradeServer = "http://10.0.0.12:8888"
+    static let gradeServer = "http://192.168.11.113:8888"
     
     class func forumList(_ response: @escaping ([PP_ForumModel?]) -> ()) {
         let url = "/mobcent/app/web/index.php?r=forum/forumlist"
-        Alamofire.request(server+url).responseData(completionHandler: { (handler) in
+        Alamofire.request(ppServer+url).responseData(completionHandler: { (handler) in
             guard let value = handler.result.value else { return }
             let json = JSON(data: value)
             print(json)
@@ -33,7 +35,7 @@ class ForumService: NSObject {
         
 //        $boardId, $page = 1, $pageSize = 10, $orderby = 'all',  $sortid = '', $sorts = '', $circle = 0
         
-        Alamofire.request(server+url, parameters: parameters).responseData(completionHandler: { (handler) in
+        Alamofire.request(ppServer+url, parameters: parameters).responseData(completionHandler: { (handler) in
             guard let value = handler.result.value else { return }
             let json = JSON(data: value)
             print(json)
@@ -52,7 +54,7 @@ class ForumService: NSObject {
         let url = "/mobcent/app/web/index.php?r=forum/postlist"
         let parameters: Parameters = ["boardId": boardId, "topicId": topicId, "page": page]
         
-        Alamofire.request(server+url, parameters: parameters).responseData(completionHandler: { (handler) in
+        Alamofire.request(ppServer+url, parameters: parameters).responseData(completionHandler: { (handler) in
             guard let value = handler.result.value else { return }
             let json = JSON(data: value)
             print(json)
@@ -63,26 +65,37 @@ class ForumService: NSObject {
         })
     }
     
-    class func registUser(boardId: String, topicId: String, _ response: @escaping (TopicDetailModel?, [PP_CommentModel?]?) -> ()) {
+    class func registUser(username: String, password: String, _ response: @escaping (PP_UserModel?) -> ()) {
         let url = "/mobcent/app/web/index.php?r=user/register"
-        let parameters: Parameters = ["username": boardId, "password": topicId]
+        let parameters: Parameters = ["username": username, "password": password, "email": ""]
         
-        Alamofire.request(server+url, parameters: parameters).responseData(completionHandler: { (handler) in
-            guard let value = handler.result.value else { return }
+        Alamofire.request(ppServer+url, method:.get, parameters: parameters).responseData(completionHandler: { (handler) in
+            guard let value = handler.result.value else {
+                let des = handler.error?.localizedDescription
+                cmShowToast(des)
+                return
+            }
             let json = JSON(data: value)
             print(json)
             
-            let topic = TopicDetailModel.deserialize(from: json.rawString(), designatedPath: "topic")
-            let list = [PP_CommentModel].deserialize(from: json.rawString(), designatedPath: "list")
-            response(topic, list)
+            let errCode = json["head"]["errCode"].string
+            if errCode == "00000000" {
+                let model = PP_UserModel.deserialize(from: json.rawString())
+                response(model)
+            }
+            else {
+                cmShowToast(json["head"]["errInfo"].string)
+                return
+            }
         })
     }
     
     class func loginUser(username: String, password: String, _ response: @escaping (PP_UserModel?) -> ()) {
-        let url = "/mobcent/app/web/index.php?r=user/login"
+//        let url = "/mobcent/app/web/index.php?r=user/login"
+        let url = "/login"
         let parameters: Parameters = ["username": username, "password": password]
         
-        Alamofire.request(server+url, parameters: parameters).responseData(completionHandler: { (handler) in
+        Alamofire.request(gradeServer+url, method:.post, parameters: parameters).responseData(completionHandler: { (handler) in
             guard let value = handler.result.value else {
                 let des = handler.error?.localizedDescription
                 cmShowToast(des)

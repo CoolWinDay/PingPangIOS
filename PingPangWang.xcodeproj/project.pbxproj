@@ -98,6 +98,12 @@
 		E84D478D209EAAB800117138 /* PP_ForumCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E84D478B209EAAB800117138 /* PP_ForumCell.xib */; };
 		E84D4790209EB8D200117138 /* PP_ForumHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84D478E209EB8D200117138 /* PP_ForumHeaderView.swift */; };
 		E84D4791209EB8D200117138 /* PP_ForumHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E84D478F209EB8D200117138 /* PP_ForumHeaderView.xib */; };
+		E856F3F620CEB95500A2E054 /* EE_AddCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E856F3F420CEB95500A2E054 /* EE_AddCell.swift */; };
+		E856F3F720CEB95500A2E054 /* EE_AddCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E856F3F520CEB95500A2E054 /* EE_AddCell.xib */; };
+		E858EF9320CD332100B0E568 /* PP_GradeVenueApplyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E858EF9120CD332100B0E568 /* PP_GradeVenueApplyVC.swift */; };
+		E858EF9420CD332100B0E568 /* PP_GradeVenueApplyVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E858EF9220CD332100B0E568 /* PP_GradeVenueApplyVC.xib */; };
+		E858EF9720CD397C00B0E568 /* EE_ImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E858EF9520CD397B00B0E568 /* EE_ImageCell.xib */; };
+		E858EF9820CD397C00B0E568 /* EE_ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E858EF9620CD397C00B0E568 /* EE_ImageCell.swift */; };
 		E85E861C2095D8E000895376 /* dz_list_circle_replies@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E85E861A2095D8DF00895376 /* dz_list_circle_replies@2x.png */; };
 		E85E861D2095D8E000895376 /* dz_list_circle_pv@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E85E861B2095D8DF00895376 /* dz_list_circle_pv@2x.png */; };
 		E85E86202095D9F100895376 /* dz_personal_icon_woman@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E85E861E2095D9F100895376 /* dz_personal_icon_woman@2x.png */; };
@@ -285,6 +291,12 @@
 		E84D478B209EAAB800117138 /* PP_ForumCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PP_ForumCell.xib; sourceTree = "<group>"; };
 		E84D478E209EB8D200117138 /* PP_ForumHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PP_ForumHeaderView.swift; sourceTree = "<group>"; };
 		E84D478F209EB8D200117138 /* PP_ForumHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PP_ForumHeaderView.xib; sourceTree = "<group>"; };
+		E856F3F420CEB95500A2E054 /* EE_AddCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EE_AddCell.swift; sourceTree = "<group>"; };
+		E856F3F520CEB95500A2E054 /* EE_AddCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EE_AddCell.xib; sourceTree = "<group>"; };
+		E858EF9120CD332100B0E568 /* PP_GradeVenueApplyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PP_GradeVenueApplyVC.swift; sourceTree = "<group>"; };
+		E858EF9220CD332100B0E568 /* PP_GradeVenueApplyVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PP_GradeVenueApplyVC.xib; sourceTree = "<group>"; };
+		E858EF9520CD397B00B0E568 /* EE_ImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EE_ImageCell.xib; sourceTree = "<group>"; };
+		E858EF9620CD397C00B0E568 /* EE_ImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EE_ImageCell.swift; sourceTree = "<group>"; };
 		E85E861A2095D8DF00895376 /* dz_list_circle_replies@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dz_list_circle_replies@2x.png"; sourceTree = "<group>"; };
 		E85E861B2095D8DF00895376 /* dz_list_circle_pv@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dz_list_circle_pv@2x.png"; sourceTree = "<group>"; };
 		E85E861E2095D9F100895376 /* dz_personal_icon_woman@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dz_personal_icon_woman@2x.png"; sourceTree = "<group>"; };
@@ -680,6 +692,26 @@
 			path = Location;
 			sourceTree = "<group>";
 		};
+		E856F3EF20CE949000A2E054 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				E858EF9620CD397C00B0E568 /* EE_ImageCell.swift */,
+				E858EF9520CD397B00B0E568 /* EE_ImageCell.xib */,
+				E856F3F420CEB95500A2E054 /* EE_AddCell.swift */,
+				E856F3F520CEB95500A2E054 /* EE_AddCell.xib */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		E858EF9020CD327D00B0E568 /* Grade */ = {
+			isa = PBXGroup;
+			children = (
+				E858EF9120CD332100B0E568 /* PP_GradeVenueApplyVC.swift */,
+				E858EF9220CD332100B0E568 /* PP_GradeVenueApplyVC.xib */,
+			);
+			path = Grade;
+			sourceTree = "<group>";
+		};
 		E85DE38F1E4D65D200F8C9C5 /* Define */ = {
 			isa = PBXGroup;
 			children = (
@@ -704,18 +736,12 @@
 			path = Forum;
 			sourceTree = "<group>";
 		};
-		E8735A711E55DCB600D8A910 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
 		E87575461E4C561700BFDCB7 /* Business */ = {
 			isa = PBXGroup;
 			children = (
+				E856F3EF20CE949000A2E054 /* Common */,
+				E858EF9020CD327D00B0E568 /* Grade */,
 				783CEC4B208043B0008AB8BD /* Forum */,
-				E8735A711E55DCB600D8A910 /* Common */,
 				E82B2B421EAEF7730078F9EF /* Login */,
 				E8F9D7EB1EBF1D0C0005C5E8 /* Setting */,
 			);
@@ -1041,9 +1067,11 @@
 				E82C2FFC1E5FBBA300CE08F7 /* nav_share@3x.png in Resources */,
 				E839EF4B1E7BC04C006C78B7 /* ImageVC.xib in Resources */,
 				E839EF251E7B936B006C78B7 /* bulb_light@2x.png in Resources */,
+				E858EF9720CD397C00B0E568 /* EE_ImageCell.xib in Resources */,
 				E8C477B01E8CDB4500543846 /* SegmentVC.xib in Resources */,
 				E84D4785209DF96D00117138 /* dz_posts_manage_btn@2x.png in Resources */,
 				E839EF231E7B936B006C78B7 /* bulb@2x.png in Resources */,
+				E856F3F720CEB95500A2E054 /* EE_AddCell.xib in Resources */,
 				E8470AD31EBDC3F400D86916 /* LocationVC.xib in Resources */,
 				E8C477BF1E8D004200543846 /* 4.jpg in Resources */,
 				E85E86202095D9F100895376 /* dz_personal_icon_woman@2x.png in Resources */,
@@ -1053,6 +1081,7 @@
 				E84D4791209EB8D200117138 /* PP_ForumHeaderView.xib in Resources */,
 				E839EF511E7BC91B006C78B7 /* ImageCell.xib in Resources */,
 				E839EF411E7B951A006C78B7 /* tab_home@2x.png in Resources */,
+				E858EF9420CD332100B0E568 /* PP_GradeVenueApplyVC.xib in Resources */,
 				E82CBEDC1E76BF7100DEF744 /* NetWorkingVC.xib in Resources */,
 				E8EA5FD21EA758FD00C3CE52 /* StringValidateVC.xib in Resources */,
 			);
@@ -1087,31 +1116,41 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-PingPangWang/Pods-PingPangWang-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/DACircularProgress/DACircularProgress.framework",
 				"${BUILT_PRODUCTS_DIR}/ESPullToRefresh/ESPullToRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/MWPhotoBrowser/MWPhotoBrowser.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftDate/SwiftDate.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/TZImagePickerController/TZImagePickerController.framework",
 				"${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DACircularProgress.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ESPullToRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MWPhotoBrowser.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftDate.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TZImagePickerController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast_Swift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1147,6 +1186,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E892A08E2095D0290068DEA7 /* PP_TopicCell.swift in Sources */,
+				E858EF9320CD332100B0E568 /* PP_GradeVenueApplyVC.swift in Sources */,
 				E837C2061EC6C19800E69FAC /* WidgetVC.swift in Sources */,
 				E8E5F2C6209AE70700C028CB /* CMUIViewUtils.swift in Sources */,
 				E8F9D7EA1EBF137D0005C5E8 /* CMUserDefaultsUtils.swift in Sources */,
@@ -1192,6 +1232,7 @@
 				E8CCA8C82080DEC300D72E5E /* PP_TopicVC.swift in Sources */,
 				E82CCE8B1EB038BC00A3E379 /* WXApiManager.swift in Sources */,
 				E85E8626209861A900895376 /* PP_TopicContent.swift in Sources */,
+				E858EF9820CD397C00B0E568 /* EE_ImageCell.swift in Sources */,
 				E8F9D7E61EBF03020005C5E8 /* CMNotificationDefine.swift in Sources */,
 				6141E9421E63C968002CB071 /* CMStringUtils.swift in Sources */,
 				E82B2B451EAEF7FB0078F9EF /* LoginVC.swift in Sources */,
@@ -1213,6 +1254,7 @@
 				E84D4788209E9C3C00117138 /* PP_TopicCell2.swift in Sources */,
 				E839EF0A1E7B81D6006C78B7 /* JTSegmentControl.swift in Sources */,
 				E8E803C21EA59A3E0095EFD8 /* CMUILabelUtils.swift in Sources */,
+				E856F3F620CEB95500A2E054 /* EE_AddCell.swift in Sources */,
 				E8CCA8C12080D7B800D72E5E /* CMJsonModel.swift in Sources */,
 				E85E8629209865C400895376 /* PP_ContentModel.swift in Sources */,
 				E87575561E4C58ED00BFDCB7 /* CMRootTabBar.swift in Sources */,
