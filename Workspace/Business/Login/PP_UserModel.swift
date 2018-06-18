@@ -27,4 +27,11 @@ class PP_UserModel: CMJsonModel {
         let model = PP_UserModel.deserialize(from: jsonStr)
         return model
     }
+    
+    class func userToken() -> String {
+        if let model = modelWithCache() {
+            return model.token
+        }
+        return ""
+    }
 }

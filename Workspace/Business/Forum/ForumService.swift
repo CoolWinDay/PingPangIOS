@@ -10,11 +10,7 @@ import Moya
 import Alamofire
 import SwiftyJSON
 
-class ForumService: NSObject {
-    
-    static let ppServer = "http://www.pingpangwang.com"
-//    static let gradeServer = "http://10.0.0.12:8888"
-    static let gradeServer = "http://192.168.11.113:8888"
+class ForumService: PP_BaseService {
     
     class func forumList(_ response: @escaping ([PP_ForumModel?]) -> ()) {
         let url = "/mobcent/app/web/index.php?r=forum/forumlist"
@@ -90,21 +86,39 @@ class ForumService: NSObject {
         })
     }
     
-    class func loginUser(username: String, password: String, _ response: @escaping (PP_UserModel?) -> ()) {
+    class func loginUser(username: String, password: String, _ response: @escaping (PP_UserModel) -> ()) {
 //        let url = "/mobcent/app/web/index.php?r=user/login"
         let url = "/login"
         let parameters: Parameters = ["username": username, "password": password]
         
+        cmShowLoading()
         Alamofire.request(gradeServer+url, method:.post, parameters: parameters).responseData(completionHandler: { (handler) in
-            guard let value = handler.result.value else {
-                let des = handler.error?.localizedDescription
-                cmShowToast(des)
-                return
+            cmHideLoading()
+            
+            if handler.result.isSuccess {
+                guard let value = handler.result.value else {
+                    cmShowToast("服务无数据")
+                    return
+                }
+                let json = JSON(data: value)
+                print(json)
+                
+                let errCode = json["errorCode"].string
+                if errCode == "00000000" {
+                    if let model = PP_UserModel.deserialize(from: json.rawString()) {
+                        response(model)
+                    }
+                    else {
+                        cmShowToast("数据格式错误")
+                    }
+                }
+                else {
+                    cmShowToast(json["errorInfo"].string)
+                }
             }
-            let json = JSON(data: value)
-            print(json)
-            let model = PP_UserModel.deserialize(from: json.rawString())
-            response(model)
+            else {
+                cmShowToast(handler.error?.localizedDescription)
+            }
         })
     }
     

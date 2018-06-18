@@ -9,6 +9,18 @@
 import UIKit
 
 extension UIImage {
+    
+    // 压缩图片到制定size内，1k=1024*1
+    func compress(toSize: Int) -> Data? {
+        var lastQuality: CGFloat = 1.0
+        var imageData = UIImageJPEGRepresentation(self, lastQuality)
+        while imageData!.count > toSize {
+            lastQuality = lastQuality - 0.05
+            imageData = UIImageJPEGRepresentation(self, lastQuality)
+        }
+        return imageData
+    }
+    
     // 修复图片旋转
     func fixOrientation() -> UIImage {
         if self.imageOrientation == .up {

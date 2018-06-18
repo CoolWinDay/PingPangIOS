@@ -38,17 +38,18 @@ class DemoHomeVC: CMBaseVC {
     
     @IBAction
     func btnPredded() {
-        let username = "18610249533"
-        let password = "123456"
-        ForumService.registUser(username: username, password: username) { (model) in
-            // 注册成功，登录
-            ForumService.loginUser(username: username, password: password, { (model) in
-                
-            })
-        }
-        
-        
-        self.label.attributedText = myString.handleMobcentGifText()
+        cmShowToast("提交成功")
+//        let username = "18610249533"
+//        let password = "123456"
+//        ForumService.registUser(username: username, password: username) { (model) in
+//            // 注册成功，登录
+//            ForumService.loginUser(username: username, password: password, { (model) in
+//                
+//            })
+//        }
+//        
+//        
+//        self.label.attributedText = myString.handleMobcentGifText()
         
 //        ForumService.forumList { (forumList) in
 //

@@ -12,6 +12,7 @@ extension UserDefaults {
     
     // user
     public static let UDK_UserModel = "UDK_UserModel"
+    public static let UDK_LoginToken = "UDK_LoginToken"
     
     // update
     public static let UDKey_UpdateType = "UDKey_UpdateType"

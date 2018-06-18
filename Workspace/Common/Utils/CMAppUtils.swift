@@ -13,6 +13,8 @@ import AVFoundation
 import AssetsLibrary
 import CoreLocation
 
+typealias VoidCallback = () -> ()
+
 func cmMainWindow() -> UIWindow? {
     if let window = cmDelegate().window {
         return window
@@ -72,6 +74,20 @@ func cmPushViewController(_ vc: Any?, setVC: ((UIViewController) -> ())? = nil) 
     }
 }
 
+func cmPopViewController() {
+    cmRootNavigationController().popViewController(animated: true)
+}
+
+func cmShowLogin(animated: Bool, loginSuccess: (() -> Swift.Void)? = nil) {
+    let loginVC = LoginVC()
+    loginVC.successCallback = {
+        
+    }
+    cmRootNavigationController().present(loginVC, animated: animated) {
+        
+    }
+}
+
 func cmCacheUrl(name: String) -> URL {
     var cacheUrl = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask)[0]
     if let appName = Bundle.main.object(forInfoDictionaryKey: "CFBundleName") as? String {
@@ -82,7 +98,7 @@ func cmCacheUrl(name: String) -> URL {
 
 func cmShowToast(_ toast: String?, position: Toast_Swift.ToastPosition = ToastManager.shared.position) {
     if let theToast = toast {
-        cmTopMostViewController()?.view.makeToast(theToast, duration: ToastManager.shared.duration, position: position)
+        cmMainWindow()?.makeToast(theToast, duration: ToastManager.shared.duration, position: position)
     }
 }
 

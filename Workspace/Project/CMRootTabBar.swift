@@ -29,7 +29,7 @@ class CMRootTabBar: UITabBarController, UITabBarControllerDelegate {
         vc2.tabBarItem.image = UIImage(named: "tab_me")
         vc2.tabBarItem.title = "发帖"
         
-        let vc3 = PP_GradeVenueApplyVC()
+        let vc3 = PP_GradeHomeVC()
         vc3.tabBarItem.image = UIImage(named: "tab_shopping")
         vc3.tabBarItem.title = "评级"
         

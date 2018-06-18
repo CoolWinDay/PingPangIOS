@@ -15,5 +15,12 @@ class CMResponse: HandyJSON {
     var error: Error?
     var fileUrl: URL?
     
+    var errorCode = ""
+    var errorInfo = "请求错误"
+    
     required init() {}
+    
+    func isSuccess() -> Bool {
+        return errorCode == "00000000"
+    }
 }

@@ -23,3 +23,7 @@
 
 // umeng
 #import "UMessage.h"
+
+// address choose
+#import "ChooseLocationView.h"
+#import "CitiesDataTool.h"

@@ -14,6 +14,8 @@ class LoginVC: CMBaseVC {
     @IBOutlet weak var pwdText: UITextField!
     @IBOutlet weak var loginBtn: UIButton!
     
+    var successCallback: VoidCallback = {_ in }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -30,18 +32,24 @@ class LoginVC: CMBaseVC {
         }
         
         ForumService.loginUser(username: username, password: pwd) { (model) in
-            guard let model = model else {
-                cmShowToast("用户名或密码错误")
-                return
-            }
-            
             model.save2Cache()
             cmShowToast("登录成功")
+            self.successCallback()
+            self.dismiss(animated: true, completion: nil)
         }
     }
     
     @IBAction
     func doRegist() {
-        
+        ForumService.registUser(username: "", password: "") { (model) in
+            self.successCallback()
+        }
+    }
+    
+    @IBAction
+    func doClose() {
+        self.dismiss(animated: true) {
+            
+        }
     }
 }
