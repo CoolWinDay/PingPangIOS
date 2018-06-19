@@ -9,6 +9,7 @@
 import UIKit
 
 class PP_VenueModel: CMJsonModel {
+    var kid = ""
     var name = ""
     var charger = ""
     var phone = ""
@@ -19,4 +20,7 @@ class PP_VenueModel: CMJsonModel {
     var introduce = ""
     var venueImages: [UIImage] = []
     var AuthenticImages: [UIImage] = []
+    
+    
+    var venueImage: [PP_ImageModel] = []
 }

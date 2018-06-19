@@ -14,6 +14,7 @@ import AssetsLibrary
 import CoreLocation
 
 typealias VoidCallback = () -> ()
+typealias StringCallback = (String) -> ()
 
 func cmMainWindow() -> UIWindow? {
     if let window = cmDelegate().window {

@@ -39,7 +39,7 @@ class PP_GradeHomeVC: CMBaseVC {
     @IBAction
     func applyExam() {
         if checkLogin() {
-            cmPushViewController("PP_GradeVenueApplyVC")
+            cmPushViewController("PP_ExamApplyVC")
         }
         else {
             cmShowLogin(animated: true)

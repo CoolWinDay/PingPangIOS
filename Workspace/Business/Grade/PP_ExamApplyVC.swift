@@ -1,8 +1,8 @@
 //
-//  PP_AuditorApplyVC.swift
+//  PP_ExamApplyVC.swift
 //  PingPangWang
 //
-//  Created by 李鹏 on 2018/6/18.
+//  Created by 李鹏 on 2018/6/19.
 //  Copyright © 2018年 com.jsinda. All rights reserved.
 //
 
@@ -10,7 +10,7 @@ import UIKit
 import TZImagePickerController
 import MWPhotoBrowser
 
-class PP_AuditorApplyVC: CMBaseVC {
+class PP_ExamApplyVC: CMBaseVC {
 
     let cellIdentifier0 = "EE_ImageCell"
     let cellIdentifier1 = "EE_AddCell"
@@ -42,7 +42,7 @@ class PP_AuditorApplyVC: CMBaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "考官申请"
+        self.title = "考试报名"
         
         self.performSelector(inBackground: #selector(loadAddressData), with: nil)
         
@@ -55,12 +55,12 @@ class PP_AuditorApplyVC: CMBaseVC {
             self.locationView.isHidden = false
             self.isEditing = false
         }
-
+        
         locationView.chooseCancel = {
             self.coverView.isHidden = true
             self.locationView.isHidden = true
         }
-
+        
         locationView.chooseFinish = {
             self.coverView.isHidden = true
             self.locationView.isHidden = true
@@ -164,7 +164,7 @@ class PP_AuditorApplyVC: CMBaseVC {
     }
 }
 
-extension PP_AuditorApplyVC: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+extension PP_ExamApplyVC: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -219,13 +219,6 @@ extension PP_AuditorApplyVC: UICollectionViewDataSource, UICollectionViewDelegat
         }
         else {
             let browser = MWPhotoBrowser(delegate: self)
-            //            browser.displayActionButton = NO;
-            //            browser.alwaysShowControls = NO;
-            //            browser.displaySelectionButtons = NO;
-            //            browser.zoomPhotosToFill = YES;
-            //            browser.displayNavArrows = NO;
-            //            browser.startOnGrid = NO;
-            //            browser.enableGrid = YES;
             cmPushViewController(browser)
         }
     }
@@ -253,7 +246,7 @@ extension PP_AuditorApplyVC: UICollectionViewDataSource, UICollectionViewDelegat
     }
 }
 
-extension PP_AuditorApplyVC: TZImagePickerControllerDelegate {
+extension PP_ExamApplyVC: TZImagePickerControllerDelegate {
     func imagePickerController(_ picker: TZImagePickerController!, didFinishPickingPhotos photos: [UIImage]!, sourceAssets assets: [Any]!, isSelectOriginalPhoto: Bool, infos: [[AnyHashable : Any]]!) {
         if picker.view.tag == 101 {
             if photos.count > 0 {
@@ -267,7 +260,7 @@ extension PP_AuditorApplyVC: TZImagePickerControllerDelegate {
     }
 }
 
-extension PP_AuditorApplyVC: MWPhotoBrowserDelegate {
+extension PP_ExamApplyVC: MWPhotoBrowserDelegate {
     func numberOfPhotos(in photoBrowser: MWPhotoBrowser!) -> UInt {
         return UInt(self.imageArray.count)
     }
