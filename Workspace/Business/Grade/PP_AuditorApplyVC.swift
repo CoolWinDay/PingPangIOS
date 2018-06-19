@@ -149,8 +149,10 @@ class PP_AuditorApplyVC: CMBaseVC {
         model.idcard = idcard
         model.introduce = introduce
         model.venueid = venue_id
-        model.avatarImage = [avatarImage]
         model.certificateImages = self.imageArray
+        let imageModel = PP_ImageModel()
+        imageModel.image = avatarImage
+        model.avatarImage = imageModel
         
         PP_GradeService.buildAuditor(model) { (response) in
             if response.isSuccess() {

@@ -191,6 +191,10 @@
 		E8EA5FCA1EA7588400C3CE52 /* TextAndInputVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8EA5FC81EA7588400C3CE52 /* TextAndInputVC.xib */; };
 		E8EA5FD11EA758FD00C3CE52 /* StringValidateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EA5FCF1EA758FD00C3CE52 /* StringValidateVC.swift */; };
 		E8EA5FD21EA758FD00C3CE52 /* StringValidateVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8EA5FD01EA758FD00C3CE52 /* StringValidateVC.xib */; };
+		E8F3F48720D90D7600DEF0E4 /* PP_AuditorSelectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F3F48520D90D7600DEF0E4 /* PP_AuditorSelectVC.swift */; };
+		E8F3F48820D90D7600DEF0E4 /* PP_AuditorSelectVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8F3F48620D90D7600DEF0E4 /* PP_AuditorSelectVC.xib */; };
+		E8F3F48B20D90EFB00DEF0E4 /* PP_AuditorListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F3F48920D90EFB00DEF0E4 /* PP_AuditorListCell.swift */; };
+		E8F3F48C20D90EFB00DEF0E4 /* PP_AuditorListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8F3F48A20D90EFB00DEF0E4 /* PP_AuditorListCell.xib */; };
 		E8F9D7E01EBEF9360005C5E8 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F9D7DF1EBEF9360005C5E8 /* main.swift */; };
 		E8F9D7E21EBEFA630005C5E8 /* CMApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F9D7E11EBEFA630005C5E8 /* CMApplication.swift */; };
 		E8F9D7E61EBF03020005C5E8 /* CMNotificationDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F9D7E51EBF03020005C5E8 /* CMNotificationDefine.swift */; };
@@ -430,6 +434,10 @@
 		E8EA5FC81EA7588400C3CE52 /* TextAndInputVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextAndInputVC.xib; sourceTree = "<group>"; };
 		E8EA5FCF1EA758FD00C3CE52 /* StringValidateVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringValidateVC.swift; sourceTree = "<group>"; };
 		E8EA5FD01EA758FD00C3CE52 /* StringValidateVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StringValidateVC.xib; sourceTree = "<group>"; };
+		E8F3F48520D90D7600DEF0E4 /* PP_AuditorSelectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PP_AuditorSelectVC.swift; sourceTree = "<group>"; };
+		E8F3F48620D90D7600DEF0E4 /* PP_AuditorSelectVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PP_AuditorSelectVC.xib; sourceTree = "<group>"; };
+		E8F3F48920D90EFB00DEF0E4 /* PP_AuditorListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PP_AuditorListCell.swift; sourceTree = "<group>"; };
+		E8F3F48A20D90EFB00DEF0E4 /* PP_AuditorListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PP_AuditorListCell.xib; sourceTree = "<group>"; };
 		E8F9D7DF1EBEF9360005C5E8 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		E8F9D7E11EBEFA630005C5E8 /* CMApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMApplication.swift; sourceTree = "<group>"; };
 		E8F9D7E51EBF03020005C5E8 /* CMNotificationDefine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMNotificationDefine.swift; sourceTree = "<group>"; };
@@ -793,6 +801,10 @@
 				E851C0F720D7F284002F9D82 /* PP_VenueSelectVC.xib */,
 				E85C6B3A20D8D6DB0013CEC4 /* PP_VenueListCell.swift */,
 				E85C6B3B20D8D6DB0013CEC4 /* PP_VenueListCell.xib */,
+				E8F3F48520D90D7600DEF0E4 /* PP_AuditorSelectVC.swift */,
+				E8F3F48620D90D7600DEF0E4 /* PP_AuditorSelectVC.xib */,
+				E8F3F48920D90EFB00DEF0E4 /* PP_AuditorListCell.swift */,
+				E8F3F48A20D90EFB00DEF0E4 /* PP_AuditorListCell.xib */,
 			);
 			path = Grade;
 			sourceTree = "<group>";
@@ -1177,6 +1189,7 @@
 				E8CCA8BD2080D13B00D72E5E /* PP_ForumVC.xib in Resources */,
 				E85FDEA020D6407F005B11B8 /* Cities.json in Resources */,
 				E84514F41D80480800D57CE3 /* Info.plist in Resources */,
+				E8F3F48820D90D7600DEF0E4 /* PP_AuditorSelectVC.xib in Resources */,
 				E8B43CB7209C797D0085DB2A /* PP_ContentTextCell.xib in Resources */,
 				E839EF261E7B936B006C78B7 /* clip.png in Resources */,
 				E82E42FA1E5A8C4C00679FAE /* DemoStudyVC.xib in Resources */,
@@ -1194,6 +1207,7 @@
 				E875756A1E4C638100BFDCB7 /* DemoMeVC.xib in Resources */,
 				E817F86A1D8054D000D2DD07 /* Assets.xcassets in Resources */,
 				E85F488D1E70FA7600C18AD6 /* LaunchImg3@2x.png in Resources */,
+				E8F3F48C20D90EFB00DEF0E4 /* PP_AuditorListCell.xib in Resources */,
 				E82AC5CD1E63AEA900621A3A /* ReadMe.rtf in Resources */,
 				E839EF2A1E7B936B006C78B7 /* cloud.png in Resources */,
 				E839EF291E7B936B006C78B7 /* clip_light@2x.png in Resources */,
@@ -1404,6 +1418,7 @@
 				E87575501E4C566700BFDCB7 /* CMRootNavigation.swift in Sources */,
 				E8EA5FD11EA758FD00C3CE52 /* StringValidateVC.swift in Sources */,
 				E8F9D7E21EBEFA630005C5E8 /* CMApplication.swift in Sources */,
+				E8F3F48B20D90EFB00DEF0E4 /* PP_AuditorListCell.swift in Sources */,
 				E8470AC71EBDB42C00D86916 /* CMNetWorkManager.swift in Sources */,
 				E82CCEAC1EB31EB200A3E379 /* CMWebVC.swift in Sources */,
 				E839EF131E7B9332006C78B7 /* SMSegmentView.swift in Sources */,
@@ -1443,6 +1458,7 @@
 				E87575561E4C58ED00BFDCB7 /* CMRootTabBar.swift in Sources */,
 				E82946D71E5F2D9000D62A86 /* CMUIButtonUtils.swift in Sources */,
 				E839EF121E7B9332006C78B7 /* SMSegmentAppearance.swift in Sources */,
+				E8F3F48720D90D7600DEF0E4 /* PP_AuditorSelectVC.swift in Sources */,
 				E851C0F220D77F5D002F9D82 /* PP_AuditorApplyVC.swift in Sources */,
 				E8CCA8BF2080D78400D72E5E /* PP_BoardModel.swift in Sources */,
 				E85C6B4020D8F6410013CEC4 /* PP_ExamApplyVC.swift in Sources */,

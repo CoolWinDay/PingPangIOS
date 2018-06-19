@@ -10,6 +10,7 @@ import UIKit
 import HandyJSON
 
 class PP_AuditorModel: CMJsonModel {
+    var kid = ""
     var name = ""
     var sex = ""
     var age = ""
@@ -17,7 +18,7 @@ class PP_AuditorModel: CMJsonModel {
     var idcard = ""
     var introduce = ""
     var venueid = ""
-    var avatarImage: [UIImage] = []
+    var avatarImage: PP_ImageModel?
     var certificateImages: [UIImage] = []
     
 //    func mapping(mapper: HelpingMapper) {

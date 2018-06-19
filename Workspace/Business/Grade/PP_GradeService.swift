@@ -71,9 +71,11 @@ class PP_GradeService: PP_BaseService {
                 }
             }
             
-            if model.avatarImage.count > 0 {
-                if let imgData = model.avatarImage[0].compress(toSize: imageMaxSize) {
-                    mData.append(imgData, withName: "avatar", fileName: "\(timeInt)_avatar.jpg", mimeType: "image/jpeg")
+            if let avatarImage = model.avatarImage {
+                if let image = avatarImage.image {
+                    if let imgData = image.compress(toSize: imageMaxSize) {
+                        mData.append(imgData, withName: "avatar", fileName: "\(timeInt)_avatar.jpg", mimeType: "image/jpeg")
+                    }
                 }
             }
             
@@ -117,7 +119,7 @@ class PP_GradeService: PP_BaseService {
     class func venueList(province: String, city: String, county: String, _ block: @escaping ([PP_VenueModel?]?) -> ()) {
         let url = "/grade/venue/list"
         let token = "b523a0b55c06930cfec15774de9a1"
-        let parameters: Parameters = ["province": province, "city": city, "county": county, token: token]
+        let parameters: Parameters = ["province": province, "city": city, "county": county, "token": token]
         
         Alamofire.request(gradeServer+url, parameters: parameters).responseData(completionHandler: { (handler) in
             guard let value = handler.result.value else {
@@ -130,6 +132,30 @@ class PP_GradeService: PP_BaseService {
             let errCode = json["errorCode"].string
             if errCode == "00000000" {
                 let list = [PP_VenueModel].deserialize(from: json.rawString(), designatedPath: "data")
+                block(list)
+            }
+            else {
+                block(nil)
+            }
+        })
+    }
+    
+    class func auditorList(venueid: String, _ block: @escaping ([PP_AuditorModel?]?) -> ()) {
+        let url = "/grade/auditor/list"
+        let token = "b523a0b55c06930cfec15774de9a1"
+        let parameters: Parameters = ["venueid": venueid, "token": token]
+        
+        Alamofire.request(gradeServer+url, parameters: parameters).responseData(completionHandler: { (handler) in
+            guard let value = handler.result.value else {
+                block(nil)
+                return
+            }
+            let json = JSON(data: value)
+            print(json)
+            
+            let errCode = json["errorCode"].string
+            if errCode == "00000000" {
+                let list = [PP_AuditorModel].deserialize(from: json.rawString(), designatedPath: "data")
                 block(list)
             }
             else {
