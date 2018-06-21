@@ -25,7 +25,6 @@ class PP_ExamApplyVC: CMBaseVC {
     @IBOutlet weak var ageView: UITextField!
     @IBOutlet weak var phoneView: UITextField!
     @IBOutlet weak var idcardView: UITextField!
-    @IBOutlet weak var introduceText: UITextView!
     @IBOutlet weak var venueView: UITextField!
     @IBOutlet weak var auditorView: UITextField!
     @IBOutlet weak var timeView: UITextField!
@@ -42,7 +41,7 @@ class PP_ExamApplyVC: CMBaseVC {
     
     var venue_id = ""
     var auditor_id = ""
-    let gradePickerData = ["一级", "二级", "三级", "四级", "五级", "六级", "七级", "八级", "九级"]
+    let gradePickerData = ["预备级", "一级", "二级", "三级", "四级", "五级", "六级", "七级", "八级", "九级"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -167,12 +166,20 @@ class PP_ExamApplyVC: CMBaseVC {
             cmShowToast("请填写身份证号")
             return
         }
-        guard let introduce = introduceText.text, introduce.count>0 else {
-            cmShowToast("请填写自我介绍")
-            return
-        }
         guard let venue = venueView.text, venue.count>0 else {
             cmShowToast("请选所在考点")
+            return
+        }
+        guard let auditor = auditorView.text, auditor.count>0 else {
+            cmShowToast("请选所在考官")
+            return
+        }
+        guard let time = timeView.text, time.count>0 else {
+            cmShowToast("请填选择考试时间")
+            return
+        }
+        guard let grade = gradeView.text, grade.count>0 else {
+            cmShowToast("请填选择考试等级")
             return
         }
         
@@ -185,19 +192,27 @@ class PP_ExamApplyVC: CMBaseVC {
             return
         }
         
-        let model = PP_AuditorModel()
-        model.name = name
-        model.sex = sex
-        model.age = age
-        model.phone = phone
-        model.idcard = idcard
-        model.introduce = introduce
-        model.venueid = venue_id
-        let imageModel = PP_ImageModel()
-        imageModel.image = avatarImage
-        model.avatarImage = imageModel
+        let avatar = PP_ImageModel()
+        avatar.module = 3
+        avatar.type = 3
+        avatar.image = avatarImage
         
-        PP_GradeService.buildAuditor(model) { (response) in
+        let examinee = PP_ExamineeModel()
+        examinee.name = name
+        examinee.sex = sex
+        examinee.age = age
+        examinee.phone = phone
+        examinee.idcard = idcard
+        examinee.avatarImage = avatar
+        
+        let exam = PP_ExamModel()
+        exam.venue_id = venue_id
+        exam.auditor_id = auditor_id
+        exam.exam_time = time
+        exam.exam_grade = String(gradePickerData.index(of: grade)!)
+        exam.examinee = examinee
+        
+        PP_GradeService.buildExam(exam) { (response) in
             if response.isSuccess() {
                 cmShowToast("提交成功")
                 cmPopViewController()

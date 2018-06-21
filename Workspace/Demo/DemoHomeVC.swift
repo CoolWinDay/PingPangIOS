@@ -38,7 +38,19 @@ class DemoHomeVC: CMBaseVC {
     
     @IBAction
     func btnPredded() {
-        cmShowToast("提交成功")
+//        cmShowLoading()
+//        cmShowToast("提交成功")
+        
+//        let avatar = PP_ImageModel()
+//        avatar.module = 3
+//        avatar.type = 3
+//        avatar.image = UIImage(named: "img_add")
+//
+//        let jsonData1 = avatar.toJSON()
+//        print(jsonData1!)
+//        let jsonData2 = avatar.toJSONString()
+//        print(jsonData2!)
+        
 //        let username = "18610249533"
 //        let password = "123456"
 //        ForumService.registUser(username: username, password: username) { (model) in

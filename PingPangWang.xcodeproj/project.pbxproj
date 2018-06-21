@@ -45,6 +45,8 @@
 		E82CCEB11EB31F0500A3E379 /* ShareDefault@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E82CCEAF1EB31F0500A3E379 /* ShareDefault@3x.png */; };
 		E82E42F91E5A8C4C00679FAE /* DemoStudyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82E42F71E5A8C4C00679FAE /* DemoStudyVC.swift */; };
 		E82E42FA1E5A8C4C00679FAE /* DemoStudyVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E82E42F81E5A8C4C00679FAE /* DemoStudyVC.xib */; };
+		E831217720DA987E00A1B307 /* PP_ExamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E831217620DA987E00A1B307 /* PP_ExamModel.swift */; };
+		E831217920DA9F7000A1B307 /* PP_ExamineeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E831217820DA9F7000A1B307 /* PP_ExamineeModel.swift */; };
 		E837C2061EC6C19800E69FAC /* WidgetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E837C2041EC6C19800E69FAC /* WidgetVC.swift */; };
 		E837C2071EC6C19800E69FAC /* WidgetVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E837C2051EC6C19800E69FAC /* WidgetVC.xib */; };
 		E839EF0A1E7B81D6006C78B7 /* JTSegmentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E839EF081E7B81D6006C78B7 /* JTSegmentControl.swift */; };
@@ -270,6 +272,8 @@
 		E82E42F71E5A8C4C00679FAE /* DemoStudyVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoStudyVC.swift; sourceTree = "<group>"; };
 		E82E42F81E5A8C4C00679FAE /* DemoStudyVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DemoStudyVC.xib; sourceTree = "<group>"; };
 		E82E42FB1E5A8DCD00679FAE /* DemoPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = DemoPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		E831217620DA987E00A1B307 /* PP_ExamModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PP_ExamModel.swift; sourceTree = "<group>"; };
+		E831217820DA9F7000A1B307 /* PP_ExamineeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PP_ExamineeModel.swift; sourceTree = "<group>"; };
 		E837C2041EC6C19800E69FAC /* WidgetVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WidgetVC.swift; sourceTree = "<group>"; };
 		E837C2051EC6C19800E69FAC /* WidgetVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WidgetVC.xib; sourceTree = "<group>"; };
 		E837C2081EC6C55100E69FAC /* WidgetDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WidgetDemo.entitlements; sourceTree = "<group>"; };
@@ -797,6 +801,8 @@
 				E85C6B3F20D8F6410013CEC4 /* PP_ExamApplyVC.xib */,
 				E8D8920D20D007A5008A4C5F /* PP_VenueModel.swift */,
 				E851C0F420D7C926002F9D82 /* PP_AuditorModel.swift */,
+				E831217620DA987E00A1B307 /* PP_ExamModel.swift */,
+				E831217820DA9F7000A1B307 /* PP_ExamineeModel.swift */,
 				E851C0F620D7F284002F9D82 /* PP_VenueSelectVC.swift */,
 				E851C0F720D7F284002F9D82 /* PP_VenueSelectVC.xib */,
 				E85C6B3A20D8D6DB0013CEC4 /* PP_VenueListCell.swift */,
@@ -1391,6 +1397,7 @@
 				E851C0F520D7C927002F9D82 /* PP_AuditorModel.swift in Sources */,
 				E84D4783209DED3600117138 /* PP_CommentModel.swift in Sources */,
 				E82CCEA91EB31EB200A3E379 /* CMRequest.swift in Sources */,
+				E831217920DA9F7000A1B307 /* PP_ExamineeModel.swift in Sources */,
 				E8F9D7E01EBEF9360005C5E8 /* main.swift in Sources */,
 				E8D8920A20CFE99C008A4C5F /* PP_GradeService.swift in Sources */,
 				37679FFD1E9C6C0B00FE0D49 /* CMUIImageUtils.swift in Sources */,
@@ -1438,6 +1445,7 @@
 				E8C477B51E8CFAF900543846 /* CycleViewVC.swift in Sources */,
 				E8C477A71E8CD9D200543846 /* PPTView.swift in Sources */,
 				E84D4790209EB8D200117138 /* PP_ForumHeaderView.swift in Sources */,
+				E831217720DA987E00A1B307 /* PP_ExamModel.swift in Sources */,
 				E8EA5FC91EA7588400C3CE52 /* TextAndInputVC.swift in Sources */,
 				E82CCEAA1EB31EB200A3E379 /* CMResponse.swift in Sources */,
 				E8C477AF1E8CDB4500543846 /* SegmentVC.swift in Sources */,

@@ -116,6 +116,59 @@ class PP_GradeService: PP_BaseService {
         }
     }
     
+    class func buildExam(_ model: PP_ExamModel, _ block: @escaping (CMResponse) -> ()) {
+        cmShowLoading()
+        let url = "/grade/exam/insert"
+        Alamofire.upload(multipartFormData: { (mData) in
+            
+            let timeInt = Date().timeIntervalSince1970
+            if let examinee = model.examinee {
+                if let avatarImage = examinee.avatarImage {
+                    if let image = avatarImage.image {
+                        if let imgData = image.compress(toSize: imageMaxSize) {
+                            mData.append(imgData, withName: "avatar", fileName: "\(timeInt)_avatar.jpg", mimeType: "image/jpeg")
+                        }
+                    }
+                }
+            }
+            
+            if let jsonData = model.toJSONString() {
+                mData.append(jsonData.data(using: .utf8)!, withName: "jsonData")
+            }
+            
+//            let token = PP_UserModel.userToken()
+            let token = "b523a0b55c06930cfec15774de9a1"
+            mData.append(token.data(using: .utf8)!, withName: "token")
+            
+        }, to: gradeServer+url) { (result) in
+            switch result {
+            case .success(let upload, _, _):
+                upload.uploadProgress(closure: { (progress) in
+                    //                    self.progress(progress)
+                })
+                
+                upload.responseData(completionHandler: { (response) in
+                    cmHideLoading()
+                    
+                    guard let value = response.result.value else {
+                        cmShowToast("数据错误")
+                        return
+                    }
+                    
+                    let json = JSON(data: value)
+                    print(json)
+                    
+                    if let model = CMResponse.deserialize(from: json.rawString()) {
+                        block(model)
+                    }
+                })
+            case .failure(let error):
+                cmHideLoading()
+                cmShowToast(error.localizedDescription)
+            }
+        }
+    }
+    
     class func venueList(province: String, city: String, county: String, _ block: @escaping ([PP_VenueModel?]?) -> ()) {
         let url = "/grade/venue/list"
         let token = "b523a0b55c06930cfec15774de9a1"

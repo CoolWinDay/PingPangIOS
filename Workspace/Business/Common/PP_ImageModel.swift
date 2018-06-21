@@ -9,13 +9,14 @@
 import UIKit
 import HandyJSON
 
-class PP_ImageModel: CMJsonModel {
+class PP_ImageModel: HandyJSON {
     var name = ""
     var path = ""
     var module = 0     // 1：考场，2：考官，3：考生
     var type = 0       // 1：场馆图片，2：认证图片，3：头像图片
-    var image: UIImage?
     
+    
+    var image: UIImage?
     var imageUrl: String {
         get {
             return "\(PP_BaseService.gradeServer)/\(path)/\(name)"
@@ -25,4 +26,6 @@ class PP_ImageModel: CMJsonModel {
     func mapping(mapper: HelpingMapper) {
         mapper >>> self.image
     }
+    
+    required init() {}
 }
