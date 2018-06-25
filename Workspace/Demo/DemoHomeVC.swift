@@ -38,42 +38,7 @@ class DemoHomeVC: CMBaseVC {
     
     @IBAction
     func btnPredded() {
-//        cmShowLoading()
-//        cmShowToast("提交成功")
-        
-//        let avatar = PP_ImageModel()
-//        avatar.module = 3
-//        avatar.type = 3
-//        avatar.image = UIImage(named: "img_add")
-//
-//        let jsonData1 = avatar.toJSON()
-//        print(jsonData1!)
-//        let jsonData2 = avatar.toJSONString()
-//        print(jsonData2!)
-        
-//        let username = "18610249533"
-//        let password = "123456"
-//        ForumService.registUser(username: username, password: username) { (model) in
-//            // 注册成功，登录
-//            ForumService.loginUser(username: username, password: password, { (model) in
-//                
-//            })
-//        }
-//        
-//        
-//        self.label.attributedText = myString.handleMobcentGifText()
-        
-//        ForumService.forumList { (forumList) in
-//
-//        }
-        
-//        let url = "http://www.pingpangwang.com/mobcent/app/web/index.php?r=forum/forumlist"
-//        Alamofire.request(url).responseData(completionHandler: { (response) in
-//            let json = JSON(data: response.result.value!)
-//            print(json)
-//
-//            let modelList = [PP_ForumModel].deserialize(from: json.rawString(), designatedPath: "list")
-//        })
+        self.label.attributedText = myString.handleMobcentGifText()
         
         
 //        let date = "2014-09-03".date(format: DateFormat.custom("yyyy-MM-dd"))?.absoluteDate

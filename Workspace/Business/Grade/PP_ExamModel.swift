@@ -17,4 +17,6 @@ class PP_ExamModel: CMJsonModel {
     var exam_grade = ""
     var exam_time = ""
     var examinee: PP_ExamineeModel?
+    var venue: PP_VenueModel?
+    var auditor: PP_AuditorModel?
 }

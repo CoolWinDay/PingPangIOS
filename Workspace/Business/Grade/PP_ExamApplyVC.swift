@@ -209,7 +209,7 @@ class PP_ExamApplyVC: CMBaseVC {
         exam.venue_id = venue_id
         exam.auditor_id = auditor_id
         exam.exam_time = time
-        exam.exam_grade = String(gradePickerData.index(of: grade)!)
+        exam.exam_grade = grade
         exam.examinee = examinee
         
         PP_GradeService.buildExam(exam) { (response) in

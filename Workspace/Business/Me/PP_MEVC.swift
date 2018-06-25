@@ -33,7 +33,7 @@ class PP_MEVC: CMBaseVC {
         refreshView()
         
         gradeView.tapAction { (view) in
-            
+            cmPushViewController("PP_ExamListVC")
         }
         
         auditorView.tapAction { (view) in

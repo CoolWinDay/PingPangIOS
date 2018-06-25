@@ -19,6 +19,10 @@
 		E809255220E0DB2F0065C411 /* PP_VenueListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E809255020E0DB2F0065C411 /* PP_VenueListVC.xib */; };
 		E809255920E0FA450065C411 /* PP_AuditorListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E809255720E0FA450065C411 /* PP_AuditorListVC.swift */; };
 		E809255A20E0FA450065C411 /* PP_AuditorListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E809255820E0FA450065C411 /* PP_AuditorListVC.xib */; };
+		E809255D20E12FBD0065C411 /* PP_ExamListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E809255B20E12FBD0065C411 /* PP_ExamListVC.swift */; };
+		E809255E20E12FBD0065C411 /* PP_ExamListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E809255C20E12FBD0065C411 /* PP_ExamListVC.xib */; };
+		E809256120E136150065C411 /* PP_ExamListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E809255F20E136150065C411 /* PP_ExamListCell.swift */; };
+		E809256220E136150065C411 /* PP_ExamListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E809256020E136150065C411 /* PP_ExamListCell.xib */; };
 		E817F86A1D8054D000D2DD07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E817F85C1D8054D000D2DD07 /* Assets.xcassets */; };
 		E82946C51E5EAE0B00D62A86 /* DemoHomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E82946C41E5EAE0B00D62A86 /* DemoHomeVC.xib */; };
 		E82946CB1E5ED86000D62A86 /* CMBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82946CA1E5ED86000D62A86 /* CMBaseVC.swift */; };
@@ -242,6 +246,10 @@
 		E809255020E0DB2F0065C411 /* PP_VenueListVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PP_VenueListVC.xib; sourceTree = "<group>"; };
 		E809255720E0FA450065C411 /* PP_AuditorListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PP_AuditorListVC.swift; sourceTree = "<group>"; };
 		E809255820E0FA450065C411 /* PP_AuditorListVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PP_AuditorListVC.xib; sourceTree = "<group>"; };
+		E809255B20E12FBD0065C411 /* PP_ExamListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PP_ExamListVC.swift; sourceTree = "<group>"; };
+		E809255C20E12FBD0065C411 /* PP_ExamListVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PP_ExamListVC.xib; sourceTree = "<group>"; };
+		E809255F20E136150065C411 /* PP_ExamListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PP_ExamListCell.swift; sourceTree = "<group>"; };
+		E809256020E136150065C411 /* PP_ExamListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PP_ExamListCell.xib; sourceTree = "<group>"; };
 		E817F85C1D8054D000D2DD07 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E82946C41E5EAE0B00D62A86 /* DemoHomeVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DemoHomeVC.xib; sourceTree = "<group>"; };
 		E82946CA1E5ED86000D62A86 /* CMBaseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMBaseVC.swift; sourceTree = "<group>"; };
@@ -827,6 +835,10 @@
 				E809255020E0DB2F0065C411 /* PP_VenueListVC.xib */,
 				E809255720E0FA450065C411 /* PP_AuditorListVC.swift */,
 				E809255820E0FA450065C411 /* PP_AuditorListVC.xib */,
+				E809255B20E12FBD0065C411 /* PP_ExamListVC.swift */,
+				E809255C20E12FBD0065C411 /* PP_ExamListVC.xib */,
+				E809255F20E136150065C411 /* PP_ExamListCell.swift */,
+				E809256020E136150065C411 /* PP_ExamListCell.xib */,
 			);
 			path = Grade;
 			sourceTree = "<group>";
@@ -1246,6 +1258,7 @@
 				E839EF291E7B936B006C78B7 /* clip_light@2x.png in Resources */,
 				E809255A20E0FA450065C411 /* PP_AuditorListVC.xib in Resources */,
 				E839EF221E7B936B006C78B7 /* bulb.png in Resources */,
+				E809255E20E12FBD0065C411 /* PP_ExamListVC.xib in Resources */,
 				E8C477C01E8D004200543846 /* 5.jpg in Resources */,
 				E85C6B4120D8F6410013CEC4 /* PP_ExamApplyVC.xib in Resources */,
 				E85E86232095DDEB00895376 /* dz_posts_grade_default@2x.png in Resources */,
@@ -1279,6 +1292,7 @@
 				E82CCEB11EB31F0500A3E379 /* ShareDefault@3x.png in Resources */,
 				E85FDE9720D6407F005B11B8 /* AddressTableViewCell.xib in Resources */,
 				E82C2FFC1E5FBBA300CE08F7 /* nav_share@3x.png in Resources */,
+				E809256220E136150065C411 /* PP_ExamListCell.xib in Resources */,
 				E839EF4B1E7BC04C006C78B7 /* ImageVC.xib in Resources */,
 				E839EF251E7B936B006C78B7 /* bulb_light@2x.png in Resources */,
 				E858EF9720CD397C00B0E568 /* EE_ImageCell.xib in Resources */,
@@ -1471,6 +1485,7 @@
 				E809255120E0DB2F0065C411 /* PP_VenueListVC.swift in Sources */,
 				E85FDE9920D6407F005B11B8 /* AddressTableViewCell.m in Sources */,
 				E82CCEAB1EB31EB200A3E379 /* CMShareManager.swift in Sources */,
+				E809256120E136150065C411 /* PP_ExamListCell.swift in Sources */,
 				E8470AD21EBDC3F400D86916 /* LocationVC.swift in Sources */,
 				E82946CB1E5ED86000D62A86 /* CMBaseVC.swift in Sources */,
 				E8C477B51E8CFAF900543846 /* CycleViewVC.swift in Sources */,
@@ -1512,6 +1527,7 @@
 				E882A6681E779B1A002AC531 /* CMUIAlertViewUtils.swift in Sources */,
 				E8D8920E20D007A5008A4C5F /* PP_VenueModel.swift in Sources */,
 				E8F9D7E81EBF135D0005C5E8 /* CMUserDefaultsDefine.swift in Sources */,
+				E809255D20E12FBD0065C411 /* PP_ExamListVC.swift in Sources */,
 				E8F9D7F21EBF2C930005C5E8 /* CMUpdateManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
