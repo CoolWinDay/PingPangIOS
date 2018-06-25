@@ -14,14 +14,14 @@ class LoginVC: CMBaseVC {
     @IBOutlet weak var pwdText: UITextField!
     @IBOutlet weak var loginBtn: UIButton!
     
-    var successCallback: VoidCallback = {_ in }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     @IBAction
     func doLogin() {
+        self.view.endEditing(true)
+        
         guard let username = nameText.text else {
             cmShowToast("请输入账号")
             return
@@ -32,17 +32,22 @@ class LoginVC: CMBaseVC {
         }
         
         ForumService.loginUser(username: username, password: pwd) { (model) in
-            model.save2Cache()
-            cmShowToast("登录成功")
-            self.successCallback()
-            self.dismiss(animated: true, completion: nil)
+            if let model = model {
+                model.save2Cache()
+                cmShowToast("登录成功")
+                NotificationCenter.default.post(name: .NotificationUserLogin, object: nil)
+                self.dismiss(animated: true, completion: nil)
+            }
+            else {
+                cmShowToast("登录失败")
+            }
         }
     }
     
     @IBAction
     func doRegist() {
         ForumService.registUser(username: "", password: "") { (model) in
-            self.successCallback()
+            
         }
     }
     

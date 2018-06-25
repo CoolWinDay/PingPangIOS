@@ -47,9 +47,9 @@ class PP_GradeHomeVC: CMBaseVC {
     }
     
     func checkLogin() -> Bool {
-        return true
+//        return true
         
-//        let token = PP_UserModel.userToken()
-//        return token.count > 0
+        let token = PP_UserModel.userToken()
+        return token.count > 0
     }
 }

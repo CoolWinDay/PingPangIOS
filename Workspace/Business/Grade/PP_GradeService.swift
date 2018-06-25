@@ -27,8 +27,7 @@ class PP_GradeService: PP_BaseService {
                 mData.append(jsonData.data(using: .utf8)!, withName: "jsonData")
             }
             
-//            let token = PP_UserModel.userToken()
-            let token = "b523a0b55c06930cfec15774de9a1"
+            let token = PP_UserModel.userToken()
             mData.append(token.data(using: .utf8)!, withName: "token")
             
         }, to: gradeServer+url) { (result) in
@@ -83,8 +82,7 @@ class PP_GradeService: PP_BaseService {
                 mData.append(jsonData.data(using: .utf8)!, withName: "jsonData")
             }
             
-//            let token = PP_UserModel.userToken()
-            let token = "b523a0b55c06930cfec15774de9a1"
+            let token = PP_UserModel.userToken()
             mData.append(token.data(using: .utf8)!, withName: "token")
             
         }, to: gradeServer+url) { (result) in
@@ -136,8 +134,7 @@ class PP_GradeService: PP_BaseService {
                 mData.append(jsonData.data(using: .utf8)!, withName: "jsonData")
             }
             
-//            let token = PP_UserModel.userToken()
-            let token = "b523a0b55c06930cfec15774de9a1"
+            let token = PP_UserModel.userToken()
             mData.append(token.data(using: .utf8)!, withName: "token")
             
         }, to: gradeServer+url) { (result) in
@@ -171,8 +168,32 @@ class PP_GradeService: PP_BaseService {
     
     class func venueList(province: String, city: String, county: String, _ block: @escaping ([PP_VenueModel?]?) -> ()) {
         let url = "/grade/venue/list"
-        let token = "b523a0b55c06930cfec15774de9a1"
+        let token = PP_UserModel.userToken()
         let parameters: Parameters = ["province": province, "city": city, "county": county, "token": token]
+        
+        Alamofire.request(gradeServer+url, parameters: parameters).responseData(completionHandler: { (handler) in
+            guard let value = handler.result.value else {
+                block(nil)
+                return
+            }
+            let json = JSON(data: value)
+            print(json)
+            
+            let errCode = json["errorCode"].string
+            if errCode == "00000000" {
+                let list = [PP_VenueModel].deserialize(from: json.rawString(), designatedPath: "data")
+                block(list)
+            }
+            else {
+                block(nil)
+            }
+        })
+    }
+    
+    class func myVenueList(_ block: @escaping ([PP_VenueModel?]?) -> ()) {
+        let url = "/grade/venue/myvenue"
+        let token = PP_UserModel.userToken()
+        let parameters: Parameters = ["token": token]
         
         Alamofire.request(gradeServer+url, parameters: parameters).responseData(completionHandler: { (handler) in
             guard let value = handler.result.value else {
@@ -195,7 +216,7 @@ class PP_GradeService: PP_BaseService {
     
     class func auditorList(venueid: String, _ block: @escaping ([PP_AuditorModel?]?) -> ()) {
         let url = "/grade/auditor/list"
-        let token = "b523a0b55c06930cfec15774de9a1"
+        let token = PP_UserModel.userToken()
         let parameters: Parameters = ["venueid": venueid, "token": token]
         
         Alamofire.request(gradeServer+url, parameters: parameters).responseData(completionHandler: { (handler) in
@@ -209,6 +230,54 @@ class PP_GradeService: PP_BaseService {
             let errCode = json["errorCode"].string
             if errCode == "00000000" {
                 let list = [PP_AuditorModel].deserialize(from: json.rawString(), designatedPath: "data")
+                block(list)
+            }
+            else {
+                block(nil)
+            }
+        })
+    }
+    
+    class func myAuditorList(_ block: @escaping ([PP_AuditorModel?]?) -> ()) {
+        let url = "/grade/auditor/myauditor"
+        let token = PP_UserModel.userToken()
+        let parameters: Parameters = ["token": token]
+        
+        Alamofire.request(gradeServer+url, parameters: parameters).responseData(completionHandler: { (handler) in
+            guard let value = handler.result.value else {
+                block(nil)
+                return
+            }
+            let json = JSON(data: value)
+            print(json)
+            
+            let errCode = json["errorCode"].string
+            if errCode == "00000000" {
+                let list = [PP_AuditorModel].deserialize(from: json.rawString(), designatedPath: "data")
+                block(list)
+            }
+            else {
+                block(nil)
+            }
+        })
+    }
+    
+    class func myExamList(_ block: @escaping ([PP_ExamModel?]?) -> ()) {
+        let url = "/grade/auditor/myexam"
+        let token = PP_UserModel.userToken()
+        let parameters: Parameters = ["token": token]
+        
+        Alamofire.request(gradeServer+url, parameters: parameters).responseData(completionHandler: { (handler) in
+            guard let value = handler.result.value else {
+                block(nil)
+                return
+            }
+            let json = JSON(data: value)
+            print(json)
+            
+            let errCode = json["errorCode"].string
+            if errCode == "00000000" {
+                let list = [PP_ExamModel].deserialize(from: json.rawString(), designatedPath: "data")
                 block(list)
             }
             else {

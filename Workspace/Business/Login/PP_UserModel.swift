@@ -22,6 +22,10 @@ class PP_UserModel: CMJsonModel {
         UserDefaults.setUserDefaultsString(jsonStr, forKey: UserDefaults.UDK_UserModel)
     }
     
+    class func removeLoginCache() {
+        UserDefaults.setUserDefaultsString("", forKey: UserDefaults.UDK_UserModel)
+    }
+    
     class func modelWithCache() -> PP_UserModel? {
         let jsonStr = UserDefaults.getUserDefaultsString(UserDefaults.UDK_UserModel)
         let model = PP_UserModel.deserialize(from: jsonStr)

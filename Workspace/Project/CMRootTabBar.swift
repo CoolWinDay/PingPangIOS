@@ -33,7 +33,7 @@ class CMRootTabBar: UITabBarController, UITabBarControllerDelegate {
         vc3.tabBarItem.image = UIImage(named: "tab_shopping")
         vc3.tabBarItem.title = "评级"
         
-        let vc4 = UIViewController()
+        let vc4 = PP_MEVC()
         vc4.tabBarItem.image = UIImage(named: "tab_me")
         vc4.tabBarItem.title = "我的"
         

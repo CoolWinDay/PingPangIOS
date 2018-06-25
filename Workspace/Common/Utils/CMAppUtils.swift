@@ -79,11 +79,8 @@ func cmPopViewController() {
     cmRootNavigationController().popViewController(animated: true)
 }
 
-func cmShowLogin(animated: Bool, loginSuccess: (() -> Swift.Void)? = nil) {
+func cmShowLogin(animated: Bool) {
     let loginVC = LoginVC()
-    loginVC.successCallback = {
-        
-    }
     cmRootNavigationController().present(loginVC, animated: animated) {
         
     }

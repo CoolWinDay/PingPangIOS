@@ -10,4 +10,7 @@ import UIKit
 
 extension NSNotification.Name {
     public static let UserNotificationHomeViewWillAppear = NSNotification.Name(rawValue:"UserNotificationHomeViewWillAppear")
+    
+    public static let NotificationUserLogin = NSNotification.Name(rawValue:"NotificationUserLogin")
+    public static let NotificationUserLogout = NSNotification.Name(rawValue:"NotificationUserLogout")
 }

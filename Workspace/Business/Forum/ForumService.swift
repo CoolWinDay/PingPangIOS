@@ -86,8 +86,7 @@ class ForumService: PP_BaseService {
         })
     }
     
-    class func loginUser(username: String, password: String, _ response: @escaping (PP_UserModel) -> ()) {
-//        let url = "/mobcent/app/web/index.php?r=user/login"
+    class func loginUser(username: String, password: String, _ response: @escaping (PP_UserModel?) -> ()) {
         let url = "/login"
         let parameters: Parameters = ["username": username, "password": password]
         
@@ -103,17 +102,14 @@ class ForumService: PP_BaseService {
                 let json = JSON(data: value)
                 print(json)
                 
-                let errCode = json["errorCode"].string
+                let errCode = json["head"]["errCode"].string
                 if errCode == "00000000" {
-                    if let model = PP_UserModel.deserialize(from: json.rawString()) {
-                        response(model)
-                    }
-                    else {
-                        cmShowToast("数据格式错误")
-                    }
+                    let model = PP_UserModel.deserialize(from: json.rawString())
+                    response(model)
                 }
                 else {
-                    cmShowToast(json["errorInfo"].string)
+                    cmShowToast(json["head"]["errInfo"].string)
+                    return
                 }
             }
             else {

@@ -15,6 +15,10 @@
 		783CEC4F20804F38008AB8BD /* PP_ForumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783CEC4E20804F38008AB8BD /* PP_ForumModel.swift */; };
 		786706C4207F449F0079CD44 /* Moya.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786706C3207F449F0079CD44 /* Moya.swift */; };
 		B20704019E5F63EB57E27E44 /* Pods_PingPangWang.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDD7CCB2962C3CEC304B55B9 /* Pods_PingPangWang.framework */; };
+		E809255120E0DB2F0065C411 /* PP_VenueListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E809254F20E0DB2F0065C411 /* PP_VenueListVC.swift */; };
+		E809255220E0DB2F0065C411 /* PP_VenueListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E809255020E0DB2F0065C411 /* PP_VenueListVC.xib */; };
+		E809255920E0FA450065C411 /* PP_AuditorListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E809255720E0FA450065C411 /* PP_AuditorListVC.swift */; };
+		E809255A20E0FA450065C411 /* PP_AuditorListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E809255820E0FA450065C411 /* PP_AuditorListVC.xib */; };
 		E817F86A1D8054D000D2DD07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E817F85C1D8054D000D2DD07 /* Assets.xcassets */; };
 		E82946C51E5EAE0B00D62A86 /* DemoHomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E82946C41E5EAE0B00D62A86 /* DemoHomeVC.xib */; };
 		E82946CB1E5ED86000D62A86 /* CMBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82946CA1E5ED86000D62A86 /* CMBaseVC.swift */; };
@@ -185,6 +189,8 @@
 		E8D8920E20D007A5008A4C5F /* PP_VenueModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D8920D20D007A5008A4C5F /* PP_VenueModel.swift */; };
 		E8D990381E532E6A00AFB8F5 /* CMUIDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D990371E532E6A00AFB8F5 /* CMUIDefine.swift */; };
 		E8D9903A1E5333F000AFB8F5 /* CMAppDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D990391E5333F000AFB8F5 /* CMAppDefine.swift */; };
+		E8DD760A20DE64F600588094 /* PP_MEVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DD760820DE64F600588094 /* PP_MEVC.swift */; };
+		E8DD760B20DE64F600588094 /* PP_MEVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8DD760920DE64F600588094 /* PP_MEVC.xib */; };
 		E8E5F2C6209AE70700C028CB /* CMUIViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E5F2C5209AE70600C028CB /* CMUIViewUtils.swift */; };
 		E8E803C21EA59A3E0095EFD8 /* CMUILabelUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E803C11EA59A3E0095EFD8 /* CMUILabelUtils.swift */; };
 		E8E803C91EA5C4AD0095EFD8 /* CMUITextFieldUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E803C81EA5C4AD0095EFD8 /* CMUITextFieldUtils.swift */; };
@@ -232,6 +238,10 @@
 		786706C3207F449F0079CD44 /* Moya.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Moya.swift; sourceTree = "<group>"; };
 		BDD7CCB2962C3CEC304B55B9 /* Pods_PingPangWang.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PingPangWang.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E366658872ED3CDF0A68E47B /* Pods_CommonSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CommonSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E809254F20E0DB2F0065C411 /* PP_VenueListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PP_VenueListVC.swift; sourceTree = "<group>"; };
+		E809255020E0DB2F0065C411 /* PP_VenueListVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PP_VenueListVC.xib; sourceTree = "<group>"; };
+		E809255720E0FA450065C411 /* PP_AuditorListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PP_AuditorListVC.swift; sourceTree = "<group>"; };
+		E809255820E0FA450065C411 /* PP_AuditorListVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PP_AuditorListVC.xib; sourceTree = "<group>"; };
 		E817F85C1D8054D000D2DD07 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E82946C41E5EAE0B00D62A86 /* DemoHomeVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DemoHomeVC.xib; sourceTree = "<group>"; };
 		E82946CA1E5ED86000D62A86 /* CMBaseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMBaseVC.swift; sourceTree = "<group>"; };
@@ -430,6 +440,8 @@
 		E8D8920D20D007A5008A4C5F /* PP_VenueModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PP_VenueModel.swift; sourceTree = "<group>"; };
 		E8D990371E532E6A00AFB8F5 /* CMUIDefine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMUIDefine.swift; sourceTree = "<group>"; };
 		E8D990391E5333F000AFB8F5 /* CMAppDefine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMAppDefine.swift; sourceTree = "<group>"; };
+		E8DD760820DE64F600588094 /* PP_MEVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PP_MEVC.swift; sourceTree = "<group>"; };
+		E8DD760920DE64F600588094 /* PP_MEVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PP_MEVC.xib; sourceTree = "<group>"; };
 		E8E5F2C5209AE70600C028CB /* CMUIViewUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMUIViewUtils.swift; sourceTree = "<group>"; };
 		E8E803C11EA59A3E0095EFD8 /* CMUILabelUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMUILabelUtils.swift; sourceTree = "<group>"; };
 		E8E803C81EA5C4AD0095EFD8 /* CMUITextFieldUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMUITextFieldUtils.swift; sourceTree = "<group>"; };
@@ -811,6 +823,10 @@
 				E8F3F48620D90D7600DEF0E4 /* PP_AuditorSelectVC.xib */,
 				E8F3F48920D90EFB00DEF0E4 /* PP_AuditorListCell.swift */,
 				E8F3F48A20D90EFB00DEF0E4 /* PP_AuditorListCell.xib */,
+				E809254F20E0DB2F0065C411 /* PP_VenueListVC.swift */,
+				E809255020E0DB2F0065C411 /* PP_VenueListVC.xib */,
+				E809255720E0FA450065C411 /* PP_AuditorListVC.swift */,
+				E809255820E0FA450065C411 /* PP_AuditorListVC.xib */,
 			);
 			path = Grade;
 			sourceTree = "<group>";
@@ -915,6 +931,7 @@
 		E87575461E4C561700BFDCB7 /* Business */ = {
 			isa = PBXGroup;
 			children = (
+				E8DD760720DE64B300588094 /* Me */,
 				E856F3EF20CE949000A2E054 /* Common */,
 				E858EF9020CD327D00B0E568 /* Grade */,
 				783CEC4B208043B0008AB8BD /* Forum */,
@@ -1080,6 +1097,15 @@
 			path = CycleView;
 			sourceTree = "<group>";
 		};
+		E8DD760720DE64B300588094 /* Me */ = {
+			isa = PBXGroup;
+			children = (
+				E8DD760820DE64F600588094 /* PP_MEVC.swift */,
+				E8DD760920DE64F600588094 /* PP_MEVC.xib */,
+			);
+			path = Me;
+			sourceTree = "<group>";
+		};
 		E8EA5FC51EA7588400C3CE52 /* StringValidate */ = {
 			isa = PBXGroup;
 			children = (
@@ -1212,11 +1238,13 @@
 				E8EA5FCA1EA7588400C3CE52 /* TextAndInputVC.xib in Resources */,
 				E875756A1E4C638100BFDCB7 /* DemoMeVC.xib in Resources */,
 				E817F86A1D8054D000D2DD07 /* Assets.xcassets in Resources */,
+				E8DD760B20DE64F600588094 /* PP_MEVC.xib in Resources */,
 				E85F488D1E70FA7600C18AD6 /* LaunchImg3@2x.png in Resources */,
 				E8F3F48C20D90EFB00DEF0E4 /* PP_AuditorListCell.xib in Resources */,
 				E82AC5CD1E63AEA900621A3A /* ReadMe.rtf in Resources */,
 				E839EF2A1E7B936B006C78B7 /* cloud.png in Resources */,
 				E839EF291E7B936B006C78B7 /* clip_light@2x.png in Resources */,
+				E809255A20E0FA450065C411 /* PP_AuditorListVC.xib in Resources */,
 				E839EF221E7B936B006C78B7 /* bulb.png in Resources */,
 				E8C477C01E8D004200543846 /* 5.jpg in Resources */,
 				E85C6B4120D8F6410013CEC4 /* PP_ExamApplyVC.xib in Resources */,
@@ -1232,6 +1260,7 @@
 				E839EF441E7B951A006C78B7 /* tab_me@3x.png in Resources */,
 				E85F488E1E70FA7600C18AD6 /* LaunchImg3@3x.png in Resources */,
 				E8C477BD1E8D004200543846 /* 2.jpg in Resources */,
+				E809255220E0DB2F0065C411 /* PP_VenueListVC.xib in Resources */,
 				E875756E1E4C646A00BFDCB7 /* DemoBusinessVC.xib in Resources */,
 				E85FDE9F20D6407F005B11B8 /* Info.plist in Resources */,
 				E84D478D209EAAB800117138 /* PP_ForumCell.xib in Resources */,
@@ -1401,6 +1430,7 @@
 				E8F9D7E01EBEF9360005C5E8 /* main.swift in Sources */,
 				E8D8920A20CFE99C008A4C5F /* PP_GradeService.swift in Sources */,
 				37679FFD1E9C6C0B00FE0D49 /* CMUIImageUtils.swift in Sources */,
+				E809255920E0FA450065C411 /* PP_AuditorListVC.swift in Sources */,
 				E84D478C209EAAB800117138 /* PP_ForumCell.swift in Sources */,
 				E839EF111E7B9332006C78B7 /* SMSegment.swift in Sources */,
 				E85FDE9620D6407F005B11B8 /* ChooseLocationView.m in Sources */,
@@ -1438,6 +1468,7 @@
 				E82B2B451EAEF7FB0078F9EF /* LoginVC.swift in Sources */,
 				E8D8920C20CFE9D3008A4C5F /* PP_BaseService.swift in Sources */,
 				E82CBED81E76BF7100DEF744 /* BookModel.swift in Sources */,
+				E809255120E0DB2F0065C411 /* PP_VenueListVC.swift in Sources */,
 				E85FDE9920D6407F005B11B8 /* AddressTableViewCell.m in Sources */,
 				E82CCEAB1EB31EB200A3E379 /* CMShareManager.swift in Sources */,
 				E8470AD21EBDC3F400D86916 /* LocationVC.swift in Sources */,
@@ -1472,6 +1503,7 @@
 				E85C6B4020D8F6410013CEC4 /* PP_ExamApplyVC.swift in Sources */,
 				E8E803C91EA5C4AD0095EFD8 /* CMUITextFieldUtils.swift in Sources */,
 				E85FDE9520D6407F005B11B8 /* AddressItem.m in Sources */,
+				E8DD760A20DE64F600588094 /* PP_MEVC.swift in Sources */,
 				E85C6B3C20D8D6DB0013CEC4 /* PP_VenueListCell.swift in Sources */,
 				E84D477D209D530800117138 /* PP_ContentCell.swift in Sources */,
 				E84D477A209D485400117138 /* PP_ContentLinkCell.swift in Sources */,
