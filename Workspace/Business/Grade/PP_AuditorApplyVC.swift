@@ -11,6 +11,8 @@ import TZImagePickerController
 import MWPhotoBrowser
 
 class PP_AuditorApplyVC: CMBaseVC {
+    
+    var auditorModel: PP_AuditorModel?
 
     let cellIdentifier0 = "EE_ImageCell"
     let cellIdentifier1 = "EE_AddCell"
@@ -82,6 +84,32 @@ class PP_AuditorApplyVC: CMBaseVC {
                 self.nevueView.text = model.name
             }
             cmPushViewController(vc)
+        }
+        
+        if let model = auditorModel {
+            onlyReadView(model: model)
+        }
+    }
+    
+    func onlyReadView(model: PP_AuditorModel) {
+        self.title = "考官详情"
+        
+        self.nameView.text = model.name
+        self.sexView.text = model.sex
+        self.ageView.text = model.age
+        self.phoneView.text = model.phone
+        self.idcardView.text = model.idcard
+//        self.cityView.text = model.city
+        self.introduceText.text = model.introduce
+        self.imageArray = model.certificateImages
+        if let avatarImage = model.avatarImage {
+            self.avatarView?.kf.setImage(with: URL(string: avatarImage.imageUrl), for: .normal)
+        }
+        
+        let coverView = UIView()
+        self.view.addSubview(coverView)
+        coverView.snp.makeConstraints { (maker) in
+            maker.top.bottom.left.right.equalToSuperview()
         }
     }
     

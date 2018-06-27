@@ -12,6 +12,8 @@ import MWPhotoBrowser
 
 class PP_GradeVenueApplyVC: CMBaseVC {
     
+    var venueModel: PP_VenueModel?
+    
     let cellIdentifier0 = "EE_ImageCell"
     let cellIdentifier1 = "EE_AddCell"
     let headerIdentifier = "UICollectionReusableView"
@@ -62,6 +64,28 @@ class PP_GradeVenueApplyVC: CMBaseVC {
             self.coverView.isHidden = true
             self.locationView.isHidden = true
             self.cityView.text = self.locationView.address
+        }
+        
+        if let model = venueModel {
+            onlyReadView(model: model)
+        }
+    }
+    
+    func onlyReadView(model: PP_VenueModel) {
+        self.title = "考点详情"
+        
+        self.nameView.text = model.name
+        self.chargeView.text = model.charger
+        self.phoneView.text = model.phone
+        self.cityView.text = model.city
+        self.addressText.text = model.address
+        self.introduceText.text = model.introduce
+        self.imageArray = model.venueImages
+        
+        let coverView = UIView()
+        self.view.addSubview(coverView)
+        coverView.snp.makeConstraints { (maker) in
+            maker.top.bottom.left.right.equalToSuperview()
         }
     }
     

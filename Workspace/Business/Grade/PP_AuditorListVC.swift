@@ -60,7 +60,9 @@ extension PP_AuditorListVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let model = dataList[indexPath.row] {
-            cmPopViewController()
+            let vc = PP_AuditorApplyVC()
+            vc.auditorModel = model
+            cmPushViewController(vc)
         }
     }
 }

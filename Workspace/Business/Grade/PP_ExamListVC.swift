@@ -56,7 +56,9 @@ extension PP_ExamListVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let model = dataList[indexPath.row] {
-            cmPopViewController()
+            let vc = PP_ExamApplyVC()
+            vc.examModel = model
+            cmPushViewController(vc)
         }
     }
 }

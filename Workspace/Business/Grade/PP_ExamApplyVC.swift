@@ -11,6 +11,8 @@ import TZImagePickerController
 import MWPhotoBrowser
 
 class PP_ExamApplyVC: CMBaseVC {
+    
+    var examModel: PP_ExamModel?
 
     let cellIdentifier0 = "EE_ImageCell"
     let cellIdentifier1 = "EE_AddCell"
@@ -92,6 +94,40 @@ class PP_ExamApplyVC: CMBaseVC {
             self.view.endEditing(true)
             
             self.showPickerView()
+        }
+        
+        if let model = examModel {
+            onlyReadView(model: model)
+        }
+    }
+    
+    func onlyReadView(model: PP_ExamModel) {
+        self.title = "考级详情"
+        
+        if let examinee = model.examinee {
+            self.nameView.text = examinee.name
+            self.sexView.text = examinee.sex
+            self.ageView.text = examinee.age
+            self.phoneView.text = examinee.phone
+            self.idcardView.text = examinee.idcard
+            if let avatarImage = examinee.avatarImage {
+                self.avatarView?.kf.setImage(with: URL(string: avatarImage.imageUrl), for: .normal)
+            }
+        }
+        if let venue = model.venue {
+            self.venueView.text = venue.name
+        }
+        if let auditor = model.auditor {
+            self.auditorView.text = auditor.name
+        }
+        
+        self.timeView.text = model.exam_time
+        self.gradeView.text = model.exam_grade
+        
+        let coverView = UIView()
+        self.view.addSubview(coverView)
+        coverView.snp.makeConstraints { (maker) in
+            maker.top.bottom.left.right.equalToSuperview()
         }
     }
     

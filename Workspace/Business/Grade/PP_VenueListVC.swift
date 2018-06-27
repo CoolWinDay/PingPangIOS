@@ -56,7 +56,9 @@ extension PP_VenueListVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let model = venueList[indexPath.row] {
-            cmPopViewController()
+            let vc = PP_GradeVenueApplyVC()
+            vc.venueModel = model
+            cmPushViewController(vc)
         }
     }
 }
