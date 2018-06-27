@@ -29,11 +29,11 @@ class LoginVC: CMBaseVC {
     func doLogin() {
         self.view.endEditing(true)
         
-        guard let username = nameText0.text else {
+        guard let username = nameText0.text, username.count > 0 else {
             cmShowToast("请输入账号")
             return
         }
-        guard let pwd = pwdText0.text else {
+        guard let pwd = pwdText0.text, pwd.count > 0 else {
             cmShowToast("请输入密码")
             return
         }
@@ -56,15 +56,15 @@ class LoginVC: CMBaseVC {
     func doRegist() {
         self.view.endEditing(true)
         
-        guard let username = nameText1.text else {
+        guard let username = nameText1.text, username.count > 0 else {
             cmShowToast("请输入账号")
             return
         }
-        guard let pwd = pwdText1.text else {
+        guard let pwd = pwdText1.text, pwd.count > 0 else {
             cmShowToast("请输入密码")
             return
         }
-        guard let rePwd = rePwdText1.text else {
+        guard let rePwd = rePwdText1.text, rePwd.count > 0 else {
             cmShowToast("请确认密码")
             return
         }
