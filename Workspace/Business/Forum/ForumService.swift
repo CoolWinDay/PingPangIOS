@@ -62,6 +62,7 @@ class ForumService: PP_BaseService {
     }
     
     class func registUser(username: String, password: String, _ response: @escaping (PP_UserModel?) -> ()) {
+        // 直接请求乒乓网注册服务，主要是注册接口有ip地址检查
         let url = "/mobcent/app/web/index.php?r=user/register"
         let parameters: Parameters = ["username": username, "password": password, "email": ""]
         

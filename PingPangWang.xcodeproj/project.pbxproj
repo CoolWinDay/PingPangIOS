@@ -171,6 +171,8 @@
 		E8B43CB7209C797D0085DB2A /* PP_ContentTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8B43CB5209C797D0085DB2A /* PP_ContentTextCell.xib */; };
 		E8B43CBA209C9C6E0085DB2A /* PP_ContentImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B43CB8209C9C6E0085DB2A /* PP_ContentImageCell.swift */; };
 		E8B43CBB209C9C6E0085DB2A /* PP_ContentImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8B43CB9209C9C6E0085DB2A /* PP_ContentImageCell.xib */; };
+		E8C26BF520E330CF0023C276 /* PP_RegistVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C26BF320E330CF0023C276 /* PP_RegistVC.swift */; };
+		E8C26BF620E330CF0023C276 /* PP_RegistVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8C26BF420E330CF0023C276 /* PP_RegistVC.xib */; };
 		E8C477A71E8CD9D200543846 /* PPTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C477A61E8CD9D200543846 /* PPTView.swift */; };
 		E8C477AF1E8CDB4500543846 /* SegmentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C477AD1E8CDB4500543846 /* SegmentVC.swift */; };
 		E8C477B01E8CDB4500543846 /* SegmentVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8C477AE1E8CDB4500543846 /* SegmentVC.xib */; };
@@ -426,6 +428,8 @@
 		E8B8564F1EC1F8FF0014F7BD /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		E8B856521EC1F8FF0014F7BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		E8B856541EC1F8FF0014F7BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E8C26BF320E330CF0023C276 /* PP_RegistVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PP_RegistVC.swift; sourceTree = "<group>"; };
+		E8C26BF420E330CF0023C276 /* PP_RegistVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PP_RegistVC.xib; sourceTree = "<group>"; };
 		E8C477A61E8CD9D200543846 /* PPTView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPTView.swift; sourceTree = "<group>"; };
 		E8C477AD1E8CDB4500543846 /* SegmentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentVC.swift; sourceTree = "<group>"; };
 		E8C477AE1E8CDB4500543846 /* SegmentVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SegmentVC.xib; sourceTree = "<group>"; };
@@ -623,6 +627,8 @@
 			children = (
 				E82B2B431EAEF7FB0078F9EF /* LoginVC.swift */,
 				E82B2B441EAEF7FB0078F9EF /* LoginVC.xib */,
+				E8C26BF320E330CF0023C276 /* PP_RegistVC.swift */,
+				E8C26BF420E330CF0023C276 /* PP_RegistVC.xib */,
 				E8A11DF220B705610092D0C6 /* PP_UserModel.swift */,
 			);
 			path = Login;
@@ -1249,6 +1255,7 @@
 				E8F9D7EF1EBF1D240005C5E8 /* SettingVC.xib in Resources */,
 				E8EA5FCA1EA7588400C3CE52 /* TextAndInputVC.xib in Resources */,
 				E875756A1E4C638100BFDCB7 /* DemoMeVC.xib in Resources */,
+				E8C26BF620E330CF0023C276 /* PP_RegistVC.xib in Resources */,
 				E817F86A1D8054D000D2DD07 /* Assets.xcassets in Resources */,
 				E8DD760B20DE64F600588094 /* PP_MEVC.xib in Resources */,
 				E85F488D1E70FA7600C18AD6 /* LaunchImg3@2x.png in Resources */,
@@ -1513,6 +1520,7 @@
 				E82946D71E5F2D9000D62A86 /* CMUIButtonUtils.swift in Sources */,
 				E839EF121E7B9332006C78B7 /* SMSegmentAppearance.swift in Sources */,
 				E8F3F48720D90D7600DEF0E4 /* PP_AuditorSelectVC.swift in Sources */,
+				E8C26BF520E330CF0023C276 /* PP_RegistVC.swift in Sources */,
 				E851C0F220D77F5D002F9D82 /* PP_AuditorApplyVC.swift in Sources */,
 				E8CCA8BF2080D78400D72E5E /* PP_BoardModel.swift in Sources */,
 				E85C6B4020D8F6410013CEC4 /* PP_ExamApplyVC.swift in Sources */,

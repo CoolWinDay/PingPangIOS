@@ -10,9 +10,16 @@ import UIKit
 
 class LoginVC: CMBaseVC {
     
-    @IBOutlet weak var nameText: UITextField!
-    @IBOutlet weak var pwdText: UITextField!
-    @IBOutlet weak var loginBtn: UIButton!
+    @IBOutlet weak var loginView: UIView!
+    @IBOutlet weak var registView: UIView!
+    
+    @IBOutlet weak var nameText0: UITextField!
+    @IBOutlet weak var pwdText0: UITextField!
+    
+    @IBOutlet weak var nameText1: UITextField!
+    @IBOutlet weak var pwdText1: UITextField!
+    @IBOutlet weak var rePwdText1: UITextField!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,33 +29,65 @@ class LoginVC: CMBaseVC {
     func doLogin() {
         self.view.endEditing(true)
         
-        guard let username = nameText.text else {
+        guard let username = nameText0.text else {
             cmShowToast("请输入账号")
             return
         }
-        guard let pwd = pwdText.text else {
+        guard let pwd = pwdText0.text else {
             cmShowToast("请输入密码")
             return
         }
         
-        ForumService.loginUser(username: username, password: pwd) { (model) in
+        self.loginWith(username: username, password: pwd)
+    }
+    
+    func loginWith(username: String, password: String) {
+        ForumService.loginUser(username: username, password: password) { (model) in
             if let model = model {
                 model.save2Cache()
                 cmShowToast("登录成功")
                 NotificationCenter.default.post(name: .NotificationUserLogin, object: nil)
                 self.dismiss(animated: true, completion: nil)
             }
-            else {
-                cmShowToast("登录失败")
-            }
         }
     }
     
     @IBAction
     func doRegist() {
-        ForumService.registUser(username: "", password: "") { (model) in
-            
+        self.view.endEditing(true)
+        
+        guard let username = nameText1.text else {
+            cmShowToast("请输入账号")
+            return
         }
+        guard let pwd = pwdText1.text else {
+            cmShowToast("请输入密码")
+            return
+        }
+        guard let rePwd = rePwdText1.text else {
+            cmShowToast("请确认密码")
+            return
+        }
+        if pwd != rePwd {
+            cmShowToast("两次输入密码不一致")
+            return
+        }
+        
+        ForumService.registUser(username: username, password: pwd) { (model) in
+            self.loginWith(username: username, password: pwd)
+        }
+    }
+    
+    @IBAction
+    func toLoginView() {
+        self.loginView.isHidden = false
+        self.registView.isHidden = true
+    }
+    
+    @IBAction
+    func toRegistView() {
+        self.loginView.isHidden = true
+        self.registView.isHidden = false
     }
     
     @IBAction
