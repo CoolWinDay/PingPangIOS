@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -295,7 +295,7 @@
                                     <rect key="frame" x="87.5" y="0.0" width="272.5" height="50"/>
                                     <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                 </textField>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E8p-mc-Swl" userLabel="Line">
                                     <rect key="frame" x="0.0" y="49.5" width="375" height="0.5"/>
@@ -336,8 +336,9 @@
                                     </constraints>
                                 </view>
                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mzx-jE-OhJ">
-                                    <rect key="frame" x="87.5" y="5" width="272.5" height="89.5"/>
+                                    <rect key="frame" x="87.5" y="2" width="272.5" height="95.5"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 </textView>
@@ -346,10 +347,10 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="100" id="44H-Gx-BLU"/>
                                 <constraint firstAttribute="bottom" secondItem="6Zi-Pp-M15" secondAttribute="bottom" id="Ad1-eo-bpL"/>
-                                <constraint firstItem="mzx-jE-OhJ" firstAttribute="top" secondItem="gRY-ax-kDX" secondAttribute="top" constant="5" id="AoN-lk-xXa"/>
+                                <constraint firstItem="mzx-jE-OhJ" firstAttribute="top" secondItem="gRY-ax-kDX" secondAttribute="top" constant="2" id="AoN-lk-xXa"/>
                                 <constraint firstItem="xXM-uP-xxd" firstAttribute="top" secondItem="gRY-ax-kDX" secondAttribute="top" constant="10" id="KRY-z4-UkL"/>
                                 <constraint firstItem="6Zi-Pp-M15" firstAttribute="leading" secondItem="gRY-ax-kDX" secondAttribute="leading" id="QX9-au-P9b"/>
-                                <constraint firstItem="6Zi-Pp-M15" firstAttribute="top" secondItem="mzx-jE-OhJ" secondAttribute="bottom" constant="5" id="bqe-yP-gC1"/>
+                                <constraint firstItem="6Zi-Pp-M15" firstAttribute="top" secondItem="mzx-jE-OhJ" secondAttribute="bottom" constant="2" id="bqe-yP-gC1"/>
                                 <constraint firstAttribute="trailing" secondItem="6Zi-Pp-M15" secondAttribute="trailing" id="dao-4d-Vu3"/>
                                 <constraint firstAttribute="trailing" secondItem="mzx-jE-OhJ" secondAttribute="trailing" constant="15" id="ebg-Kh-KQN"/>
                                 <constraint firstItem="xXM-uP-xxd" firstAttribute="leading" secondItem="gRY-ax-kDX" secondAttribute="leading" constant="15" id="j0p-M6-DRh"/>
@@ -473,6 +474,7 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dOT-5V-nAe">
                     <rect key="frame" x="225" y="30" width="150" height="150"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <inset key="imageEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                     <state key="normal" image="img_add"/>
                     <connections>
                         <action selector="selAvatar" destination="-1" eventType="touchUpInside" id="nXh-NQ-2go"/>
@@ -510,7 +512,7 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="dFJ-Us-vnj"/>
-            <point key="canvasLocation" x="155.5" y="-27"/>
+            <point key="canvasLocation" x="125" y="-1"/>
         </view>
     </objects>
     <resources>

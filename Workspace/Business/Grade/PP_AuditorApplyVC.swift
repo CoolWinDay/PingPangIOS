@@ -36,6 +36,7 @@ class PP_AuditorApplyVC: CMBaseVC {
     @IBOutlet weak var coverView: UIView!
     @IBOutlet weak var locationView: ChooseLocationView!
     
+    var avatarImage: UIImage?
     var imageArray: [UIImage] = []
     var venue_id = ""
     
@@ -51,6 +52,8 @@ class PP_AuditorApplyVC: CMBaseVC {
         collectionView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: headerIdentifier)
         
         cityView.tapAction { (view) in
+            self.view.endEditing(true)
+            
             self.coverView.isHidden = false
             self.locationView.isHidden = false
             self.isEditing = false
@@ -68,6 +71,8 @@ class PP_AuditorApplyVC: CMBaseVC {
         }
         
         nevueView.tapAction { (view) in
+            self.view.endEditing(true)
+            
             let vc = PP_VenueSelectVC()
             if let address = self.cityView.text, address.count > 0 {
                 vc.address = address
@@ -118,21 +123,21 @@ class PP_AuditorApplyVC: CMBaseVC {
             cmShowToast("请填写自我介绍")
             return
         }
+        if introduce.count > 100 {
+            cmShowToast("自我介绍限制在100字内")
+            return
+        }
         guard let city = cityView.text, city.count>0 else {
             cmShowToast("请选择现居地区")
             return
         }
         guard let venue = nevueView.text, venue.count>0 else {
-            cmShowToast("请选所在考点")
+            cmShowToast("请选择所在考点")
             return
         }
         
-        guard let imageView = avatarView.imageView else {
-            cmShowToast("请选头像图片")
-            return
-        }
-        guard let avatarImage = imageView.image else {
-            cmShowToast("请选头像图片")
+        guard let avatarImage = self.avatarImage else {
+            cmShowToast("请选择头像图片")
             return
         }
         
@@ -260,6 +265,7 @@ extension PP_AuditorApplyVC: TZImagePickerControllerDelegate {
         if picker.view.tag == 101 {
             if photos.count > 0 {
                 avatarView.setImage(photos[0], for: .normal)
+                avatarImage = photos[0]
             }
         }
         else {

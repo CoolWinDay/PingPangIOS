@@ -47,6 +47,7 @@ class PP_GradeVenueApplyVC: CMBaseVC {
         collectionView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: headerIdentifier)
         
         cityView.tapAction { (view) in
+            self.view.endEditing(true)
             self.coverView.isHidden = false
             self.locationView.isHidden = false
             self.isEditing = false
@@ -90,8 +91,16 @@ class PP_GradeVenueApplyVC: CMBaseVC {
             cmShowToast("请填写详细地址")
             return
         }
+        if address.count > 50 {
+            cmShowToast("详细地址限制50字以内")
+            return
+        }
         guard let introduce = introduceText.text, introduce.count>0 else {
             cmShowToast("请填考点简介")
+            return
+        }
+        if introduce.count > 100 {
+            cmShowToast("考点简介限制100字以内")
             return
         }
         if imageArray.count == 0 {
@@ -197,7 +206,7 @@ extension PP_GradeVenueApplyVC: UICollectionViewDataSource, UICollectionViewDele
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: collectionView.bounds.width, height: 470)
+        return CGSize(width: collectionView.bounds.width, height: 450)
     }
     
     // header

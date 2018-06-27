@@ -42,6 +42,7 @@ class PP_ExamApplyVC: CMBaseVC {
     var venue_id = ""
     var auditor_id = ""
     let gradePickerData = ["预备级", "一级", "二级", "三级", "四级", "五级", "六级", "七级", "八级", "九级"]
+    var avatarImage: UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,6 +56,8 @@ class PP_ExamApplyVC: CMBaseVC {
         collectionView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: headerIdentifier)
         
         venueView.tapAction { (view) in
+            self.view.endEditing(true)
+            
             let vc = PP_VenueSelectVC()
             vc.callBack = { (model) in
                 self.venue_id = model.kid
@@ -64,6 +67,8 @@ class PP_ExamApplyVC: CMBaseVC {
         }
         
         auditorView.tapAction { (view) in
+            self.view.endEditing(true)
+            
             if self.venue_id == "" {
                 cmShowToast("请先选择考点")
                 return
@@ -78,10 +83,14 @@ class PP_ExamApplyVC: CMBaseVC {
         }
         
         timeView.tapAction { (view) in
+            self.view.endEditing(true)
+            
             self.showDateView()
         }
         
         gradeView.tapAction { (view) in
+            self.view.endEditing(true)
+            
             self.showPickerView()
         }
     }
@@ -183,11 +192,7 @@ class PP_ExamApplyVC: CMBaseVC {
             return
         }
         
-        guard let imageView = avatarView.imageView else {
-            cmShowToast("请选头像图片")
-            return
-        }
-        guard let avatarImage = imageView.image else {
+        guard let avatarImage = self.avatarImage else {
             cmShowToast("请选头像图片")
             return
         }
@@ -310,6 +315,7 @@ extension PP_ExamApplyVC: TZImagePickerControllerDelegate {
     func imagePickerController(_ picker: TZImagePickerController!, didFinishPickingPhotos photos: [UIImage]!, sourceAssets assets: [Any]!, isSelectOriginalPhoto: Bool, infos: [[AnyHashable : Any]]!) {
         if photos.count > 0 {
             avatarView.setImage(photos[0], for: .normal)
+            avatarImage = photos[0]
         }
     }
 }
