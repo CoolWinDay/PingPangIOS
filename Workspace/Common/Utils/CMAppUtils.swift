@@ -94,7 +94,7 @@ func cmCacheUrl(name: String) -> URL {
     return cacheUrl.appendingPathComponent(name)
 }
 
-func cmShowToast(_ toast: String?, position: Toast_Swift.ToastPosition = ToastManager.shared.position) {
+func cmShowToast(_ toast: String?, position: Toast_Swift.ToastPosition = .center) {
     if let theToast = toast {
         cmMainWindow()?.makeToast(theToast, duration: ToastManager.shared.duration, position: position)
     }

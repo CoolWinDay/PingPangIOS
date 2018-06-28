@@ -110,6 +110,8 @@ class PP_AuditorApplyVC: CMBaseVC {
         
         let coverView = UIView()
         self.view.addSubview(coverView)
+        coverView.backgroundColor = UIColor.black
+        coverView.alpha = 0.1
         coverView.snp.makeConstraints { (maker) in
             maker.top.bottom.left.right.equalToSuperview()
         }
@@ -121,7 +123,7 @@ class PP_AuditorApplyVC: CMBaseVC {
     
     @IBAction
     func sexRadioButton(button: UIButton) {
-        let manSel = button.titleLabel!.text == "男"
+        let manSel = button.tag == 101
         self.sex0View.isSelected = manSel
         self.sex1View.isSelected = !manSel
     }

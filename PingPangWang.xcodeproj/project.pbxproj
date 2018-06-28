@@ -122,7 +122,6 @@
 		E85C6B3920D8CC090013CEC4 /* PP_ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85C6B3820D8CC090013CEC4 /* PP_ImageModel.swift */; };
 		E85C6B3C20D8D6DB0013CEC4 /* PP_VenueListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85C6B3A20D8D6DB0013CEC4 /* PP_VenueListCell.swift */; };
 		E85C6B3D20D8D6DB0013CEC4 /* PP_VenueListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E85C6B3B20D8D6DB0013CEC4 /* PP_VenueListCell.xib */; };
-		E85C6B4020D8F6410013CEC4 /* PP_ExamApplyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85C6B3E20D8F6410013CEC4 /* PP_ExamApplyVC.swift */; };
 		E85C6B4120D8F6410013CEC4 /* PP_ExamApplyVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E85C6B3F20D8F6410013CEC4 /* PP_ExamApplyVC.xib */; };
 		E85E861C2095D8E000895376 /* dz_list_circle_replies@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E85E861A2095D8DF00895376 /* dz_list_circle_replies@2x.png */; };
 		E85E861D2095D8E000895376 /* dz_list_circle_pv@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E85E861B2095D8DF00895376 /* dz_list_circle_pv@2x.png */; };
@@ -167,6 +166,7 @@
 		E892A08F2095D0290068DEA7 /* PP_TopicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E892A08D2095D0290068DEA7 /* PP_TopicCell.xib */; };
 		E8A11DF320B705610092D0C6 /* PP_UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A11DF220B705610092D0C6 /* PP_UserModel.swift */; };
 		E8A19F1D1EBF346C0054C4FD /* CMDateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A19F1C1EBF346C0054C4FD /* CMDateUtils.swift */; };
+		E8A6F64C20E496060041FAF4 /* PP_ExamApplyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85C6B3E20D8F6410013CEC4 /* PP_ExamApplyVC.swift */; };
 		E8B43CB6209C797D0085DB2A /* PP_ContentTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B43CB4209C797D0085DB2A /* PP_ContentTextCell.swift */; };
 		E8B43CB7209C797D0085DB2A /* PP_ContentTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8B43CB5209C797D0085DB2A /* PP_ContentTextCell.xib */; };
 		E8B43CBA209C9C6E0085DB2A /* PP_ContentImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B43CB8209C9C6E0085DB2A /* PP_ContentImageCell.swift */; };
@@ -1424,6 +1424,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8A6F64C20E496060041FAF4 /* PP_ExamApplyVC.swift in Sources */,
 				E892A08E2095D0290068DEA7 /* PP_TopicCell.swift in Sources */,
 				E858EF9320CD332100B0E568 /* PP_GradeVenueApplyVC.swift in Sources */,
 				E837C2061EC6C19800E69FAC /* WidgetVC.swift in Sources */,
@@ -1525,7 +1526,6 @@
 				E8C26BF520E330CF0023C276 /* PP_RegistVC.swift in Sources */,
 				E851C0F220D77F5D002F9D82 /* PP_AuditorApplyVC.swift in Sources */,
 				E8CCA8BF2080D78400D72E5E /* PP_BoardModel.swift in Sources */,
-				E85C6B4020D8F6410013CEC4 /* PP_ExamApplyVC.swift in Sources */,
 				E8E803C91EA5C4AD0095EFD8 /* CMUITextFieldUtils.swift in Sources */,
 				E85FDE9520D6407F005B11B8 /* AddressItem.m in Sources */,
 				E8DD760A20DE64F600588094 /* PP_MEVC.swift in Sources */,

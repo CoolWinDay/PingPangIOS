@@ -32,6 +32,7 @@ class PP_ExamApplyVC: CMBaseVC {
     @IBOutlet weak var gradeView: UITextField!
     @IBOutlet weak var sex0View: UIButton!
     @IBOutlet weak var sex1View: UIButton!
+    @IBOutlet weak var checkView: UIButton!
     
     @IBOutlet var pickerWindow: UIView!
     @IBOutlet var pickerView: UIPickerView!
@@ -128,6 +129,8 @@ class PP_ExamApplyVC: CMBaseVC {
         
         let coverView = UIView()
         self.view.addSubview(coverView)
+        coverView.backgroundColor = UIColor.black
+        coverView.alpha = 0.1
         coverView.snp.makeConstraints { (maker) in
             maker.top.bottom.left.right.equalToSuperview()
         }
@@ -139,9 +142,22 @@ class PP_ExamApplyVC: CMBaseVC {
     
     @IBAction
     func sexRadioButton(button: UIButton) {
-        let manSel = button.titleLabel!.text == "男"
+        let manSel = button.tag == 101
         self.sex0View.isSelected = manSel
         self.sex1View.isSelected = !manSel
+    }
+    
+    @IBAction
+    func checkButton(button: UIButton) {
+        button.isSelected = !button.isSelected
+    }
+    
+    @IBAction
+    func toAgreement() {
+        let webVC = CMWebVC()
+        webVC.title = "考生网上报名协议"
+        webVC.webUrl = "https://www.baidu.com"
+        cmPushViewController(webVC)
     }
     
     @IBAction
@@ -235,6 +251,11 @@ class PP_ExamApplyVC: CMBaseVC {
         
         guard let avatarImage = self.avatarImage else {
             cmShowToast("请选头像图片")
+            return
+        }
+        
+        if !checkView.isSelected {
+            cmShowToast("请阅读并同意协议")
             return
         }
         

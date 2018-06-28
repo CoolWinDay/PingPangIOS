@@ -15,6 +15,7 @@
                 <outlet property="ageView" destination="Zq6-bc-HhI" id="iDs-Bc-FOp"/>
                 <outlet property="auditorView" destination="sea-6m-DDg" id="CZ4-zf-7Xc"/>
                 <outlet property="avatarView" destination="e85-Yr-Kln" id="P1k-zw-skO"/>
+                <outlet property="checkView" destination="f2f-cb-1us" id="8OX-Vd-1hm"/>
                 <outlet property="collectionView" destination="62Q-IC-Ugn" id="4UX-Fa-NTg"/>
                 <outlet property="dateView" destination="pKG-bv-om2" id="dIW-Qv-sdk"/>
                 <outlet property="dateWindow" destination="iuz-eE-No2" id="gsT-e4-Of2"/>
@@ -136,7 +137,7 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IOR-1I-v57">
                                     <rect key="frame" x="59" y="6" width="99" height="37"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a7q-pL-f96">
+                                        <button opaque="NO" tag="101" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a7q-pL-f96">
                                             <rect key="frame" x="0.0" y="-0.5" width="42" height="37"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="15" maxY="10"/>
@@ -149,7 +150,7 @@
                                                 <action selector="sexRadioButtonWithButton:" destination="-1" eventType="touchUpInside" id="Afc-WP-DA9"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="51X-ac-xb9">
+                                        <button opaque="NO" tag="102" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="51X-ac-xb9">
                                             <rect key="frame" x="57" y="0.0" width="42" height="37"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="15" maxY="10"/>
@@ -547,18 +548,25 @@
                     <rect key="frame" x="0.0" y="500" width="375" height="50"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f2f-cb-1us">
-                            <rect key="frame" x="15" y="0.0" width="103" height="50"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                            <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
-                            <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="-10" maxY="0.0"/>
-                            <state key="normal" title="已阅读并同意" image="tab_me.png">
+                            <rect key="frame" x="15" y="0.0" width="106" height="50"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="5" maxY="0.0"/>
+                            <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="-5" maxY="0.0"/>
+                            <state key="normal" title="已阅读并同意" image="pic_uncheck">
                                 <color key="titleColor" red="0.36862745099999999" green="0.36862745099999999" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
+                            <state key="selected" image="pic_check"/>
+                            <connections>
+                                <action selector="checkButtonWithButton:" destination="-1" eventType="touchUpInside" id="gJP-LH-caa"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rVl-Ej-yua">
-                            <rect key="frame" x="123" y="0.0" width="123" height="50"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <rect key="frame" x="126" y="0.0" width="143" height="50"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <state key="normal" title="《考生网上报名协议》"/>
+                            <connections>
+                                <action selector="toAgreement" destination="-1" eventType="touchUpInside" id="WwS-BS-vZL"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -769,8 +777,9 @@
     <resources>
         <image name="arrow_next" width="8" height="15"/>
         <image name="img_add" width="60" height="60"/>
+        <image name="pic_check" width="15" height="15"/>
+        <image name="pic_uncheck" width="15" height="15"/>
         <image name="radio_check" width="12" height="12"/>
         <image name="radio_uncheck" width="12" height="12"/>
-        <image name="tab_me.png" width="19" height="19"/>
     </resources>
 </document>

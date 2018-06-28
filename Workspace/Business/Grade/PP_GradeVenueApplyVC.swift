@@ -84,6 +84,8 @@ class PP_GradeVenueApplyVC: CMBaseVC {
         
         let coverView = UIView()
         self.view.addSubview(coverView)
+        coverView.backgroundColor = UIColor.black
+        coverView.alpha = 0.1
         coverView.snp.makeConstraints { (maker) in
             maker.top.bottom.left.right.equalToSuperview()
         }
