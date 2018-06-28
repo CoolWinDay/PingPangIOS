@@ -23,7 +23,6 @@ class PP_ExamApplyVC: CMBaseVC {
     
     @IBOutlet weak var avatarView: UIButton!
     @IBOutlet weak var nameView: UITextField!
-    @IBOutlet weak var sexView: UITextField!
     @IBOutlet weak var ageView: UITextField!
     @IBOutlet weak var phoneView: UITextField!
     @IBOutlet weak var idcardView: UITextField!
@@ -31,6 +30,8 @@ class PP_ExamApplyVC: CMBaseVC {
     @IBOutlet weak var auditorView: UITextField!
     @IBOutlet weak var timeView: UITextField!
     @IBOutlet weak var gradeView: UITextField!
+    @IBOutlet weak var sex0View: UIButton!
+    @IBOutlet weak var sex1View: UIButton!
     
     @IBOutlet var pickerWindow: UIView!
     @IBOutlet var pickerView: UIPickerView!
@@ -106,7 +107,8 @@ class PP_ExamApplyVC: CMBaseVC {
         
         if let examinee = model.examinee {
             self.nameView.text = examinee.name
-            self.sexView.text = examinee.sex
+            self.sex0View.isSelected = sex0View.titleLabel!.text == examinee.sex
+            self.sex1View.isSelected = sex1View.titleLabel!.text == examinee.sex
             self.ageView.text = examinee.age
             self.phoneView.text = examinee.phone
             self.idcardView.text = examinee.idcard
@@ -133,6 +135,13 @@ class PP_ExamApplyVC: CMBaseVC {
     
     func loadAddressData() {
         CitiesDataTool.sharedManager().requestGetData()
+    }
+    
+    @IBAction
+    func sexRadioButton(button: UIButton) {
+        let manSel = button.titleLabel!.text == "男"
+        self.sex0View.isSelected = manSel
+        self.sex1View.isSelected = !manSel
     }
     
     @IBAction
@@ -195,10 +204,6 @@ class PP_ExamApplyVC: CMBaseVC {
             cmShowToast("请填写姓名")
             return
         }
-        guard let sex = sexView.text, sex.count>0 else {
-            cmShowToast("请选择性别")
-            return
-        }
         guard let age = ageView.text, age.count>0 else {
             cmShowToast("请填写年龄")
             return
@@ -232,6 +237,8 @@ class PP_ExamApplyVC: CMBaseVC {
             cmShowToast("请选头像图片")
             return
         }
+        
+        let sex = sex0View.isSelected ? sex0View.titleLabel!.text! : sex1View.titleLabel!.text!
         
         let avatar = PP_ImageModel()
         avatar.module = 3

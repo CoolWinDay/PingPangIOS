@@ -25,7 +25,8 @@
                 <outlet property="phoneView" destination="EzH-1X-duV" id="GFz-Iu-tqz"/>
                 <outlet property="pickerView" destination="LR9-J4-yR4" id="fEc-Hq-JaH"/>
                 <outlet property="pickerWindow" destination="dDt-yB-ywA" id="7Hl-kq-gDk"/>
-                <outlet property="sexView" destination="h0c-Gs-YaX" id="y5F-gU-328"/>
+                <outlet property="sex0View" destination="a7q-pL-f96" id="W2P-w1-5sm"/>
+                <outlet property="sex1View" destination="51X-ac-xb9" id="mKK-dW-biy"/>
                 <outlet property="submitView" destination="vFb-93-c9s" id="Bkn-35-uIV"/>
                 <outlet property="timeView" destination="YFk-gu-SRf" id="X1y-PV-G1N"/>
                 <outlet property="venueView" destination="sZq-eI-5um" id="nXz-ef-CpZ"/>
@@ -132,12 +133,47 @@
                                     <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请选择性别" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="h0c-Gs-YaX">
-                                    <rect key="frame" x="59" y="0.0" width="151" height="50"/>
-                                    <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
-                                </textField>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IOR-1I-v57">
+                                    <rect key="frame" x="59" y="6" width="99" height="37"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a7q-pL-f96">
+                                            <rect key="frame" x="0.0" y="-0.5" width="42" height="37"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="15" maxY="10"/>
+                                            <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="-5" maxY="0.0"/>
+                                            <state key="normal" title="男" image="radio_uncheck">
+                                                <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                            <state key="selected" image="radio_check"/>
+                                            <connections>
+                                                <action selector="sexRadioButtonWithButton:" destination="-1" eventType="touchUpInside" id="Afc-WP-DA9"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="51X-ac-xb9">
+                                            <rect key="frame" x="57" y="0.0" width="42" height="37"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="15" maxY="10"/>
+                                            <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="-5" maxY="0.0"/>
+                                            <state key="normal" title="女" image="radio_uncheck">
+                                                <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                            <state key="selected" image="radio_check"/>
+                                            <connections>
+                                                <action selector="sexRadioButtonWithButton:" destination="-1" eventType="touchUpInside" id="A8u-1h-AeB"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="51X-ac-xb9" firstAttribute="leading" secondItem="a7q-pL-f96" secondAttribute="trailing" constant="15" id="3Hr-T8-lHs"/>
+                                        <constraint firstAttribute="trailing" secondItem="51X-ac-xb9" secondAttribute="trailing" id="6yp-li-MyV"/>
+                                        <constraint firstAttribute="bottom" secondItem="a7q-pL-f96" secondAttribute="bottom" id="GCs-74-K73"/>
+                                        <constraint firstAttribute="bottom" secondItem="51X-ac-xb9" secondAttribute="bottom" id="Jt8-Cq-oy2"/>
+                                        <constraint firstItem="a7q-pL-f96" firstAttribute="top" secondItem="IOR-1I-v57" secondAttribute="top" id="MAT-7r-Aeb"/>
+                                        <constraint firstItem="a7q-pL-f96" firstAttribute="leading" secondItem="IOR-1I-v57" secondAttribute="leading" id="UFR-IH-1Pe"/>
+                                        <constraint firstItem="51X-ac-xb9" firstAttribute="top" secondItem="IOR-1I-v57" secondAttribute="top" id="ctF-Sm-xaL"/>
+                                    </constraints>
+                                </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MXF-rV-pJp" userLabel="Line">
                                     <rect key="frame" x="0.0" y="49.5" width="225" height="0.5"/>
                                     <color key="backgroundColor" red="0.86666666670000003" green="0.86666666670000003" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -148,13 +184,11 @@
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
+                                <constraint firstItem="IOR-1I-v57" firstAttribute="leading" secondItem="BKQ-iz-gK6" secondAttribute="trailing" constant="15" id="AwT-6r-5pT"/>
                                 <constraint firstItem="BKQ-iz-gK6" firstAttribute="leading" secondItem="BNm-If-7dy" secondAttribute="leading" constant="15" id="AzG-39-TRw"/>
-                                <constraint firstAttribute="trailing" secondItem="h0c-Gs-YaX" secondAttribute="trailing" constant="15" id="DL8-go-gmU"/>
-                                <constraint firstAttribute="bottom" secondItem="h0c-Gs-YaX" secondAttribute="bottom" id="NrM-Wx-9fe"/>
-                                <constraint firstItem="h0c-Gs-YaX" firstAttribute="top" secondItem="BNm-If-7dy" secondAttribute="top" id="RSy-1u-fLV"/>
+                                <constraint firstItem="IOR-1I-v57" firstAttribute="centerY" secondItem="BNm-If-7dy" secondAttribute="centerY" id="FcB-ZP-TmA"/>
                                 <constraint firstItem="MXF-rV-pJp" firstAttribute="leading" secondItem="BNm-If-7dy" secondAttribute="leading" id="ZyI-rh-dID"/>
                                 <constraint firstAttribute="bottom" secondItem="MXF-rV-pJp" secondAttribute="bottom" id="gb1-Uf-ZWd"/>
-                                <constraint firstItem="h0c-Gs-YaX" firstAttribute="leading" secondItem="BKQ-iz-gK6" secondAttribute="trailing" constant="15" id="h3d-ox-jDJ"/>
                                 <constraint firstAttribute="height" constant="50" id="pmL-G5-jBo"/>
                                 <constraint firstItem="BKQ-iz-gK6" firstAttribute="centerY" secondItem="BNm-If-7dy" secondAttribute="centerY" id="uzJ-rY-sTw"/>
                                 <constraint firstAttribute="trailing" secondItem="MXF-rV-pJp" secondAttribute="trailing" id="vVt-lT-wwC"/>
@@ -735,6 +769,8 @@
     <resources>
         <image name="arrow_next" width="8" height="15"/>
         <image name="img_add" width="60" height="60"/>
+        <image name="radio_check" width="12" height="12"/>
+        <image name="radio_uncheck" width="12" height="12"/>
         <image name="tab_me.png" width="19" height="19"/>
     </resources>
 </document>

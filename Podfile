@@ -14,6 +14,7 @@ target 'PingPangWang' do
     pod 'SwiftDate', '~> 4.1.1'
     pod 'TZImagePickerController'
     pod 'MWPhotoBrowser'
+    pod 'RadioButton'
     
     # U-Share SDK UI模块（分享面板，建议添加）
     pod 'UMengUShare/UI'

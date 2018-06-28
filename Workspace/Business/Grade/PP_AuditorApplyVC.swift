@@ -23,13 +23,14 @@ class PP_AuditorApplyVC: CMBaseVC {
     
     @IBOutlet weak var avatarView: UIButton!
     @IBOutlet weak var nameView: UITextField!
-    @IBOutlet weak var sexView: UITextField!
     @IBOutlet weak var ageView: UITextField!
     @IBOutlet weak var phoneView: UITextField!
     @IBOutlet weak var idcardView: UITextField!
     @IBOutlet weak var introduceText: UITextView!
     @IBOutlet weak var cityView: UITextField!
     @IBOutlet weak var nevueView: UITextField!
+    @IBOutlet weak var sex0View: UIButton!
+    @IBOutlet weak var sex1View: UIButton!
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet var headView: UIView!
@@ -95,7 +96,8 @@ class PP_AuditorApplyVC: CMBaseVC {
         self.title = "考官详情"
         
         self.nameView.text = model.name
-        self.sexView.text = model.sex
+        self.sex0View.isSelected = sex0View.titleLabel!.text == model.sex
+        self.sex1View.isSelected = sex1View.titleLabel!.text == model.sex
         self.ageView.text = model.age
         self.phoneView.text = model.phone
         self.idcardView.text = model.idcard
@@ -118,6 +120,13 @@ class PP_AuditorApplyVC: CMBaseVC {
     }
     
     @IBAction
+    func sexRadioButton(button: UIButton) {
+        let manSel = button.titleLabel!.text == "男"
+        self.sex0View.isSelected = manSel
+        self.sex1View.isSelected = !manSel
+    }
+    
+    @IBAction
     func selAvatar() {
         if let picker = TZImagePickerController(maxImagesCount: 1, delegate: self) {
             picker.view.tag = 101
@@ -127,12 +136,9 @@ class PP_AuditorApplyVC: CMBaseVC {
     
     @IBAction
     func doSubmit() {
+        
         guard let name = nameView.text, name.count>0 else {
             cmShowToast("请填写姓名")
-            return
-        }
-        guard let sex = sexView.text, sex.count>0 else {
-            cmShowToast("请选择性别")
             return
         }
         guard let age = ageView.text, age.count>0 else {
@@ -173,6 +179,8 @@ class PP_AuditorApplyVC: CMBaseVC {
             cmShowToast("请上相关证书")
             return
         }
+        
+        let sex = sex0View.isSelected ? sex0View.titleLabel!.text! : sex1View.titleLabel!.text!
         
         let model = PP_AuditorModel()
         model.name = name
