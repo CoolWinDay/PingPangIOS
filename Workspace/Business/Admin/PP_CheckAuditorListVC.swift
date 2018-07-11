@@ -1,38 +1,30 @@
 //
-//  PP_AuditorListVC.swift
+//  PP_CheckAuditorListVC.swift
 //  PingPangWang
 //
-//  Created by 李鹏 on 2018/6/25.
+//  Created by 李鹏 on 2018/7/9.
 //  Copyright © 2018年 com.jsinda. All rights reserved.
 //
 
 import UIKit
 
-class PP_AuditorListVC: CMBaseVC {
-
+class PP_CheckAuditorListVC: CMBaseVC {
+    
     let CellRI = "PP_AuditorListCell"
     
     @IBOutlet weak var tableView: UITableView!
-    
+
     var dataList: [PP_AuditorModel?] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "我的考官"
+        self.title = "审核考官"
         
-        self.tableView.tableFooterView = UIView()
         self.tableView.register(UINib(nibName: CellRI, bundle: Bundle.main), forCellReuseIdentifier: CellRI)
+        self.tableView.tableFooterView = UIView()
         
-        self.loadData()
-    }
-    
-    func loadData() {
-//        PP_GradeService.myExamList { (list) in
-//            let a = list?.count
-//        }
-        
-        PP_GradeService.myAuditorList { (auditorList) in
+        PP_GradeService.uncheckAuditorList { (auditorList) in
             if let list = auditorList {
                 self.dataList = list
                 self.tableView.reloadData()
@@ -41,7 +33,7 @@ class PP_AuditorListVC: CMBaseVC {
     }
 }
 
-extension PP_AuditorListVC: UITableViewDataSource, UITableViewDelegate {
+extension PP_CheckAuditorListVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataList.count
     }
@@ -60,9 +52,6 @@ extension PP_AuditorListVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let model = dataList[indexPath.row] {
-            let vc = PP_AuditorDetailVC()
-            vc.auditorModel = model
-            cmPushViewController(vc)
         }
     }
 }

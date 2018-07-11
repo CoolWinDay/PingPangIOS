@@ -1,14 +1,14 @@
 //
-//  PP_VenueListVC.swift
+//  PP_CheckListVC.swift
 //  PingPangWang
 //
-//  Created by 李鹏 on 2018/6/25.
+//  Created by 李鹏 on 2018/7/9.
 //  Copyright © 2018年 com.jsinda. All rights reserved.
 //
 
 import UIKit
 
-class PP_VenueListVC: CMBaseVC {
+class PP_CheckVenueListVC: CMBaseVC {
     
     let CellRI = "PP_VenueListCell"
     
@@ -19,16 +19,12 @@ class PP_VenueListVC: CMBaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "我的俱乐部"
-
-        self.tableView.tableFooterView = UIView()
-        self.tableView.register(UINib(nibName: CellRI, bundle: Bundle.main), forCellReuseIdentifier: CellRI)
+        self.title = "考场详情"
         
-        self.loadData()
-    }
-    
-    func loadData() {
-        PP_GradeService.myVenueList { (venueList) in
+        self.tableView.register(UINib(nibName: CellRI, bundle: Bundle.main), forCellReuseIdentifier: CellRI)
+        self.tableView.tableFooterView = UIView()
+        
+        PP_GradeService.uncheckVenueList { (venueList) in
             if let list = venueList {
                 self.venueList = list
                 self.tableView.reloadData()
@@ -37,7 +33,7 @@ class PP_VenueListVC: CMBaseVC {
     }
 }
 
-extension PP_VenueListVC: UITableViewDataSource, UITableViewDelegate {
+extension PP_CheckVenueListVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return venueList.count
     }
@@ -58,6 +54,7 @@ extension PP_VenueListVC: UITableViewDataSource, UITableViewDelegate {
         if let model = venueList[indexPath.row] {
             let vc = PP_VenueDetailVC()
             vc.venueModel = model
+            vc.isCheck = true
             cmPushViewController(vc)
         }
     }

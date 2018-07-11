@@ -85,6 +85,10 @@
 		E839EF4B1E7BC04C006C78B7 /* ImageVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E839EF491E7BC04C006C78B7 /* ImageVC.xib */; };
 		E839EF501E7BC91B006C78B7 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E839EF4E1E7BC91B006C78B7 /* ImageCell.swift */; };
 		E839EF511E7BC91B006C78B7 /* ImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E839EF4F1E7BC91B006C78B7 /* ImageCell.xib */; };
+		E83FD1E220F3A5DC00DD1DDC /* PP_CheckAuditorListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83FD1E020F3A5DC00DD1DDC /* PP_CheckAuditorListVC.swift */; };
+		E83FD1E320F3A5DC00DD1DDC /* PP_CheckAuditorListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E83FD1E120F3A5DC00DD1DDC /* PP_CheckAuditorListVC.xib */; };
+		E83FD1E620F3A90900DD1DDC /* PP_CheckExamListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83FD1E420F3A90900DD1DDC /* PP_CheckExamListVC.swift */; };
+		E83FD1E720F3A90900DD1DDC /* PP_CheckExamListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E83FD1E520F3A90900DD1DDC /* PP_CheckExamListVC.xib */; };
 		E84514F41D80480800D57CE3 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E84514EE1D80480800D57CE3 /* Info.plist */; };
 		E8470AC41EBD844900D86916 /* NotificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8470AC21EBD844900D86916 /* NotificationVC.swift */; };
 		E8470AC51EBD844900D86916 /* NotificationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8470AC31EBD844900D86916 /* NotificationVC.xib */; };
@@ -162,6 +166,8 @@
 		E87575731E4C686C00BFDCB7 /* CMColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87575721E4C686C00BFDCB7 /* CMColorUtils.swift */; };
 		E882A6661E77855D002AC531 /* LGProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = E882A6651E77855D002AC531 /* LGProgressHUD.swift */; };
 		E882A6681E779B1A002AC531 /* CMUIAlertViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E882A6671E779B1A002AC531 /* CMUIAlertViewUtils.swift */; };
+		E8881E0320F4F67A000E06E5 /* PP_VenueDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8881E0120F4F678000E06E5 /* PP_VenueDetailVC.swift */; };
+		E8881E0420F4F67A000E06E5 /* PP_VenueDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8881E0220F4F679000E06E5 /* PP_VenueDetailVC.xib */; };
 		E892A08E2095D0290068DEA7 /* PP_TopicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E892A08C2095D0290068DEA7 /* PP_TopicCell.swift */; };
 		E892A08F2095D0290068DEA7 /* PP_TopicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E892A08D2095D0290068DEA7 /* PP_TopicCell.xib */; };
 		E8A11DF320B705610092D0C6 /* PP_UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A11DF220B705610092D0C6 /* PP_UserModel.swift */; };
@@ -201,6 +207,10 @@
 		E8E803C21EA59A3E0095EFD8 /* CMUILabelUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E803C11EA59A3E0095EFD8 /* CMUILabelUtils.swift */; };
 		E8E803C91EA5C4AD0095EFD8 /* CMUITextFieldUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E803C81EA5C4AD0095EFD8 /* CMUITextFieldUtils.swift */; };
 		E8E803CB1EA607DC0095EFD8 /* CMUITextViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E803CA1EA607DC0095EFD8 /* CMUITextViewUtils.swift */; };
+		E8E85B2E20F3975300A628AA /* PP_AdminVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E85B2C20F3975300A628AA /* PP_AdminVC.swift */; };
+		E8E85B2F20F3975300A628AA /* PP_AdminVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8E85B2D20F3975300A628AA /* PP_AdminVC.xib */; };
+		E8E85B3220F398F900A628AA /* PP_CheckVenueListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8E85B3020F398F800A628AA /* PP_CheckVenueListVC.xib */; };
+		E8E85B3320F398F900A628AA /* PP_CheckVenueListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E85B3120F398F800A628AA /* PP_CheckVenueListVC.swift */; };
 		E8EA5FC91EA7588400C3CE52 /* TextAndInputVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EA5FC71EA7588400C3CE52 /* TextAndInputVC.swift */; };
 		E8EA5FCA1EA7588400C3CE52 /* TextAndInputVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8EA5FC81EA7588400C3CE52 /* TextAndInputVC.xib */; };
 		E8EA5FD11EA758FD00C3CE52 /* StringValidateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EA5FCF1EA758FD00C3CE52 /* StringValidateVC.swift */; };
@@ -217,6 +227,8 @@
 		E8F9D7EE1EBF1D240005C5E8 /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F9D7EC1EBF1D240005C5E8 /* SettingVC.swift */; };
 		E8F9D7EF1EBF1D240005C5E8 /* SettingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8F9D7ED1EBF1D240005C5E8 /* SettingVC.xib */; };
 		E8F9D7F21EBF2C930005C5E8 /* CMUpdateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F9D7F11EBF2C930005C5E8 /* CMUpdateManager.swift */; };
+		E8FAF4B520F651A4006C552A /* PP_AuditorDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FAF4B320F651A2006C552A /* PP_AuditorDetailVC.swift */; };
+		E8FAF4B620F651A4006C552A /* PP_AuditorDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8FAF4B420F651A3006C552A /* PP_AuditorDetailVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -325,6 +337,10 @@
 		E839EF491E7BC04C006C78B7 /* ImageVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageVC.xib; sourceTree = "<group>"; };
 		E839EF4E1E7BC91B006C78B7 /* ImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		E839EF4F1E7BC91B006C78B7 /* ImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageCell.xib; sourceTree = "<group>"; };
+		E83FD1E020F3A5DC00DD1DDC /* PP_CheckAuditorListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PP_CheckAuditorListVC.swift; sourceTree = "<group>"; };
+		E83FD1E120F3A5DC00DD1DDC /* PP_CheckAuditorListVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PP_CheckAuditorListVC.xib; sourceTree = "<group>"; };
+		E83FD1E420F3A90900DD1DDC /* PP_CheckExamListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PP_CheckExamListVC.swift; sourceTree = "<group>"; };
+		E83FD1E520F3A90900DD1DDC /* PP_CheckExamListVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PP_CheckExamListVC.xib; sourceTree = "<group>"; };
 		E84514EE1D80480800D57CE3 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E8470AC21EBD844900D86916 /* NotificationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationVC.swift; sourceTree = "<group>"; };
 		E8470AC31EBD844900D86916 /* NotificationVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotificationVC.xib; sourceTree = "<group>"; };
@@ -416,6 +432,8 @@
 		E882A6651E77855D002AC531 /* LGProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LGProgressHUD.swift; sourceTree = "<group>"; };
 		E882A6671E779B1A002AC531 /* CMUIAlertViewUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMUIAlertViewUtils.swift; sourceTree = "<group>"; };
 		E882BFAA1D80386500FC8483 /* PingPangWang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PingPangWang.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8881E0120F4F678000E06E5 /* PP_VenueDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PP_VenueDetailVC.swift; sourceTree = "<group>"; };
+		E8881E0220F4F679000E06E5 /* PP_VenueDetailVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PP_VenueDetailVC.xib; sourceTree = "<group>"; };
 		E892A08C2095D0290068DEA7 /* PP_TopicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PP_TopicCell.swift; sourceTree = "<group>"; };
 		E892A08D2095D0290068DEA7 /* PP_TopicCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PP_TopicCell.xib; sourceTree = "<group>"; };
 		E89A8D841EC1F207005FE6BF /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
@@ -458,6 +476,10 @@
 		E8E803C11EA59A3E0095EFD8 /* CMUILabelUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMUILabelUtils.swift; sourceTree = "<group>"; };
 		E8E803C81EA5C4AD0095EFD8 /* CMUITextFieldUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMUITextFieldUtils.swift; sourceTree = "<group>"; };
 		E8E803CA1EA607DC0095EFD8 /* CMUITextViewUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMUITextViewUtils.swift; sourceTree = "<group>"; };
+		E8E85B2C20F3975300A628AA /* PP_AdminVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PP_AdminVC.swift; sourceTree = "<group>"; };
+		E8E85B2D20F3975300A628AA /* PP_AdminVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PP_AdminVC.xib; sourceTree = "<group>"; };
+		E8E85B3020F398F800A628AA /* PP_CheckVenueListVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PP_CheckVenueListVC.xib; sourceTree = "<group>"; };
+		E8E85B3120F398F800A628AA /* PP_CheckVenueListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PP_CheckVenueListVC.swift; sourceTree = "<group>"; };
 		E8EA5FC71EA7588400C3CE52 /* TextAndInputVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextAndInputVC.swift; sourceTree = "<group>"; };
 		E8EA5FC81EA7588400C3CE52 /* TextAndInputVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextAndInputVC.xib; sourceTree = "<group>"; };
 		E8EA5FCF1EA758FD00C3CE52 /* StringValidateVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringValidateVC.swift; sourceTree = "<group>"; };
@@ -474,6 +496,8 @@
 		E8F9D7EC1EBF1D240005C5E8 /* SettingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
 		E8F9D7ED1EBF1D240005C5E8 /* SettingVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingVC.xib; sourceTree = "<group>"; };
 		E8F9D7F11EBF2C930005C5E8 /* CMUpdateManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMUpdateManager.swift; sourceTree = "<group>"; };
+		E8FAF4B320F651A2006C552A /* PP_AuditorDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PP_AuditorDetailVC.swift; sourceTree = "<group>"; };
+		E8FAF4B420F651A3006C552A /* PP_AuditorDetailVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PP_AuditorDetailVC.xib; sourceTree = "<group>"; };
 		EFE7E30AE6866D8B233F81B0 /* Pods-PingPangWang.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PingPangWang.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PingPangWang/Pods-PingPangWang.debug.xcconfig"; sourceTree = "<group>"; };
 		F12706313D16BE8A00F0258A /* Pods-PingPangWang.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PingPangWang.release.xcconfig"; path = "Pods/Target Support Files/Pods-PingPangWang/Pods-PingPangWang.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -821,8 +845,12 @@
 				E85FDE7120D63AF7005B11B8 /* PP_GradeHomeVC.xib */,
 				E858EF9120CD332100B0E568 /* PP_GradeVenueApplyVC.swift */,
 				E858EF9220CD332100B0E568 /* PP_GradeVenueApplyVC.xib */,
+				E8881E0120F4F678000E06E5 /* PP_VenueDetailVC.swift */,
+				E8881E0220F4F679000E06E5 /* PP_VenueDetailVC.xib */,
 				E851C0F020D77F5D002F9D82 /* PP_AuditorApplyVC.swift */,
 				E851C0F120D77F5D002F9D82 /* PP_AuditorApplyVC.xib */,
+				E8FAF4B320F651A2006C552A /* PP_AuditorDetailVC.swift */,
+				E8FAF4B420F651A3006C552A /* PP_AuditorDetailVC.xib */,
 				E85C6B3E20D8F6410013CEC4 /* PP_ExamApplyVC.swift */,
 				E85C6B3F20D8F6410013CEC4 /* PP_ExamApplyVC.xib */,
 				E8D8920D20D007A5008A4C5F /* PP_VenueModel.swift */,
@@ -949,6 +977,7 @@
 		E87575461E4C561700BFDCB7 /* Business */ = {
 			isa = PBXGroup;
 			children = (
+				E8E85B2B20F3974200A628AA /* Admin */,
 				E8DD760720DE64B300588094 /* Me */,
 				E856F3EF20CE949000A2E054 /* Common */,
 				E858EF9020CD327D00B0E568 /* Grade */,
@@ -1124,6 +1153,21 @@
 			path = Me;
 			sourceTree = "<group>";
 		};
+		E8E85B2B20F3974200A628AA /* Admin */ = {
+			isa = PBXGroup;
+			children = (
+				E8E85B2C20F3975300A628AA /* PP_AdminVC.swift */,
+				E8E85B2D20F3975300A628AA /* PP_AdminVC.xib */,
+				E8E85B3120F398F800A628AA /* PP_CheckVenueListVC.swift */,
+				E8E85B3020F398F800A628AA /* PP_CheckVenueListVC.xib */,
+				E83FD1E020F3A5DC00DD1DDC /* PP_CheckAuditorListVC.swift */,
+				E83FD1E120F3A5DC00DD1DDC /* PP_CheckAuditorListVC.xib */,
+				E83FD1E420F3A90900DD1DDC /* PP_CheckExamListVC.swift */,
+				E83FD1E520F3A90900DD1DDC /* PP_CheckExamListVC.xib */,
+			);
+			path = Admin;
+			sourceTree = "<group>";
+		};
 		E8EA5FC51EA7588400C3CE52 /* StringValidate */ = {
 			isa = PBXGroup;
 			children = (
@@ -1240,6 +1284,7 @@
 				E85FDEA020D6407F005B11B8 /* Cities.json in Resources */,
 				E84514F41D80480800D57CE3 /* Info.plist in Resources */,
 				E8F3F48820D90D7600DEF0E4 /* PP_AuditorSelectVC.xib in Resources */,
+				E8E85B3220F398F900A628AA /* PP_CheckVenueListVC.xib in Resources */,
 				E8B43CB7209C797D0085DB2A /* PP_ContentTextCell.xib in Resources */,
 				E839EF261E7B936B006C78B7 /* clip.png in Resources */,
 				E82E42FA1E5A8C4C00679FAE /* DemoStudyVC.xib in Resources */,
@@ -1263,7 +1308,9 @@
 				E82AC5CD1E63AEA900621A3A /* ReadMe.rtf in Resources */,
 				E839EF2A1E7B936B006C78B7 /* cloud.png in Resources */,
 				E839EF291E7B936B006C78B7 /* clip_light@2x.png in Resources */,
+				E8E85B2F20F3975300A628AA /* PP_AdminVC.xib in Resources */,
 				E809255A20E0FA450065C411 /* PP_AuditorListVC.xib in Resources */,
+				E83FD1E320F3A5DC00DD1DDC /* PP_CheckAuditorListVC.xib in Resources */,
 				E839EF221E7B936B006C78B7 /* bulb.png in Resources */,
 				E809255E20E12FBD0065C411 /* PP_ExamListVC.xib in Resources */,
 				E8C477C01E8D004200543846 /* 5.jpg in Resources */,
@@ -1302,10 +1349,12 @@
 				E809256220E136150065C411 /* PP_ExamListCell.xib in Resources */,
 				E839EF4B1E7BC04C006C78B7 /* ImageVC.xib in Resources */,
 				E839EF251E7B936B006C78B7 /* bulb_light@2x.png in Resources */,
+				E8FAF4B620F651A4006C552A /* PP_AuditorDetailVC.xib in Resources */,
 				E858EF9720CD397C00B0E568 /* EE_ImageCell.xib in Resources */,
 				E8C477B01E8CDB4500543846 /* SegmentVC.xib in Resources */,
 				E84D4785209DF96D00117138 /* dz_posts_manage_btn@2x.png in Resources */,
 				E839EF231E7B936B006C78B7 /* bulb@2x.png in Resources */,
+				E83FD1E720F3A90900DD1DDC /* PP_CheckExamListVC.xib in Resources */,
 				E856F3F720CEB95500A2E054 /* EE_AddCell.xib in Resources */,
 				E85FDE7320D63AF7005B11B8 /* PP_GradeHomeVC.xib in Resources */,
 				E8470AD31EBDC3F400D86916 /* LocationVC.xib in Resources */,
@@ -1319,6 +1368,7 @@
 				E839EF411E7B951A006C78B7 /* tab_home@2x.png in Resources */,
 				E858EF9420CD332100B0E568 /* PP_GradeVenueApplyVC.xib in Resources */,
 				E82CBEDC1E76BF7100DEF744 /* NetWorkingVC.xib in Resources */,
+				E8881E0420F4F67A000E06E5 /* PP_VenueDetailVC.xib in Resources */,
 				E85C6B3D20D8D6DB0013CEC4 /* PP_VenueListCell.xib in Resources */,
 				E8EA5FD21EA758FD00C3CE52 /* StringValidateVC.xib in Resources */,
 			);
@@ -1439,6 +1489,7 @@
 				E8D9903A1E5333F000AFB8F5 /* CMAppDefine.swift in Sources */,
 				E851C0F820D7F284002F9D82 /* PP_VenueSelectVC.swift in Sources */,
 				E85FDE9A20D6407F005B11B8 /* FMDatabaseQueue.m in Sources */,
+				E83FD1E620F3A90900DD1DDC /* PP_CheckExamListVC.swift in Sources */,
 				E8B43CB6209C797D0085DB2A /* PP_ContentTextCell.swift in Sources */,
 				E875756D1E4C646A00BFDCB7 /* DemoBusinessVC.swift in Sources */,
 				E839EF4A1E7BC04C006C78B7 /* ImageVC.swift in Sources */,
@@ -1452,6 +1503,7 @@
 				E82CCEA91EB31EB200A3E379 /* CMRequest.swift in Sources */,
 				E831217920DA9F7000A1B307 /* PP_ExamineeModel.swift in Sources */,
 				E8F9D7E01EBEF9360005C5E8 /* main.swift in Sources */,
+				E83FD1E220F3A5DC00DD1DDC /* PP_CheckAuditorListVC.swift in Sources */,
 				E8D8920A20CFE99C008A4C5F /* PP_GradeService.swift in Sources */,
 				37679FFD1E9C6C0B00FE0D49 /* CMUIImageUtils.swift in Sources */,
 				E809255920E0FA450065C411 /* PP_AuditorListVC.swift in Sources */,
@@ -1474,6 +1526,7 @@
 				783CEC4D208043D1008AB8BD /* ForumService.swift in Sources */,
 				E8A19F1D1EBF346C0054C4FD /* CMDateUtils.swift in Sources */,
 				E82CCE9D1EB1DD5300A3E379 /* ShareVC.swift in Sources */,
+				E8FAF4B520F651A4006C552A /* PP_AuditorDetailVC.swift in Sources */,
 				E8470ACA1EBDC14700D86916 /* CMLocationManager.swift in Sources */,
 				E839EF501E7BC91B006C78B7 /* ImageCell.swift in Sources */,
 				E87575501E4C566700BFDCB7 /* CMRootNavigation.swift in Sources */,
@@ -1482,6 +1535,7 @@
 				E8F3F48B20D90EFB00DEF0E4 /* PP_AuditorListCell.swift in Sources */,
 				E8470AC71EBDB42C00D86916 /* CMNetWorkManager.swift in Sources */,
 				E82CCEAC1EB31EB200A3E379 /* CMWebVC.swift in Sources */,
+				E8E85B2E20F3975300A628AA /* PP_AdminVC.swift in Sources */,
 				E839EF131E7B9332006C78B7 /* SMSegmentView.swift in Sources */,
 				E8CCA8C82080DEC300D72E5E /* PP_TopicVC.swift in Sources */,
 				E82CCE8B1EB038BC00A3E379 /* WXApiManager.swift in Sources */,
@@ -1492,8 +1546,10 @@
 				E82B2B451EAEF7FB0078F9EF /* LoginVC.swift in Sources */,
 				E8D8920C20CFE9D3008A4C5F /* PP_BaseService.swift in Sources */,
 				E82CBED81E76BF7100DEF744 /* BookModel.swift in Sources */,
+				E8881E0320F4F67A000E06E5 /* PP_VenueDetailVC.swift in Sources */,
 				E809255120E0DB2F0065C411 /* PP_VenueListVC.swift in Sources */,
 				E85FDE9920D6407F005B11B8 /* AddressTableViewCell.m in Sources */,
+				E8E85B3320F398F900A628AA /* PP_CheckVenueListVC.swift in Sources */,
 				E82CCEAB1EB31EB200A3E379 /* CMShareManager.swift in Sources */,
 				E809256120E136150065C411 /* PP_ExamListCell.swift in Sources */,
 				E8470AD21EBDC3F400D86916 /* LocationVC.swift in Sources */,

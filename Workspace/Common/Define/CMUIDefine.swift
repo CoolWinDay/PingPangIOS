@@ -28,6 +28,9 @@ extension UIColor {
     class func ColorBgNormal() -> UIColor {
         return UIColor.white
     }
+    class func ColorBgGray() -> UIColor {
+        return self.hexColor(hexInteger: 0xbbbbbb)
+    }
     
     // text
     class func ColorTextTheme() -> UIColor {

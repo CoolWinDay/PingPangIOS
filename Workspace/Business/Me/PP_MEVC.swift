@@ -20,6 +20,7 @@ class PP_MEVC: CMBaseVC {
     @IBOutlet weak var gradeView: UIView!
     @IBOutlet weak var auditorView: UIView!
     @IBOutlet weak var venueView: UIView!
+    @IBOutlet weak var adminView: UIView!
     
     deinit {
         NotificationCenter.default.removeObserver(self)
@@ -43,16 +44,25 @@ class PP_MEVC: CMBaseVC {
         venueView.tapAction { (view) in
             cmPushViewController("PP_VenueListVC")
         }
+        
+        adminView.tapAction { (view) in
+            cmPushViewController("PP_AdminVC")
+        }
     }
     
     func refreshView() {
         let model = PP_UserModel.modelWithCache()
+        
         if let model = model {
             self.infoView.isHidden = false
             self.loginView.isHidden = true
             self.nameView.text = model.userName
             self.titleView.text = model.userTitle
             self.avartaView.kf.setImage(with: URL(string: model.avatar))
+            
+            let isAdmin = model.isAdminUser()
+            self.adminView.isHidden = !isAdmin
+            
         }
         else {
             self.infoView.isHidden = true

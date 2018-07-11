@@ -18,9 +18,9 @@ class PP_VenueModel: CMJsonModel {
     var county = ""
     var address = ""
     var introduce = ""
+    var state = -1
     var venueImages: [UIImage] = []
     var AuthenticImages: [UIImage] = []
-    
     
     var venueImage: [PP_ImageModel] = []
 }

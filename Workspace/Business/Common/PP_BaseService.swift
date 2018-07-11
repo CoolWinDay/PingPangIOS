@@ -10,9 +10,9 @@ import UIKit
 
 class PP_BaseService: NSObject {
     static let ppServer = "http://www.pingpangwang.com"
-    static let gradeServer = "http://47.93.36.103:8888"   // 线上
+//    static let gradeServer = "http://47.93.36.103:8888"   // 线上
 //    static let gradeServer = "http://10.0.0.21:8888"
-//    static let gradeServer = "http://127.0.0.1:8888"
+    static let gradeServer = "http://127.0.0.1:8888"
     
     static let imageMaxSize = 307200
 }

@@ -1,47 +1,41 @@
 //
-//  PP_AuditorListVC.swift
+//  PP_CheckExamListVC.swift
 //  PingPangWang
 //
-//  Created by 李鹏 on 2018/6/25.
+//  Created by 李鹏 on 2018/7/9.
 //  Copyright © 2018年 com.jsinda. All rights reserved.
 //
 
 import UIKit
 
-class PP_AuditorListVC: CMBaseVC {
-
-    let CellRI = "PP_AuditorListCell"
+class PP_CheckExamListVC: CMBaseVC {
+    
+    let CellRI = "PP_ExamListCell"
     
     @IBOutlet weak var tableView: UITableView!
     
-    var dataList: [PP_AuditorModel?] = []
-    
+    var dataList: [PP_ExamModel?] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "我的考官"
+        self.title = "我的考级"
         
         self.tableView.tableFooterView = UIView()
         self.tableView.register(UINib(nibName: CellRI, bundle: Bundle.main), forCellReuseIdentifier: CellRI)
         
-        self.loadData()
-    }
-    
-    func loadData() {
-//        PP_GradeService.myExamList { (list) in
-//            let a = list?.count
-//        }
-        
-        PP_GradeService.myAuditorList { (auditorList) in
-            if let list = auditorList {
+        PP_GradeService.myExamList { (examList) in
+            if let list = examList {
                 self.dataList = list
                 self.tableView.reloadData()
             }
         }
     }
+
 }
 
-extension PP_AuditorListVC: UITableViewDataSource, UITableViewDelegate {
+
+extension PP_CheckExamListVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataList.count
     }
@@ -51,7 +45,7 @@ extension PP_AuditorListVC: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: CellRI) as! PP_AuditorListCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: CellRI) as! PP_ExamListCell
         if let model = dataList[indexPath.row] {
             cell.cellWithData(model)
         }
@@ -60,8 +54,8 @@ extension PP_AuditorListVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let model = dataList[indexPath.row] {
-            let vc = PP_AuditorDetailVC()
-            vc.auditorModel = model
+            let vc = PP_ExamApplyVC()
+            vc.examModel = model
             cmPushViewController(vc)
         }
     }

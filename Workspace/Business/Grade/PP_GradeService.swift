@@ -190,6 +190,30 @@ class PP_GradeService: PP_BaseService {
         })
     }
     
+    class func uncheckVenueList(_ block: @escaping ([PP_VenueModel?]?) -> ()) {
+        let url = "/grade/venue/unchecklist"
+        let token = PP_UserModel.userToken()
+        let parameters: Parameters = ["token": token]
+        
+        Alamofire.request(gradeServer+url, parameters: parameters).responseData(completionHandler: { (handler) in
+            guard let value = handler.result.value else {
+                block(nil)
+                return
+            }
+            let json = JSON(data: value)
+            print(json)
+            
+            let errCode = json["errorCode"].string
+            if errCode == "00000000" {
+                let list = [PP_VenueModel].deserialize(from: json.rawString(), designatedPath: "data")
+                block(list)
+            }
+            else {
+                block(nil)
+            }
+        })
+    }
+    
     class func myVenueList(_ block: @escaping ([PP_VenueModel?]?) -> ()) {
         let url = "/grade/venue/myvenue"
         let token = PP_UserModel.userToken()
@@ -218,6 +242,30 @@ class PP_GradeService: PP_BaseService {
         let url = "/grade/auditor/list"
         let token = PP_UserModel.userToken()
         let parameters: Parameters = ["venueid": venueid, "token": token]
+        
+        Alamofire.request(gradeServer+url, parameters: parameters).responseData(completionHandler: { (handler) in
+            guard let value = handler.result.value else {
+                block(nil)
+                return
+            }
+            let json = JSON(data: value)
+            print(json)
+            
+            let errCode = json["errorCode"].string
+            if errCode == "00000000" {
+                let list = [PP_AuditorModel].deserialize(from: json.rawString(), designatedPath: "data")
+                block(list)
+            }
+            else {
+                block(nil)
+            }
+        })
+    }
+    
+    class func uncheckAuditorList(_ block: @escaping ([PP_AuditorModel?]?) -> ()) {
+        let url = "/grade/auditor/unchecklist"
+        let token = PP_UserModel.userToken()
+        let parameters: Parameters = ["token": token]
         
         Alamofire.request(gradeServer+url, parameters: parameters).responseData(completionHandler: { (handler) in
             guard let value = handler.result.value else {

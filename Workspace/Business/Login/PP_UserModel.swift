@@ -16,11 +16,28 @@ class PP_UserModel: CMJsonModel {
     var userName = ""
     var avatar = ""
     var userTitle = ""
+    var groupid = ""
     
     func save2Cache() {
         let jsonStr = self.toJSONString()
         UserDefaults.setUserDefaultsString(jsonStr, forKey: UserDefaults.UDK_UserModel)
     }
+    
+    func isAdminUser() -> Bool {
+        if let gid = Int(groupid) {
+            return gid <= 2
+        }
+        return false
+    }
+    
+//    class func isAdminUser() -> Bool {
+//        if let model = modelWithCache() {
+//            if let gid = Int(model.groupid) {
+//                return gid <= 2
+//            }
+//        }
+//        return false
+//    }
     
     class func removeLoginCache() {
         UserDefaults.setUserDefaultsString("", forKey: UserDefaults.UDK_UserModel)
