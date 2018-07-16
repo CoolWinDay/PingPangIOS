@@ -54,7 +54,7 @@
                         <constraint firstAttribute="height" constant="44" id="7Zd-vO-lOj"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <state key="normal" title="提交">
+                    <state key="normal" title="未审核">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
