@@ -13,8 +13,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PP_AdminVC" customModule="PingPangWang" customModuleProvider="target">
             <connections>
                 <outlet property="auditorView" destination="fdP-Cx-qNX" id="AnV-ZP-Bad"/>
-                <outlet property="examView" destination="drA-kj-D9Y" id="7TK-A6-UWJ"/>
-                <outlet property="venueView" destination="XMG-cK-XCw" id="i3f-hm-hv3"/>
+                <outlet property="examView" destination="XMG-cK-XCw" id="lSn-lV-3ZT"/>
+                <outlet property="venueView" destination="drA-kj-D9Y" id="DRm-hy-TEZ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -49,7 +49,7 @@
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
-                            <state key="normal" title="考场审核" image="type_icon">
+                            <state key="normal" title="考试审核" image="type_icon">
                                 <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                         </button>
@@ -139,7 +139,7 @@
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
-                            <state key="normal" title="考试审核" image="type_icon">
+                            <state key="normal" title="考场审核" image="type_icon">
                                 <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                         </button>

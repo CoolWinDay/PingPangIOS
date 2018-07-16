@@ -14,7 +14,7 @@ class PP_ExamModel: CMJsonModel {
     var venue_id = ""
     var auditor_id = ""
     var examinee_id = ""
-    var exam_grade = ""
+    var exam_grade = "0"
     var exam_time = ""
     var examinee: PP_ExamineeModel?
     var venue: PP_VenueModel?
