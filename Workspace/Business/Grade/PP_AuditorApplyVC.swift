@@ -11,8 +11,6 @@ import TZImagePickerController
 import MWPhotoBrowser
 
 class PP_AuditorApplyVC: CMBaseVC {
-    
-    var auditorModel: PP_AuditorModel?
 
     let cellIdentifier0 = "EE_ImageCell"
     let cellIdentifier1 = "EE_AddCell"
@@ -40,7 +38,7 @@ class PP_AuditorApplyVC: CMBaseVC {
     @IBOutlet weak var locationView: ChooseLocationView!
     
     var avatarImage: UIImage?
-    var imageArray: [UIImage] = []
+    var imageArray: [PP_ImageModel] = []
     var venue_id = ""
     
     override func viewDidLoad() {
@@ -85,35 +83,6 @@ class PP_AuditorApplyVC: CMBaseVC {
                 self.nevueView.text = model.name
             }
             cmPushViewController(vc)
-        }
-        
-        if let model = auditorModel {
-            onlyReadView(model: model)
-        }
-    }
-    
-    func onlyReadView(model: PP_AuditorModel) {
-        self.title = "考官详情"
-        
-        self.nameView.text = model.name
-        self.sex0View.isSelected = sex0View.titleLabel!.text == model.sex
-        self.sex1View.isSelected = sex1View.titleLabel!.text == model.sex
-        self.ageView.text = model.age
-        self.phoneView.text = model.phone
-        self.idcardView.text = model.idcard
-//        self.cityView.text = model.city
-        self.introduceText.text = model.introduce
-        self.imageArray = model.certificateImages
-        if let avatarImage = model.avatarImage {
-            self.avatarView?.kf.setImage(with: URL(string: avatarImage.imageUrl), for: .normal)
-        }
-        
-        let coverView = UIView()
-        self.view.addSubview(coverView)
-        coverView.backgroundColor = UIColor.black
-        coverView.alpha = 0.1
-        coverView.snp.makeConstraints { (maker) in
-            maker.top.bottom.left.right.equalToSuperview()
         }
     }
     
@@ -192,7 +161,7 @@ class PP_AuditorApplyVC: CMBaseVC {
         model.idcard = idcard
         model.introduce = introduce
         model.venueid = venue_id
-        model.certificateImages = self.imageArray
+        model.certificateImage = self.imageArray
         let imageModel = PP_ImageModel()
         imageModel.image = avatarImage
         model.avatarImage = imageModel
@@ -226,7 +195,7 @@ extension PP_AuditorApplyVC: UICollectionViewDataSource, UICollectionViewDelegat
         }
         else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier0, for: indexPath) as! EE_ImageCell
-            cell.imageView.image = self.imageArray[indexPath.row]
+            cell.imageView.image = self.imageArray[indexPath.row].image
             cell.enableDelete(true)
             cell.delBlock = {
                 self.imageArray.remove(at: indexPath.row)
@@ -307,7 +276,11 @@ extension PP_AuditorApplyVC: TZImagePickerControllerDelegate {
             }
         }
         else {
-            self.imageArray.append(contentsOf: photos)
+            for image in photos {
+                let model = PP_ImageModel()
+                model.image = image
+                self.imageArray.append(model)
+            }
             self.collectionView.reloadData()
         }
     }
@@ -319,7 +292,7 @@ extension PP_AuditorApplyVC: MWPhotoBrowserDelegate {
     }
     
     func photoBrowser(_ photoBrowser: MWPhotoBrowser!, photoAt index: UInt) -> MWPhotoProtocol! {
-        let image = self.imageArray[Int(index)]
-        return MWPhoto(image: image)
+        let model = self.imageArray[Int(index)]
+        return MWPhoto(image: model.image)
     }
 }

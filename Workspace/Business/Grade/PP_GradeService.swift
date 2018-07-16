@@ -64,8 +64,8 @@ class PP_GradeService: PP_BaseService {
         let url = "/grade/auditor/insert"
         Alamofire.upload(multipartFormData: { (mData) in
             let timeInt = Date().timeIntervalSince1970
-            for (index, image) in model.certificateImages.enumerated() {
-                if let imgData = image.compress(toSize: imageMaxSize) {
+            for (index, model) in model.certificateImage.enumerated() {
+                if let imgData = model.image!.compress(toSize: imageMaxSize) {
                     mData.append(imgData, withName: "certificate", fileName: "\(timeInt)_\(index).jpg", mimeType: "image/jpeg")
                 }
             }

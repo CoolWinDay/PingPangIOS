@@ -52,6 +52,10 @@ extension PP_CheckAuditorListVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let model = dataList[indexPath.row] {
+            let vc = PP_AuditorDetailVC()
+            vc.auditorModel = model
+            vc.isCheck = true
+            cmPushViewController(vc)
         }
     }
 }

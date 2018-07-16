@@ -19,7 +19,9 @@ class PP_AuditorModel: CMJsonModel {
     var introduce = ""
     var venueid = ""
     var avatarImage: PP_ImageModel?
-    var certificateImages: [UIImage] = []
+    var certificateImage: [PP_ImageModel] = []
+    var venue: PP_VenueModel?
+    
     
 //    func mapping(mapper: HelpingMapper) {
 //        mapper >>> self.avatarImage

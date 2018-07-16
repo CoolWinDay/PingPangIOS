@@ -16,17 +16,14 @@
                 <outlet property="avatarView" destination="dOT-5V-nAe" id="2R2-Yu-RdE"/>
                 <outlet property="cityView" destination="qic-hm-EBF" id="r8K-7I-rfd"/>
                 <outlet property="collectionView" destination="Fiu-b6-Fuv" id="VSL-If-X28"/>
-                <outlet property="coverView" destination="tCd-NU-TQf" id="Qqf-HW-KLT"/>
                 <outlet property="headView" destination="m3I-ch-89c" id="CtC-kB-nur"/>
                 <outlet property="idcardView" destination="aes-pN-Sbd" id="Q6x-M3-QqT"/>
                 <outlet property="introduceText" destination="mzx-jE-OhJ" id="TbW-4L-fVd"/>
-                <outlet property="locationView" destination="4aq-xG-dmF" id="pKX-rx-xNe"/>
                 <outlet property="nameView" destination="cyd-R0-mHF" id="DLH-B3-8Mn"/>
-                <outlet property="nevueView" destination="0pn-bC-cC9" id="CeC-8L-hh8"/>
                 <outlet property="phoneView" destination="Yic-m2-P0w" id="kHw-Ib-QQO"/>
-                <outlet property="sex0View" destination="dAV-91-Dw8" id="VE6-UA-nsQ"/>
-                <outlet property="sex1View" destination="GU6-sQ-RyH" id="6gd-XH-Sd1"/>
+                <outlet property="sexView" destination="ZfT-A1-cxV" id="YgY-G6-efB"/>
                 <outlet property="submitView" destination="83T-3H-Kiz" id="gGn-OY-LPb"/>
+                <outlet property="vevueView" destination="0pn-bC-cC9" id="j8t-tO-rFD"/>
                 <outlet property="view" destination="RC5-8A-ne5" id="1wx-kg-xzk"/>
             </connections>
         </placeholder>
@@ -55,45 +52,22 @@
                         <constraint firstAttribute="height" constant="44" id="W59-32-bJT"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <state key="normal" title="提交">
+                    <state key="normal" title="未审核">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
                         <action selector="doSubmit" destination="-1" eventType="touchUpInside" id="GMT-3G-LRM"/>
                     </connections>
                 </button>
-                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tCd-NU-TQf">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                    <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4aq-xG-dmF" customClass="ChooseLocationView">
-                            <rect key="frame" x="0.0" y="317" width="375" height="350"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="350" id="IA9-Zz-B6X"/>
-                            </constraints>
-                        </view>
-                    </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="0.30457416370000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="trailing" secondItem="4aq-xG-dmF" secondAttribute="trailing" id="EUb-l4-vtj"/>
-                        <constraint firstAttribute="bottom" secondItem="4aq-xG-dmF" secondAttribute="bottom" id="cWM-Tm-NPu"/>
-                        <constraint firstItem="4aq-xG-dmF" firstAttribute="leading" secondItem="tCd-NU-TQf" secondAttribute="leading" id="lfB-Tf-1vF"/>
-                    </constraints>
-                    <viewLayoutGuide key="safeArea" id="SQg-7F-DSb"/>
-                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="Fiu-b6-Fuv" firstAttribute="top" secondItem="pcc-zi-nFz" secondAttribute="top" id="126-hB-m1R"/>
-                <constraint firstItem="tCd-NU-TQf" firstAttribute="top" secondItem="RC5-8A-ne5" secondAttribute="top" id="5he-cN-kTr"/>
                 <constraint firstItem="Fiu-b6-Fuv" firstAttribute="leading" secondItem="pcc-zi-nFz" secondAttribute="leading" id="Byx-Re-KlK"/>
-                <constraint firstItem="tCd-NU-TQf" firstAttribute="bottom" secondItem="pcc-zi-nFz" secondAttribute="bottom" id="IH1-cX-ev3"/>
                 <constraint firstItem="pcc-zi-nFz" firstAttribute="bottom" secondItem="83T-3H-Kiz" secondAttribute="bottom" constant="12" id="MBu-re-a0F"/>
-                <constraint firstItem="tCd-NU-TQf" firstAttribute="trailing" secondItem="pcc-zi-nFz" secondAttribute="trailing" id="SAp-ca-Yc0"/>
                 <constraint firstItem="pcc-zi-nFz" firstAttribute="trailing" secondItem="83T-3H-Kiz" secondAttribute="trailing" constant="10" id="TKJ-0q-haD"/>
                 <constraint firstItem="83T-3H-Kiz" firstAttribute="top" secondItem="Fiu-b6-Fuv" secondAttribute="bottom" constant="10" id="WKA-5F-HFg"/>
                 <constraint firstItem="83T-3H-Kiz" firstAttribute="leading" secondItem="pcc-zi-nFz" secondAttribute="leading" constant="10" id="bq9-7R-E23"/>
-                <constraint firstItem="tCd-NU-TQf" firstAttribute="leading" secondItem="pcc-zi-nFz" secondAttribute="leading" id="kbm-5V-0gc"/>
                 <constraint firstItem="Fiu-b6-Fuv" firstAttribute="trailing" secondItem="pcc-zi-nFz" secondAttribute="trailing" id="ouW-oJ-xq9"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="pcc-zi-nFz"/>
@@ -153,47 +127,12 @@
                                     <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FcF-kX-HBB">
-                                    <rect key="frame" x="59" y="6.5" width="99" height="37"/>
-                                    <subviews>
-                                        <button opaque="NO" tag="101" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dAV-91-Dw8">
-                                            <rect key="frame" x="0.0" y="-0.5" width="42" height="37"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="15" maxY="10"/>
-                                            <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="-5" maxY="0.0"/>
-                                            <state key="normal" title="男" image="radio_uncheck">
-                                                <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
-                                            </state>
-                                            <state key="selected" image="radio_check"/>
-                                            <connections>
-                                                <action selector="sexRadioButtonWithButton:" destination="-1" eventType="touchUpInside" id="VpC-P1-Ctg"/>
-                                            </connections>
-                                        </button>
-                                        <button opaque="NO" tag="102" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GU6-sQ-RyH">
-                                            <rect key="frame" x="57" y="0.0" width="42" height="37"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="15" maxY="10"/>
-                                            <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="-5" maxY="0.0"/>
-                                            <state key="normal" title="女" image="radio_uncheck">
-                                                <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
-                                            </state>
-                                            <state key="selected" image="radio_check"/>
-                                            <connections>
-                                                <action selector="sexRadioButtonWithButton:" destination="-1" eventType="touchUpInside" id="jdM-fr-Qf5"/>
-                                            </connections>
-                                        </button>
-                                    </subviews>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <constraints>
-                                        <constraint firstItem="dAV-91-Dw8" firstAttribute="top" secondItem="FcF-kX-HBB" secondAttribute="top" id="5ZV-Ki-yxe"/>
-                                        <constraint firstAttribute="bottom" secondItem="GU6-sQ-RyH" secondAttribute="bottom" id="I6h-JR-17I"/>
-                                        <constraint firstItem="GU6-sQ-RyH" firstAttribute="leading" secondItem="dAV-91-Dw8" secondAttribute="trailing" constant="15" id="Lwp-gK-Svb"/>
-                                        <constraint firstAttribute="trailing" secondItem="GU6-sQ-RyH" secondAttribute="trailing" id="Rix-Gs-gHX"/>
-                                        <constraint firstAttribute="bottom" secondItem="dAV-91-Dw8" secondAttribute="bottom" id="We5-nQ-WtC"/>
-                                        <constraint firstItem="dAV-91-Dw8" firstAttribute="leading" secondItem="FcF-kX-HBB" secondAttribute="leading" id="YtN-Le-AmY"/>
-                                        <constraint firstItem="GU6-sQ-RyH" firstAttribute="top" secondItem="FcF-kX-HBB" secondAttribute="top" id="fSe-Cv-yyx"/>
-                                    </constraints>
-                                </view>
+                                <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ZfT-A1-cxV">
+                                    <rect key="frame" x="59" y="0.0" width="151" height="50"/>
+                                    <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kt4-v9-gMa" userLabel="Line">
                                     <rect key="frame" x="0.0" y="49.5" width="225" height="0.5"/>
                                     <color key="backgroundColor" red="0.86666666670000003" green="0.86666666670000003" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -204,13 +143,15 @@
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
+                                <constraint firstAttribute="trailing" secondItem="ZfT-A1-cxV" secondAttribute="trailing" constant="15" id="3cF-rb-Ze3"/>
                                 <constraint firstAttribute="height" constant="50" id="4Tk-r6-dbj"/>
                                 <constraint firstItem="Qgs-pU-Vn8" firstAttribute="leading" secondItem="Syk-dH-FpM" secondAttribute="leading" constant="15" id="9Pg-EE-Ruz"/>
+                                <constraint firstAttribute="bottom" secondItem="ZfT-A1-cxV" secondAttribute="bottom" id="D8b-XJ-VQR"/>
+                                <constraint firstItem="ZfT-A1-cxV" firstAttribute="leading" secondItem="Qgs-pU-Vn8" secondAttribute="trailing" constant="15" id="Fye-xe-1y1"/>
+                                <constraint firstItem="ZfT-A1-cxV" firstAttribute="top" secondItem="Syk-dH-FpM" secondAttribute="top" id="ImH-dY-X0g"/>
                                 <constraint firstItem="Qgs-pU-Vn8" firstAttribute="centerY" secondItem="Syk-dH-FpM" secondAttribute="centerY" id="J65-I9-983"/>
                                 <constraint firstAttribute="trailing" secondItem="kt4-v9-gMa" secondAttribute="trailing" id="NhR-8y-1Qs"/>
                                 <constraint firstItem="kt4-v9-gMa" firstAttribute="leading" secondItem="Syk-dH-FpM" secondAttribute="leading" id="PFD-tM-jsv"/>
-                                <constraint firstItem="FcF-kX-HBB" firstAttribute="centerY" secondItem="Syk-dH-FpM" secondAttribute="centerY" id="TLq-Mg-tH2"/>
-                                <constraint firstItem="FcF-kX-HBB" firstAttribute="leading" secondItem="Qgs-pU-Vn8" secondAttribute="trailing" constant="15" id="eVZ-fW-rLd"/>
                                 <constraint firstAttribute="bottom" secondItem="kt4-v9-gMa" secondAttribute="bottom" id="riR-HR-yRw"/>
                             </constraints>
                         </view>
@@ -418,7 +359,7 @@
                                     <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="qic-hm-EBF">
+                                <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qic-hm-EBF">
                                     <rect key="frame" x="87.5" y="0.0" width="272.5" height="50"/>
                                     <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -455,7 +396,7 @@
                                     <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="0pn-bC-cC9">
+                                <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0pn-bC-cC9">
                                     <rect key="frame" x="87.5" y="0.0" width="272.5" height="50"/>
                                     <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -500,9 +441,6 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <inset key="imageEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                     <state key="normal" image="img_add"/>
-                    <connections>
-                        <action selector="selAvatar" destination="-1" eventType="touchUpInside" id="nXh-NQ-2go"/>
-                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请上相关证书" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kyd-DJ-WWF">
                     <rect key="frame" x="15" y="500" width="345" height="30"/>
@@ -541,7 +479,5 @@
     </objects>
     <resources>
         <image name="img_add" width="60" height="60"/>
-        <image name="radio_check" width="12" height="12"/>
-        <image name="radio_uncheck" width="12" height="12"/>
     </resources>
 </document>

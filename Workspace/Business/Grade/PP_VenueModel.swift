@@ -23,4 +23,8 @@ class PP_VenueModel: CMJsonModel {
     var AuthenticImages: [UIImage] = []
     
     var venueImage: [PP_ImageModel] = []
+    
+    func fullName() -> String {
+        return "\(province),\(city),\(county)"
+    }
 }
