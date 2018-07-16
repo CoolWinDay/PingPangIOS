@@ -69,15 +69,20 @@ class PP_VenueDetailVC: CMBaseVC {
     
     @IBAction
     func doSubmit() {
-//        PP_GradeService.buildVenue(model) { (response) in
-//            if response.isSuccess() {
-//                cmShowToast("提交成功")
-//                cmPopViewController()
-//            }
-//            else {
-//                cmShowToast(response.errorInfo)
-//            }
-//        }
+        guard let model = venueModel else {
+            cmShowToast("数据错误")
+            return
+        }
+        
+        PP_GradeService.checkVenue(venueId: model.kid) { (isSuccess) in
+            if isSuccess {
+                cmShowToast("审核成功")
+                cmPopViewController()
+            }
+            else {
+                cmShowToast("审核失败")
+            }
+        }
     }
 }
 
