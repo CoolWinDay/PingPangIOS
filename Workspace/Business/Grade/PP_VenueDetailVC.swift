@@ -76,6 +76,7 @@ class PP_VenueDetailVC: CMBaseVC {
         
         PP_GradeService.checkVenue(venueId: model.kid) { (isSuccess) in
             if isSuccess {
+                NotificationCenter.default.post(name: .kNFCheckedVenue, object: nil)
                 cmShowToast("审核成功")
                 cmPopViewController()
             }

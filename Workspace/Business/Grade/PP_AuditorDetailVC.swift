@@ -76,7 +76,21 @@ class PP_AuditorDetailVC: CMBaseVC {
     
     @IBAction
     func doSubmit() {
+        guard let model = auditorModel else {
+            cmShowToast("数据错误")
+            return
+        }
         
+        PP_GradeService.checkAuditor(kid: model.kid) { (isSuccess) in
+            if isSuccess {
+                NotificationCenter.default.post(name: .kNFCheckedAuditor, object: nil)
+                cmShowToast("审核成功")
+                cmPopViewController()
+            }
+            else {
+                cmShowToast("审核失败")
+            }
+        }
     }
 }
 

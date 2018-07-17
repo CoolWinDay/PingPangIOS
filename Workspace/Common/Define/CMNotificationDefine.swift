@@ -13,4 +13,7 @@ extension NSNotification.Name {
     
     public static let NotificationUserLogin = NSNotification.Name(rawValue:"NotificationUserLogin")
     public static let NotificationUserLogout = NSNotification.Name(rawValue:"NotificationUserLogout")
+    
+    public static let kNFCheckedVenue = NSNotification.Name(rawValue:"kNFCheckedVenue")
+    public static let kNFCheckedAuditor = NSNotification.Name(rawValue:"kNFCheckedAuditor")
 }

@@ -24,6 +24,12 @@ class PP_CheckAuditorListVC: CMBaseVC {
         self.tableView.register(UINib(nibName: CellRI, bundle: Bundle.main), forCellReuseIdentifier: CellRI)
         self.tableView.tableFooterView = UIView()
         
+        self.loadData()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(loadData), name: .kNFCheckedAuditor, object: nil)
+    }
+    
+    func loadData() {
         PP_GradeService.uncheckAuditorList { (auditorList) in
             if let list = auditorList {
                 self.dataList = list

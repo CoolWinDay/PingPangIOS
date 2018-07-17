@@ -351,4 +351,22 @@ class PP_GradeService: PP_BaseService {
             block(errCode == "00000000")
         })
     }
+    
+    class func checkAuditor(kid: String, _ block: @escaping (Bool) -> ()) {
+        let url = "/grade/auditor/docheck"
+        let token = PP_UserModel.userToken()
+        let parameters: Parameters = ["kid": kid, "token": token]
+        
+        Alamofire.request(gradeServer+url, parameters: parameters).responseData(completionHandler: { (handler) in
+            guard let value = handler.result.value else {
+                block(false)
+                return
+            }
+            let json = JSON(data: value)
+            print(json)
+            
+            let errCode = json["errorCode"].string
+            block(errCode == "00000000")
+        })
+    }
 }

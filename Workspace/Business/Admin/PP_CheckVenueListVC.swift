@@ -15,6 +15,10 @@ class PP_CheckVenueListVC: CMBaseVC {
     @IBOutlet weak var tableView: UITableView!
     
     var venueList: [PP_VenueModel?] = []
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +28,12 @@ class PP_CheckVenueListVC: CMBaseVC {
         self.tableView.register(UINib(nibName: CellRI, bundle: Bundle.main), forCellReuseIdentifier: CellRI)
         self.tableView.tableFooterView = UIView()
         
+        self.loadData()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(loadData), name: .kNFCheckedVenue, object: nil)
+    }
+    
+    func loadData() {
         PP_GradeService.uncheckVenueList { (venueList) in
             if let list = venueList {
                 self.venueList = list
