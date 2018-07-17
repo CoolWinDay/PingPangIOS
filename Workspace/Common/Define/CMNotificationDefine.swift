@@ -16,4 +16,5 @@ extension NSNotification.Name {
     
     public static let kNFCheckedVenue = NSNotification.Name(rawValue:"kNFCheckedVenue")
     public static let kNFCheckedAuditor = NSNotification.Name(rawValue:"kNFCheckedAuditor")
+    public static let kNFCheckedExam = NSNotification.Name(rawValue:"kNFCheckedExam")
 }

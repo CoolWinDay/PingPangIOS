@@ -24,14 +24,19 @@ class PP_CheckExamListVC: CMBaseVC {
         self.tableView.tableFooterView = UIView()
         self.tableView.register(UINib(nibName: CellRI, bundle: Bundle.main), forCellReuseIdentifier: CellRI)
         
-        PP_GradeService.myExamList { (examList) in
+        self.loadData()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(loadData), name: .kNFCheckedExam, object: nil)
+    }
+    
+    func loadData() {
+        PP_GradeService.uncheckExamList { (examList) in
             if let list = examList {
                 self.dataList = list
                 self.tableView.reloadData()
             }
         }
     }
-
 }
 
 

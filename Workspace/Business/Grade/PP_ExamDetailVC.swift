@@ -95,7 +95,21 @@ class PP_ExamDetailVC: CMBaseVC {
     
     @IBAction
     func doSubmit() {
+        guard let model = examModel else {
+            cmShowToast("数据错误")
+            return
+        }
         
+        PP_GradeService.checkExam(kid: model.kid) { (isSuccess) in
+            if isSuccess {
+                NotificationCenter.default.post(name: .kNFCheckedExam, object: nil)
+                cmShowToast("审核成功")
+                cmPopViewController()
+            }
+            else {
+                cmShowToast("审核失败")
+            }
+        }
     }
 }
 

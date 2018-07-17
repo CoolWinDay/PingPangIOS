@@ -311,7 +311,7 @@ class PP_GradeService: PP_BaseService {
     }
     
     class func myExamList(_ block: @escaping ([PP_ExamModel?]?) -> ()) {
-        let url = "/grade/auditor/myexam"
+        let url = "/grade/exam/myexam"
         let token = PP_UserModel.userToken()
         let parameters: Parameters = ["token": token]
         
@@ -354,6 +354,48 @@ class PP_GradeService: PP_BaseService {
     
     class func checkAuditor(kid: String, _ block: @escaping (Bool) -> ()) {
         let url = "/grade/auditor/docheck"
+        let token = PP_UserModel.userToken()
+        let parameters: Parameters = ["kid": kid, "token": token]
+        
+        Alamofire.request(gradeServer+url, parameters: parameters).responseData(completionHandler: { (handler) in
+            guard let value = handler.result.value else {
+                block(false)
+                return
+            }
+            let json = JSON(data: value)
+            print(json)
+            
+            let errCode = json["errorCode"].string
+            block(errCode == "00000000")
+        })
+    }
+    
+    class func uncheckExamList(_ block: @escaping ([PP_ExamModel?]?) -> ()) {
+        let url = "/grade/exam/unchecklist"
+        let token = PP_UserModel.userToken()
+        let parameters: Parameters = ["token": token]
+        
+        Alamofire.request(gradeServer+url, parameters: parameters).responseData(completionHandler: { (handler) in
+            guard let value = handler.result.value else {
+                block(nil)
+                return
+            }
+            let json = JSON(data: value)
+            print(json)
+            
+            let errCode = json["errorCode"].string
+            if errCode == "00000000" {
+                let list = [PP_ExamModel].deserialize(from: json.rawString(), designatedPath: "data")
+                block(list)
+            }
+            else {
+                block(nil)
+            }
+        })
+    }
+    
+    class func checkExam(kid: String, _ block: @escaping (Bool) -> ()) {
+        let url = "/grade/exam/docheck"
         let token = PP_UserModel.userToken()
         let parameters: Parameters = ["kid": kid, "token": token]
         
