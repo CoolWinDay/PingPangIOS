@@ -18,6 +18,7 @@ class PP_AuditorListCell: UITableViewCell {
     func cellWithData(_ model: PP_AuditorModel) {
         self.nameView.text = model.name
         self.introduceView.text = model.introduce
+        self.picView.image = UIImage(named: "img_empty")
         
         if let avatarImage = model.avatarImage {
             let imageUrl = avatarImage.imageUrl

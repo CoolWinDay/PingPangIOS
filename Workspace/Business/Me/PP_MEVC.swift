@@ -21,6 +21,7 @@ class PP_MEVC: CMBaseVC {
     @IBOutlet weak var auditorView: UIView!
     @IBOutlet weak var venueView: UIView!
     @IBOutlet weak var adminView: UIView!
+    @IBOutlet weak var logoutView: UIButton!
     
     deinit {
         NotificationCenter.default.removeObserver(self)
@@ -62,7 +63,7 @@ class PP_MEVC: CMBaseVC {
             
             let isAdmin = model.isAdminUser()
             self.adminView.isHidden = !isAdmin
-            
+            self.logoutView.isHidden = false
         }
         else {
             self.infoView.isHidden = true
@@ -70,6 +71,9 @@ class PP_MEVC: CMBaseVC {
             self.nameView.text = ""
             self.titleView.text = ""
             self.avartaView.image = UIImage(named: "head_def")
+            
+            self.adminView.isHidden = true
+            self.logoutView.isHidden = true
         }
     }
     

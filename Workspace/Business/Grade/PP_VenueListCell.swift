@@ -18,6 +18,7 @@ class PP_VenueListCell: UITableViewCell {
     func cellWithData(_ model: PP_VenueModel) {
         self.nameView.text = model.name
         self.introduceView.text = model.introduce
+        self.picView.image = UIImage(named: "img_empty")
         
         if model.venueImage.count > 0 {
             let imageUrl = model.venueImage[0].imageUrl

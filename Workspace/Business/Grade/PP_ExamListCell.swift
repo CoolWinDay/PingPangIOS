@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class PP_ExamListCell: UITableViewCell {
     
@@ -21,11 +22,12 @@ class PP_ExamListCell: UITableViewCell {
         self.venueView.text = model.venue?.name
         self.auditorView.text = model.auditor?.name
         self.gradeView.text = model.exam_grade
+        self.picView.image = UIImage(named: "img_empty")
         
         if let examinee = model.examinee {
             if let avatarImage = examinee.avatarImage {
                 if let url = URL(string: avatarImage.imageUrl) {
-                    self.picView.kf.setImage(with: url)
+                    self.picView.kf.setImage(with: url, placeholder: nil, options: [.transition(ImageTransition.fade(1)), .keepCurrentImageWhileLoading])
                 }
             }
         }

@@ -19,6 +19,7 @@
                 <outlet property="gradeView" destination="KzA-3S-1Hq" id="lKh-uD-0M9"/>
                 <outlet property="infoView" destination="zjz-4u-S6q" id="DnD-Fv-iaR"/>
                 <outlet property="loginView" destination="HOA-aH-s0u" id="ZgW-AR-zny"/>
+                <outlet property="logoutView" destination="6Vz-5e-573" id="07L-B8-k4V"/>
                 <outlet property="nameView" destination="bva-FK-CNY" id="6Rn-3t-h1m"/>
                 <outlet property="titleView" destination="knM-HF-TsC" id="RNH-Cv-NdT"/>
                 <outlet property="venueView" destination="QJg-mQ-Eum" id="Qtb-h7-YKh"/>
@@ -225,7 +226,7 @@
                         <constraint firstItem="faZ-T9-MzQ" firstAttribute="leading" secondItem="QJg-mQ-Eum" secondAttribute="leading" id="qOC-Ks-wTE"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ocj-hc-5g8">
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ocj-hc-5g8">
                     <rect key="frame" x="0.0" y="290" width="375" height="50"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yc5-Xn-aqA">
@@ -270,7 +271,7 @@
                         <constraint firstAttribute="trailing" secondItem="BD3-n0-k7j" secondAttribute="trailing" constant="10" id="vTD-NN-xdh"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Vz-5e-573">
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Vz-5e-573">
                     <rect key="frame" x="15" y="567" width="345" height="50"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
