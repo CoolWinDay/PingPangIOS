@@ -63,6 +63,9 @@ class PP_AuditorDetailVC: CMBaseVC {
             if let avatarImage = model.avatarImage {
                 self.avatarView?.kf.setImage(with: URL(string: avatarImage.imageUrl), for: .normal)
             }
+            
+            let state = model.state == 1 ? "已审核" : "未审核"
+            submitView.setTitle(state, for: .normal)
         }
         
         if isCheck {

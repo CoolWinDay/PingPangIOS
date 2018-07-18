@@ -74,6 +74,9 @@ class PP_ExamDetailVC: CMBaseVC {
             if let intGrade = Int(model.exam_grade), gradePickerData.count > intGrade {
                 self.gradeView.text = gradePickerData[intGrade]
             }
+            
+            let state = model.state == 1 ? "已审核" : "未审核"
+            submitView.setTitle(state, for: .normal)
         }
         
         if isCheck {
