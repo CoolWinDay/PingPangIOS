@@ -13,6 +13,7 @@ class PP_CheckExamListVC: CMBaseVC {
     let CellRI = "PP_ExamListCell"
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var segView: UISegmentedControl!
     
     var dataList: [PP_ExamModel?] = []
 
@@ -30,12 +31,18 @@ class PP_CheckExamListVC: CMBaseVC {
     }
     
     func loadData() {
-        PP_GradeService.uncheckExamList { (examList) in
+        let index = segView.selectedSegmentIndex
+        PP_GradeService.checkExamListWith(state: index) { (examList) in
             if let list = examList {
                 self.dataList = list
                 self.tableView.reloadData()
             }
         }
+    }
+    
+    @IBAction
+    func segChangeValue(sender: UISegmentedControl) {
+        self.loadData()
     }
 }
 
@@ -61,7 +68,7 @@ extension PP_CheckExamListVC: UITableViewDataSource, UITableViewDelegate {
         if let model = dataList[indexPath.row] {
             let vc = PP_ExamDetailVC()
             vc.examModel = model
-            vc.isCheck = true
+            vc.isCheck = model.state == 0
             cmPushViewController(vc)
         }
     }

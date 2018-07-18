@@ -13,6 +13,7 @@ class PP_CheckAuditorListVC: CMBaseVC {
     let CellRI = "PP_AuditorListCell"
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var segView: UISegmentedControl!
 
     var dataList: [PP_AuditorModel?] = []
     
@@ -30,12 +31,18 @@ class PP_CheckAuditorListVC: CMBaseVC {
     }
     
     func loadData() {
-        PP_GradeService.uncheckAuditorList { (auditorList) in
+        let index = segView.selectedSegmentIndex
+        PP_GradeService.auditorListWith(state: index) { (auditorList) in
             if let list = auditorList {
                 self.dataList = list
                 self.tableView.reloadData()
             }
         }
+    }
+    
+    @IBAction
+    func segChangeValue(sender: UISegmentedControl) {
+        self.loadData()
     }
 }
 
@@ -60,7 +67,7 @@ extension PP_CheckAuditorListVC: UITableViewDataSource, UITableViewDelegate {
         if let model = dataList[indexPath.row] {
             let vc = PP_AuditorDetailVC()
             vc.auditorModel = model
-            vc.isCheck = true
+            vc.isCheck = model.state == 0
             cmPushViewController(vc)
         }
     }

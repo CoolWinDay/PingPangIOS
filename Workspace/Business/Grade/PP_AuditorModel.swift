@@ -18,6 +18,7 @@ class PP_AuditorModel: CMJsonModel {
     var idcard = ""
     var introduce = ""
     var venueid = ""
+    var state = -1
     var avatarImage: PP_ImageModel?
     var certificateImage: [PP_ImageModel] = []
     var venue: PP_VenueModel?

@@ -262,10 +262,10 @@ class PP_GradeService: PP_BaseService {
         })
     }
     
-    class func uncheckAuditorList(_ block: @escaping ([PP_AuditorModel?]?) -> ()) {
-        let url = "/grade/auditor/unchecklist"
+    class func auditorListWith(state: Int, _ block: @escaping ([PP_AuditorModel?]?) -> ()) {
+        let url = "/grade/auditor/checkliststate"
         let token = PP_UserModel.userToken()
-        let parameters: Parameters = ["token": token]
+        let parameters: Parameters = ["state": state, "token": token]
         
         Alamofire.request(gradeServer+url, parameters: parameters).responseData(completionHandler: { (handler) in
             guard let value = handler.result.value else {
@@ -370,10 +370,10 @@ class PP_GradeService: PP_BaseService {
         })
     }
     
-    class func uncheckExamList(_ block: @escaping ([PP_ExamModel?]?) -> ()) {
-        let url = "/grade/exam/unchecklist"
+    class func checkExamListWith(state: Int, _ block: @escaping ([PP_ExamModel?]?) -> ()) {
+        let url = "/grade/exam/checkliststate"
         let token = PP_UserModel.userToken()
-        let parameters: Parameters = ["token": token]
+        let parameters: Parameters = ["state": state, "token": token]
         
         Alamofire.request(gradeServer+url, parameters: parameters).responseData(completionHandler: { (handler) in
             guard let value = handler.result.value else {
