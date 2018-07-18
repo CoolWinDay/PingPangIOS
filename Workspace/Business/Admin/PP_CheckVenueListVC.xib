@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PP_CheckVenueListVC">
             <connections>
+                <outlet property="segView" destination="I78-C7-Pgz" id="xC7-wb-E9Q"/>
                 <outlet property="tableView" destination="ghU-NG-wfA" id="dD7-ZC-PqC"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -22,20 +23,37 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ghU-NG-wfA">
-                    <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                    <rect key="frame" x="0.0" y="60" width="375" height="607"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="mvg-si-OU4"/>
                         <outlet property="delegate" destination="-1" id="3Ad-EL-GIv"/>
                     </connections>
                 </tableView>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="I78-C7-Pgz">
+                    <rect key="frame" x="-5" y="20" width="385" height="41"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="1Wk-5w-ERT"/>
+                    </constraints>
+                    <segments>
+                        <segment title="未审核"/>
+                        <segment title="已审核"/>
+                    </segments>
+                    <color key="tintColor" red="0.33725490200000002" green="0.62745098040000002" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <action selector="segChangeValueWithSender:" destination="-1" eventType="valueChanged" id="ox1-6o-VNS"/>
+                    </connections>
+                </segmentedControl>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ghU-NG-wfA" secondAttribute="trailing" id="9ZI-bn-hhk"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ghU-NG-wfA" secondAttribute="bottom" id="FmW-Jl-D5V"/>
-                <constraint firstItem="ghU-NG-wfA" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Iee-r5-T6X"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="I78-C7-Pgz" secondAttribute="trailing" constant="-5" id="VJr-o7-Qzu"/>
                 <constraint firstItem="ghU-NG-wfA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="fnc-J2-rFi"/>
+                <constraint firstItem="I78-C7-Pgz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="-5" id="gN0-wJ-Ue9"/>
+                <constraint firstItem="ghU-NG-wfA" firstAttribute="top" secondItem="I78-C7-Pgz" secondAttribute="bottom" id="lf7-5w-cVN"/>
+                <constraint firstItem="I78-C7-Pgz" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="umn-R8-71z"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="124" y="43"/>

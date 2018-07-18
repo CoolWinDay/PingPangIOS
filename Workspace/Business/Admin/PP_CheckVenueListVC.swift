@@ -13,6 +13,7 @@ class PP_CheckVenueListVC: CMBaseVC {
     let CellRI = "PP_VenueListCell"
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var segView: UISegmentedControl!
     
     var venueList: [PP_VenueModel?] = []
     
@@ -34,12 +35,18 @@ class PP_CheckVenueListVC: CMBaseVC {
     }
     
     func loadData() {
-        PP_GradeService.uncheckVenueList { (venueList) in
+        let index = segView.selectedSegmentIndex
+        PP_GradeService.venueListWith(state: index) { (venueList) in
             if let list = venueList {
                 self.venueList = list
                 self.tableView.reloadData()
             }
         }
+    }
+    
+    @IBAction
+    func segChangeValue(sender: UISegmentedControl) {
+        self.loadData()
     }
 }
 
@@ -64,7 +71,7 @@ extension PP_CheckVenueListVC: UITableViewDataSource, UITableViewDelegate {
         if let model = venueList[indexPath.row] {
             let vc = PP_VenueDetailVC()
             vc.venueModel = model
-            vc.isCheck = true
+            vc.isCheck = model.state == 0
             cmPushViewController(vc)
         }
     }

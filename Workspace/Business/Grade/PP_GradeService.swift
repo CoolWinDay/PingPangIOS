@@ -190,10 +190,10 @@ class PP_GradeService: PP_BaseService {
         })
     }
     
-    class func uncheckVenueList(_ block: @escaping ([PP_VenueModel?]?) -> ()) {
-        let url = "/grade/venue/unchecklist"
+    class func venueListWith(state: Int, _ block: @escaping ([PP_VenueModel?]?) -> ()) {
+        let url = "/grade/venue/checkliststate"
         let token = PP_UserModel.userToken()
-        let parameters: Parameters = ["token": token]
+        let parameters: Parameters = ["state": state, "token": token]
         
         Alamofire.request(gradeServer+url, parameters: parameters).responseData(completionHandler: { (handler) in
             guard let value = handler.result.value else {
@@ -337,7 +337,7 @@ class PP_GradeService: PP_BaseService {
     class func checkVenue(venueId: String, _ block: @escaping (Bool) -> ()) {
         let url = "/grade/venue/docheck"
         let token = PP_UserModel.userToken()
-        let parameters: Parameters = ["venueid": venueId, "token": token]
+        let parameters: Parameters = ["kid": venueId, "token": token]
         
         Alamofire.request(gradeServer+url, parameters: parameters).responseData(completionHandler: { (handler) in
             guard let value = handler.result.value else {
