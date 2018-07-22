@@ -53,16 +53,15 @@ class PP_ExamDetailVC: CMBaseVC {
         collectionView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: headerIdentifier)
         
         if let model = examModel {
-            if let examinee = model.examinee {
-                self.nameView.text = examinee.name
-                self.ageView.text = examinee.age
-                self.phoneView.text = examinee.phone
-                self.idcardView.text = examinee.idcard
-                self.sexView.text = examinee.sex
-                if let avatarImage = examinee.avatarImage {
-                    self.avatarView?.kf.setImage(with: URL(string: avatarImage.imageUrl), for: .normal)
-                }
+            self.nameView.text = model.name
+            self.ageView.text = model.age
+            self.phoneView.text = model.phone
+            self.idcardView.text = model.idcard
+            self.sexView.text = model.sex
+            if let avatarImage = model.avatarImage {
+                self.avatarView?.kf.setImage(with: URL(string: avatarImage.imageUrl), for: .normal)
             }
+            
             if let venue = model.venue {
                 self.venueView.text = venue.name
             }
@@ -70,10 +69,8 @@ class PP_ExamDetailVC: CMBaseVC {
                 self.auditorView.text = auditor.name
             }
             
-            self.timeView.text = model.exam_time
-            if let intGrade = Int(model.exam_grade), gradePickerData.count > intGrade {
-                self.gradeView.text = gradePickerData[intGrade]
-            }
+            self.timeView.text = model.exam_date
+            self.gradeView.text = model.grade
             
             let state = model.state == 1 ? "已审核" : "未审核"
             submitView.setTitle(state, for: .normal)

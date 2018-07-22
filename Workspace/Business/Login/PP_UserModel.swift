@@ -17,6 +17,7 @@ class PP_UserModel: CMJsonModel {
     var avatar = ""
     var userTitle = ""
     var groupid = ""
+    var role = 0
     
     func save2Cache() {
         let jsonStr = self.toJSONString()
@@ -28,6 +29,18 @@ class PP_UserModel: CMJsonModel {
             return gid <= 2
         }
         return false
+    }
+    
+    func isVenueUser() -> Bool {
+        return role == 3
+    }
+    
+    func isAuditorUser() -> Bool {
+        return role == 2
+    }
+    
+    func isExamUser() -> Bool {
+        return role == 1
     }
     
 //    class func isAdminUser() -> Bool {

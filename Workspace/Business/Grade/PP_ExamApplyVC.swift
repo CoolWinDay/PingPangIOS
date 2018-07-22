@@ -106,17 +106,16 @@ class PP_ExamApplyVC: CMBaseVC {
     func onlyReadView(model: PP_ExamModel) {
         self.title = "考级详情"
         
-        if let examinee = model.examinee {
-            self.nameView.text = examinee.name
-            self.sex0View.isSelected = sex0View.titleLabel!.text == examinee.sex
-            self.sex1View.isSelected = sex1View.titleLabel!.text == examinee.sex
-            self.ageView.text = examinee.age
-            self.phoneView.text = examinee.phone
-            self.idcardView.text = examinee.idcard
-            if let avatarImage = examinee.avatarImage {
-                self.avatarView?.kf.setImage(with: URL(string: avatarImage.imageUrl), for: .normal)
-            }
+        self.nameView.text = model.name
+        self.sex0View.isSelected = sex0View.titleLabel!.text == model.sex
+        self.sex1View.isSelected = sex1View.titleLabel!.text == model.sex
+        self.ageView.text = model.age
+        self.phoneView.text = model.phone
+        self.idcardView.text = model.idcard
+        if let avatarImage = model.avatarImage {
+            self.avatarView?.kf.setImage(with: URL(string: avatarImage.imageUrl), for: .normal)
         }
+        
         if let venue = model.venue {
             self.venueView.text = venue.name
         }
@@ -124,8 +123,8 @@ class PP_ExamApplyVC: CMBaseVC {
             self.auditorView.text = auditor.name
         }
         
-        self.timeView.text = model.exam_time
-        self.gradeView.text = model.exam_grade
+        self.timeView.text = model.exam_date
+        self.gradeView.text = model.grade
         
         let coverView = UIView()
         self.view.addSubview(coverView)
@@ -266,20 +265,17 @@ class PP_ExamApplyVC: CMBaseVC {
         avatar.type = 3
         avatar.image = avatarImage
         
-        let examinee = PP_ExamineeModel()
-        examinee.name = name
-        examinee.sex = sex
-        examinee.age = age
-        examinee.phone = phone
-        examinee.idcard = idcard
-        examinee.avatarImage = avatar
-        
         let exam = PP_ExamModel()
         exam.venue_id = venue_id
         exam.auditor_id = auditor_id
-        exam.exam_time = time
-        exam.exam_grade = grade
-        exam.examinee = examinee
+        exam.exam_date = time
+        exam.name = name
+        exam.sex = sex
+        exam.age = age
+        exam.phone = phone
+        exam.idcard = idcard
+        exam.grade = grade
+        exam.avatarImage = avatar
         
         PP_GradeService.buildExam(exam) { (response) in
             if response.isSuccess() {

@@ -120,12 +120,10 @@ class PP_GradeService: PP_BaseService {
         Alamofire.upload(multipartFormData: { (mData) in
             
             let timeInt = Date().timeIntervalSince1970
-            if let examinee = model.examinee {
-                if let avatarImage = examinee.avatarImage {
-                    if let image = avatarImage.image {
-                        if let imgData = image.compress(toSize: imageMaxSize) {
-                            mData.append(imgData, withName: "avatar", fileName: "\(timeInt)_avatar.jpg", mimeType: "image/jpeg")
-                        }
+            if let avatarImage = model.avatarImage {
+                if let image = avatarImage.image {
+                    if let imgData = image.compress(toSize: imageMaxSize) {
+                        mData.append(imgData, withName: "avatar", fileName: "\(timeInt)_avatar.jpg", mimeType: "image/jpeg")
                     }
                 }
             }

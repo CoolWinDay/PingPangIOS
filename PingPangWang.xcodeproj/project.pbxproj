@@ -1762,7 +1762,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.zhizhen.ybb;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "5b82db01-22dd-46dd-b3dd-932a1c089427";
+				PROVISIONING_PROFILE = "398ade6b-7958-4f85-97b1-6411c1722ba8";
 				PROVISIONING_PROFILE_SPECIFIER = Ybb_AdHoc;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Workspace/Common/BridgingHeader/Common-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
