@@ -72,12 +72,23 @@ class PP_ExamDetailVC: CMBaseVC {
             self.timeView.text = model.exam_date
             self.gradeView.text = model.grade
             
-            let state = model.state == 1 ? "已审核" : "未审核"
+            var state = ""
+            switch model.state {
+            case 0:
+                state = "进行中..."
+            case 1:
+                state = "已通过"
+            case 2:
+                state = "未通过"
+            default:
+                state = ""
+            }
             submitView.setTitle(state, for: .normal)
         }
         
-        if isCheck {
-            submitView.setTitle("通过审核", for: .normal)
+        let model = PP_UserModel.modelWithCache()
+        if model!.role >= 2 && examModel?.state == 0 {
+            submitView.setTitle("提交成绩", for: .normal)
         }
         else {
             submitView.isUserInteractionEnabled = false
@@ -95,19 +106,39 @@ class PP_ExamDetailVC: CMBaseVC {
     
     @IBAction
     func doSubmit() {
+        let alert1 = UIAlertAction(title: "取消", style: .cancel, handler:nil)
+        let alert2 = UIAlertAction(title: "通过", style: .default, handler: {
+            (a:UIAlertAction)in
+            self.submitResult(isPass: true)
+        })
+        let alert3 = UIAlertAction(title: "不通过", style: .destructive, handler: {
+            (a:UIAlertAction)in
+            self.submitResult(isPass: false)
+        })
+        
+        let alertController = UIAlertController(title:"", message:"请对本次考试给出评判", preferredStyle: .actionSheet)
+        alertController.addAction(alert1)
+        alertController.addAction(alert2)
+        alertController.addAction(alert3)
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func submitResult(isPass: Bool) {
         guard let model = examModel else {
             cmShowToast("数据错误")
             return
         }
         
-        PP_GradeService.checkExam(kid: model.kid) { (isSuccess) in
+        let state = isPass ? 1 : 2
+        PP_GradeService.checkExam(kid: model.kid, state: state) { (isSuccess) in
             if isSuccess {
                 NotificationCenter.default.post(name: .kNFCheckedExam, object: nil)
-                cmShowToast("审核成功")
+                cmShowToast("提交成功")
                 cmPopViewController()
             }
             else {
-                cmShowToast("审核失败")
+                cmShowToast("提交失败")
             }
         }
     }

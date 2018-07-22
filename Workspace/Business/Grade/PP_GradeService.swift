@@ -392,10 +392,10 @@ class PP_GradeService: PP_BaseService {
         })
     }
     
-    class func checkExam(kid: String, _ block: @escaping (Bool) -> ()) {
+    class func checkExam(kid: String, state: Int, _ block: @escaping (Bool) -> ()) {
         let url = "/grade/exam/docheck"
         let token = PP_UserModel.userToken()
-        let parameters: Parameters = ["kid": kid, "token": token]
+        let parameters: Parameters = ["kid": kid, "token": token, "state": state]
         
         Alamofire.request(gradeServer+url, parameters: parameters).responseData(completionHandler: { (handler) in
             guard let value = handler.result.value else {
