@@ -13,6 +13,7 @@ class PP_ExamListVC: CMBaseVC {
     let CellRI = "PP_ExamListCell"
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var segView: UISegmentedControl!
     
     var dataList: [PP_ExamModel?] = []
     
@@ -25,15 +26,23 @@ class PP_ExamListVC: CMBaseVC {
         self.tableView.register(UINib(nibName: CellRI, bundle: Bundle.main), forCellReuseIdentifier: CellRI)
         
         self.loadData()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(loadData), name: .kNFCheckedExam, object: nil)
     }
     
     func loadData() {
-        PP_GradeService.myExamList { (examList) in
+        let index = segView.selectedSegmentIndex
+        PP_GradeService.myExamList(checked: index == 1) { (examList) in
             if let list = examList {
                 self.dataList = list
                 self.tableView.reloadData()
             }
         }
+    }
+    
+    @IBAction
+    func segChangeValue(sender: UISegmentedControl) {
+        self.loadData()
     }
 }
 

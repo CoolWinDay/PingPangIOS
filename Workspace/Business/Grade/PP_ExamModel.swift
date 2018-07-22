@@ -24,6 +24,6 @@ class PP_ExamModel: CMJsonModel {
     var age = ""
     var phone = ""
     var idcard = ""
-    var grade = "0"
+    var grade = ""
     var avatarImage: PP_ImageModel?
 }

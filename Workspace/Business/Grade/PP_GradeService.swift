@@ -308,10 +308,10 @@ class PP_GradeService: PP_BaseService {
         })
     }
     
-    class func myExamList(_ block: @escaping ([PP_ExamModel?]?) -> ()) {
+    class func myExamList(checked: Bool, _ block: @escaping ([PP_ExamModel?]?) -> ()) {
         let url = "/grade/exam/myexam"
         let token = PP_UserModel.userToken()
-        let parameters: Parameters = ["token": token]
+        let parameters: Parameters = ["checked": checked, "token": token]
         
         Alamofire.request(gradeServer+url, parameters: parameters).responseData(completionHandler: { (handler) in
             guard let value = handler.result.value else {
