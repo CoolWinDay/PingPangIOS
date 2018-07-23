@@ -164,6 +164,7 @@
 		E875756D1E4C646A00BFDCB7 /* DemoBusinessVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E875756B1E4C646A00BFDCB7 /* DemoBusinessVC.swift */; };
 		E875756E1E4C646A00BFDCB7 /* DemoBusinessVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E875756C1E4C646A00BFDCB7 /* DemoBusinessVC.xib */; };
 		E87575731E4C686C00BFDCB7 /* CMColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87575721E4C686C00BFDCB7 /* CMColorUtils.swift */; };
+		E87CEA5E2105F9C500D0F460 /* StatisticsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87CEA5D2105F9C500D0F460 /* StatisticsModel.swift */; };
 		E882A6661E77855D002AC531 /* LGProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = E882A6651E77855D002AC531 /* LGProgressHUD.swift */; };
 		E882A6681E779B1A002AC531 /* CMUIAlertViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E882A6671E779B1A002AC531 /* CMUIAlertViewUtils.swift */; };
 		E8881E0320F4F67A000E06E5 /* PP_VenueDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8881E0120F4F678000E06E5 /* PP_VenueDetailVC.swift */; };
@@ -431,6 +432,7 @@
 		E875756B1E4C646A00BFDCB7 /* DemoBusinessVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoBusinessVC.swift; sourceTree = "<group>"; };
 		E875756C1E4C646A00BFDCB7 /* DemoBusinessVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DemoBusinessVC.xib; sourceTree = "<group>"; };
 		E87575721E4C686C00BFDCB7 /* CMColorUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMColorUtils.swift; sourceTree = "<group>"; };
+		E87CEA5D2105F9C500D0F460 /* StatisticsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsModel.swift; sourceTree = "<group>"; };
 		E882A6651E77855D002AC531 /* LGProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LGProgressHUD.swift; sourceTree = "<group>"; };
 		E882A6671E779B1A002AC531 /* CMUIAlertViewUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMUIAlertViewUtils.swift; sourceTree = "<group>"; };
 		E882BFAA1D80386500FC8483 /* PingPangWang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PingPangWang.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1170,6 +1172,7 @@
 				E83FD1E120F3A5DC00DD1DDC /* PP_CheckAuditorListVC.xib */,
 				E83FD1E420F3A90900DD1DDC /* PP_CheckExamListVC.swift */,
 				E83FD1E520F3A90900DD1DDC /* PP_CheckExamListVC.xib */,
+				E87CEA5D2105F9C500D0F460 /* StatisticsModel.swift */,
 			);
 			path = Admin;
 			sourceTree = "<group>";
@@ -1594,6 +1597,7 @@
 				E85FDE9520D6407F005B11B8 /* AddressItem.m in Sources */,
 				E8DD760A20DE64F600588094 /* PP_MEVC.swift in Sources */,
 				E85C6B3C20D8D6DB0013CEC4 /* PP_VenueListCell.swift in Sources */,
+				E87CEA5E2105F9C500D0F460 /* StatisticsModel.swift in Sources */,
 				E84D477D209D530800117138 /* PP_ContentCell.swift in Sources */,
 				E84D477A209D485400117138 /* PP_ContentLinkCell.swift in Sources */,
 				E87575651E4C630300BFDCB7 /* DemoHomeVC.swift in Sources */,

@@ -409,4 +409,28 @@ class PP_GradeService: PP_BaseService {
             block(errCode == "00000000")
         })
     }
+    
+    class func statistics(_ block: @escaping (StatisticsModel?) -> ()) {
+        let url = "/grade/statistics"
+        let token = PP_UserModel.userToken()
+        let parameters: Parameters = ["token": token]
+        
+        Alamofire.request(gradeServer+url, parameters: parameters).responseData(completionHandler: { (handler) in
+            guard let value = handler.result.value else {
+                block(nil)
+                return
+            }
+            let json = JSON(data: value)
+            print(json)
+            
+            let errCode = json["errorCode"].string
+            if errCode == "00000000" {
+                let model = StatisticsModel.deserialize(from: json.rawString(), designatedPath: "data")
+                block(model)
+            }
+            else {
+                block(nil)
+            }
+        })
+    }
 }
