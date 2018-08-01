@@ -433,4 +433,26 @@ class PP_GradeService: PP_BaseService {
             }
         })
     }
+    
+    class func topAuditorList(_ block: @escaping ([PP_AuditorModel?]?) -> ()) {
+        let url = "/grade/auditor/topauditor"
+        
+        Alamofire.request(gradeServer+url).responseData(completionHandler: { (handler) in
+            guard let value = handler.result.value else {
+                block(nil)
+                return
+            }
+            let json = JSON(data: value)
+            print(json)
+            
+            let errCode = json["errorCode"].string
+            if errCode == "00000000" {
+                let list = [PP_AuditorModel].deserialize(from: json.rawString(), designatedPath: "data")
+                block(list)
+            }
+            else {
+                block(nil)
+            }
+        })
+    }
 }

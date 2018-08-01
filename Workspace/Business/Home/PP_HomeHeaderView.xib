@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="U6b-Vx-4bR" customClass="PP_HomeHeaderView" customModule="PingPangWang" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="排行榜" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yL7-2X-Tdl">
+                    <rect key="frame" x="15" y="16" width="46" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BCc-eZ-qHB" userLabel="Line">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="0.5"/>
+                    <color key="backgroundColor" red="0.86666666670000003" green="0.86666666670000003" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="0.5" id="HPl-ga-3fC"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="2vx-IX-1Fs"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ken-iW-48m" userLabel="Line">
+                    <rect key="frame" x="0.0" y="49.5" width="320" height="0.5"/>
+                    <color key="backgroundColor" red="0.86666666670000003" green="0.86666666670000003" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="0.5" id="IDw-l6-Gr6"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="bBL-12-7d3"/>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstItem="Ken-iW-48m" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" id="3WX-gh-yHi"/>
+                <constraint firstAttribute="trailing" secondItem="Ken-iW-48m" secondAttribute="trailing" id="BA4-0p-rnR"/>
+                <constraint firstItem="VXr-Tz-HHm" firstAttribute="bottom" secondItem="Ken-iW-48m" secondAttribute="bottom" id="DM5-o3-X6s"/>
+                <constraint firstItem="BCc-eZ-qHB" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" id="LbH-I2-sbZ"/>
+                <constraint firstItem="yL7-2X-Tdl" firstAttribute="centerY" secondItem="U6b-Vx-4bR" secondAttribute="centerY" id="MK6-LP-Tom"/>
+                <constraint firstItem="BCc-eZ-qHB" firstAttribute="top" secondItem="VXr-Tz-HHm" secondAttribute="top" id="QHz-xL-bE3"/>
+                <constraint firstItem="yL7-2X-Tdl" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" constant="15" id="XVi-7l-2ce"/>
+                <constraint firstAttribute="trailing" secondItem="BCc-eZ-qHB" secondAttribute="trailing" id="oSS-hl-IfL"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
+            <connections>
+                <outlet property="titleView" destination="yL7-2X-Tdl" id="Hz2-FC-Z36"/>
+            </connections>
+        </collectionReusableView>
+    </objects>
+</document>

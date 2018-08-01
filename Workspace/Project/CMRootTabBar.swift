@@ -17,7 +17,7 @@ class CMRootTabBar: UITabBarController, UITabBarControllerDelegate {
         self.tabBar.tintColor = UIColor.ColorTextTheme()
         self.delegate = self;
         
-        let vc0 = DemoHomeVC()
+        let vc0 = PP_HomeVC()
         vc0.tabBarItem.image = UIImage(named: "tab_home")
         vc0.tabBarItem.title = "首页"
         
@@ -38,7 +38,7 @@ class CMRootTabBar: UITabBarController, UITabBarControllerDelegate {
         vc4.tabBarItem.title = "我的"
         
         self.viewControllers = [vc0, vc1, vc2, vc3, vc4]
-//        self.title = vc0.tabBarItem.title
+        self.title = vc0.tabBarItem.title
     }
 
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {

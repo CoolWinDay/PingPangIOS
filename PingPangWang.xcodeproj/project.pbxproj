@@ -112,6 +112,16 @@
 		E84D478D209EAAB800117138 /* PP_ForumCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E84D478B209EAAB800117138 /* PP_ForumCell.xib */; };
 		E84D4790209EB8D200117138 /* PP_ForumHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84D478E209EB8D200117138 /* PP_ForumHeaderView.swift */; };
 		E84D4791209EB8D200117138 /* PP_ForumHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E84D478F209EB8D200117138 /* PP_ForumHeaderView.xib */; };
+		E84E018F210EE4C700E0B74D /* PP_HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E018D210EE4C700E0B74D /* PP_HomeVC.swift */; };
+		E84E0190210EE4C700E0B74D /* PP_HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E84E018E210EE4C700E0B74D /* PP_HomeVC.xib */; };
+		E84E0193211058B400E0B74D /* HomeIconCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E0191211058B400E0B74D /* HomeIconCell.swift */; };
+		E84E0194211058B400E0B74D /* HomeIconCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E84E0192211058B400E0B74D /* HomeIconCell.xib */; };
+		E84E019721105EFD00E0B74D /* PP_HomeVenueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E019521105EFD00E0B74D /* PP_HomeVenueCell.swift */; };
+		E84E019821105EFD00E0B74D /* PP_HomeVenueCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E84E019621105EFD00E0B74D /* PP_HomeVenueCell.xib */; };
+		E84E019B21107F2200E0B74D /* PP_HomeAuditorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E019921107F2000E0B74D /* PP_HomeAuditorCell.swift */; };
+		E84E019C21107F2200E0B74D /* PP_HomeAuditorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E84E019A21107F2100E0B74D /* PP_HomeAuditorCell.xib */; };
+		E84E019F211089CC00E0B74D /* PP_HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E019D211089CC00E0B74D /* PP_HomeHeaderView.swift */; };
+		E84E01A0211089CC00E0B74D /* PP_HomeHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E84E019E211089CC00E0B74D /* PP_HomeHeaderView.xib */; };
 		E851C0F220D77F5D002F9D82 /* PP_AuditorApplyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E851C0F020D77F5D002F9D82 /* PP_AuditorApplyVC.swift */; };
 		E851C0F320D77F5D002F9D82 /* PP_AuditorApplyVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E851C0F120D77F5D002F9D82 /* PP_AuditorApplyVC.xib */; };
 		E851C0F520D7C927002F9D82 /* PP_AuditorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E851C0F420D7C926002F9D82 /* PP_AuditorModel.swift */; };
@@ -367,6 +377,16 @@
 		E84D478B209EAAB800117138 /* PP_ForumCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PP_ForumCell.xib; sourceTree = "<group>"; };
 		E84D478E209EB8D200117138 /* PP_ForumHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PP_ForumHeaderView.swift; sourceTree = "<group>"; };
 		E84D478F209EB8D200117138 /* PP_ForumHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PP_ForumHeaderView.xib; sourceTree = "<group>"; };
+		E84E018D210EE4C700E0B74D /* PP_HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PP_HomeVC.swift; sourceTree = "<group>"; };
+		E84E018E210EE4C700E0B74D /* PP_HomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PP_HomeVC.xib; sourceTree = "<group>"; };
+		E84E0191211058B400E0B74D /* HomeIconCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeIconCell.swift; sourceTree = "<group>"; };
+		E84E0192211058B400E0B74D /* HomeIconCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeIconCell.xib; sourceTree = "<group>"; };
+		E84E019521105EFD00E0B74D /* PP_HomeVenueCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PP_HomeVenueCell.swift; sourceTree = "<group>"; };
+		E84E019621105EFD00E0B74D /* PP_HomeVenueCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PP_HomeVenueCell.xib; sourceTree = "<group>"; };
+		E84E019921107F2000E0B74D /* PP_HomeAuditorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PP_HomeAuditorCell.swift; sourceTree = "<group>"; };
+		E84E019A21107F2100E0B74D /* PP_HomeAuditorCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PP_HomeAuditorCell.xib; sourceTree = "<group>"; };
+		E84E019D211089CC00E0B74D /* PP_HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PP_HomeHeaderView.swift; sourceTree = "<group>"; };
+		E84E019E211089CC00E0B74D /* PP_HomeHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PP_HomeHeaderView.xib; sourceTree = "<group>"; };
 		E851C0F020D77F5D002F9D82 /* PP_AuditorApplyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PP_AuditorApplyVC.swift; sourceTree = "<group>"; };
 		E851C0F120D77F5D002F9D82 /* PP_AuditorApplyVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PP_AuditorApplyVC.xib; sourceTree = "<group>"; };
 		E851C0F420D7C926002F9D82 /* PP_AuditorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PP_AuditorModel.swift; sourceTree = "<group>"; };
@@ -830,6 +850,23 @@
 			path = Location;
 			sourceTree = "<group>";
 		};
+		E84E018C210EE4A500E0B74D /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				E84E018D210EE4C700E0B74D /* PP_HomeVC.swift */,
+				E84E018E210EE4C700E0B74D /* PP_HomeVC.xib */,
+				E84E0191211058B400E0B74D /* HomeIconCell.swift */,
+				E84E0192211058B400E0B74D /* HomeIconCell.xib */,
+				E84E019521105EFD00E0B74D /* PP_HomeVenueCell.swift */,
+				E84E019621105EFD00E0B74D /* PP_HomeVenueCell.xib */,
+				E84E019921107F2000E0B74D /* PP_HomeAuditorCell.swift */,
+				E84E019A21107F2100E0B74D /* PP_HomeAuditorCell.xib */,
+				E84E019D211089CC00E0B74D /* PP_HomeHeaderView.swift */,
+				E84E019E211089CC00E0B74D /* PP_HomeHeaderView.xib */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		E856F3EF20CE949000A2E054 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -985,6 +1022,7 @@
 		E87575461E4C561700BFDCB7 /* Business */ = {
 			isa = PBXGroup;
 			children = (
+				E84E018C210EE4A500E0B74D /* Home */,
 				E8E85B2B20F3974200A628AA /* Admin */,
 				E8DD760720DE64B300588094 /* Me */,
 				E856F3EF20CE949000A2E054 /* Common */,
@@ -1284,6 +1322,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E84E0194211058B400E0B74D /* HomeIconCell.xib in Resources */,
 				E8C477B61E8CFAF900543846 /* CycleViewVC.xib in Resources */,
 				E82CCEAD1EB31EB200A3E379 /* CMWebVC.xib in Resources */,
 				E82CCE9E1EB1DD5300A3E379 /* ShareVC.xib in Resources */,
@@ -1338,7 +1377,9 @@
 				E8C477BD1E8D004200543846 /* 2.jpg in Resources */,
 				E809255220E0DB2F0065C411 /* PP_VenueListVC.xib in Resources */,
 				E875756E1E4C646A00BFDCB7 /* DemoBusinessVC.xib in Resources */,
+				E84E019C21107F2200E0B74D /* PP_HomeAuditorCell.xib in Resources */,
 				E85FDE9F20D6407F005B11B8 /* Info.plist in Resources */,
+				E84E019821105EFD00E0B74D /* PP_HomeVenueCell.xib in Resources */,
 				E84D478D209EAAB800117138 /* PP_ForumCell.xib in Resources */,
 				E839EF241E7B936B006C78B7 /* bulb_light.png in Resources */,
 				E82946CF1E5EDF6F00D62A86 /* nav_back@2x.png in Resources */,
@@ -1357,6 +1398,7 @@
 				E82C2FFC1E5FBBA300CE08F7 /* nav_share@3x.png in Resources */,
 				E809256220E136150065C411 /* PP_ExamListCell.xib in Resources */,
 				E839EF4B1E7BC04C006C78B7 /* ImageVC.xib in Resources */,
+				E84E0190210EE4C700E0B74D /* PP_HomeVC.xib in Resources */,
 				E839EF251E7B936B006C78B7 /* bulb_light@2x.png in Resources */,
 				E8FAF4B620F651A4006C552A /* PP_AuditorDetailVC.xib in Resources */,
 				E858EF9720CD397C00B0E568 /* EE_ImageCell.xib in Resources */,
@@ -1380,6 +1422,7 @@
 				E82CBEDC1E76BF7100DEF744 /* NetWorkingVC.xib in Resources */,
 				E8881E0420F4F67A000E06E5 /* PP_VenueDetailVC.xib in Resources */,
 				E85C6B3D20D8D6DB0013CEC4 /* PP_VenueListCell.xib in Resources */,
+				E84E01A0211089CC00E0B74D /* PP_HomeHeaderView.xib in Resources */,
 				E8EA5FD21EA758FD00C3CE52 /* StringValidateVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1510,7 +1553,9 @@
 				E84D4776209CB1FC00117138 /* PP_ContentVideoCell.swift in Sources */,
 				E82CBEDB1E76BF7100DEF744 /* NetWorkingVC.swift in Sources */,
 				E851C0F520D7C927002F9D82 /* PP_AuditorModel.swift in Sources */,
+				E84E0193211058B400E0B74D /* HomeIconCell.swift in Sources */,
 				E84D4783209DED3600117138 /* PP_CommentModel.swift in Sources */,
+				E84E018F210EE4C700E0B74D /* PP_HomeVC.swift in Sources */,
 				E82CCEA91EB31EB200A3E379 /* CMRequest.swift in Sources */,
 				E831217920DA9F7000A1B307 /* PP_ExamineeModel.swift in Sources */,
 				E8F9D7E01EBEF9360005C5E8 /* main.swift in Sources */,
@@ -1576,10 +1621,12 @@
 				E8E803CB1EA607DC0095EFD8 /* CMUITextViewUtils.swift in Sources */,
 				E839EF0B1E7B81D6006C78B7 /* JTSegmentPattern.swift in Sources */,
 				E882A6661E77855D002AC531 /* LGProgressHUD.swift in Sources */,
+				E84E019F211089CC00E0B74D /* PP_HomeHeaderView.swift in Sources */,
 				E8D990381E532E6A00AFB8F5 /* CMUIDefine.swift in Sources */,
 				E84D4788209E9C3C00117138 /* PP_TopicCell2.swift in Sources */,
 				E839EF0A1E7B81D6006C78B7 /* JTSegmentControl.swift in Sources */,
 				E85FDE9820D6407F005B11B8 /* AddressView.m in Sources */,
+				E84E019721105EFD00E0B74D /* PP_HomeVenueCell.swift in Sources */,
 				E8E803C21EA59A3E0095EFD8 /* CMUILabelUtils.swift in Sources */,
 				E856F3F620CEB95500A2E054 /* EE_AddCell.swift in Sources */,
 				E8CCA8C12080D7B800D72E5E /* CMJsonModel.swift in Sources */,
@@ -1605,6 +1652,7 @@
 				E882A6681E779B1A002AC531 /* CMUIAlertViewUtils.swift in Sources */,
 				E8D8920E20D007A5008A4C5F /* PP_VenueModel.swift in Sources */,
 				E8F9D7E81EBF135D0005C5E8 /* CMUserDefaultsDefine.swift in Sources */,
+				E84E019B21107F2200E0B74D /* PP_HomeAuditorCell.swift in Sources */,
 				E809255D20E12FBD0065C411 /* PP_ExamListVC.swift in Sources */,
 				E8F9D7F21EBF2C930005C5E8 /* CMUpdateManager.swift in Sources */,
 			);

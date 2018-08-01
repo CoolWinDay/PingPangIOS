@@ -22,6 +22,7 @@ class PP_AuditorModel: CMJsonModel {
     var avatarImage: PP_ImageModel?
     var certificateImage: [PP_ImageModel] = []
     var venue: PP_VenueModel?
+    var examcount = ""
     
     
 //    func mapping(mapper: HelpingMapper) {
