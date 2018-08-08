@@ -10,9 +10,7 @@ import UIKit
 
 class HomeIconCell: UICollectionViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
+    @IBOutlet weak var picView: UIImageView!
+    @IBOutlet weak var nameView: UILabel!
 
 }

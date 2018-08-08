@@ -30,7 +30,6 @@ class PP_HomeVC: CMBaseVC {
         collectionView.register(UINib(nibName: cellRI1, bundle: Bundle.main), forCellWithReuseIdentifier: cellRI1)
         collectionView.register(UINib(nibName: headerRI, bundle: Bundle.main), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: headerRI)
         
-        
         PP_GradeService.topAuditorList({ (auditorList) in
             if let list = auditorList {
                 self.auditorList = list
@@ -49,7 +48,7 @@ extension PP_HomeVC: UICollectionViewDataSource, UICollectionViewDelegate, UICol
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if section == 0 {
-            return 6
+            return 5
         }
         else if section == 1 {
             return auditorList.count
@@ -61,6 +60,28 @@ extension PP_HomeVC: UICollectionViewDataSource, UICollectionViewDelegate, UICol
         
         if indexPath.section == 0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellRI, for: indexPath) as! HomeIconCell
+            
+            switch indexPath.row {
+            case 0:
+                cell.picView.image = UIImage(named: "type_icon")
+                cell.nameView.text = "考生入口"
+            case 1:
+                cell.picView.image = UIImage(named: "type_icon")
+                cell.nameView.text = "考官入口"
+            case 2:
+                cell.picView.image = UIImage(named: "type_icon")
+                cell.nameView.text = "考点入口"
+            case 3:
+                cell.picView.image = UIImage(named: "type_icon")
+                cell.nameView.text = "考官列表"
+            case 4:
+                cell.picView.image = UIImage(named: "type_icon")
+                cell.nameView.text = "考场列表"
+            default:
+                cell.picView.image = UIImage(named: "img_empty")
+                cell.nameView.text = ""
+            }
+            
             return cell
         }
         else if indexPath.section == 1 {
@@ -143,5 +164,22 @@ extension PP_HomeVC: UICollectionViewDataSource, UICollectionViewDelegate, UICol
         }
         
         return UICollectionReusableView()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.section == 0 {
+            switch indexPath.row {
+            case 0:
+                cmPushViewController("PP_ExamApplyVC")
+            case 1:
+                cmPushViewController("PP_AuditorApplyVC")
+            case 2:
+                cmPushViewController("PP_GradeVenueApplyVC")
+//            case 3:
+//                cmPushViewController("PP_AuditorApplyVC")
+            default:
+                let a = 0
+            }
+        }
     }
 }

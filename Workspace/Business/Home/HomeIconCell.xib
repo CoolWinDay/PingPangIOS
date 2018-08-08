@@ -20,16 +20,16 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1MM-My-87e">
-                        <rect key="frame" x="29.5" y="13.5" width="40" height="62"/>
+                        <rect key="frame" x="38" y="14" width="24" height="61.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="icon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ss-of-tSZ">
-                                <rect key="frame" x="0.0" y="45" width="40" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <rect key="frame" x="0.0" y="47" width="24" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_empty" translatesAutoresizingMaskIntoConstraints="NO" id="Deg-mT-cKV">
-                                <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                <rect key="frame" x="-8" y="0.0" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="VnD-0L-I9r"/>
                                     <constraint firstAttribute="width" constant="40" id="dxK-s4-4RP"/>
@@ -38,12 +38,11 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="Deg-mT-cKV" secondAttribute="trailing" id="EcJ-Jz-HDk"/>
-                            <constraint firstItem="Deg-mT-cKV" firstAttribute="leading" secondItem="1MM-My-87e" secondAttribute="leading" id="Vx5-PW-Abn"/>
                             <constraint firstItem="Deg-mT-cKV" firstAttribute="top" secondItem="1MM-My-87e" secondAttribute="top" id="WYt-gr-SQX"/>
                             <constraint firstAttribute="bottom" secondItem="3Ss-of-tSZ" secondAttribute="bottom" id="YBd-Cw-bBz"/>
+                            <constraint firstItem="Deg-mT-cKV" firstAttribute="centerX" secondItem="1MM-My-87e" secondAttribute="centerX" id="adx-Rk-en9"/>
                             <constraint firstItem="3Ss-of-tSZ" firstAttribute="leading" secondItem="1MM-My-87e" secondAttribute="leading" id="fg1-vs-fZ6"/>
-                            <constraint firstItem="3Ss-of-tSZ" firstAttribute="top" secondItem="Deg-mT-cKV" secondAttribute="bottom" constant="5" id="lGi-bl-dVQ"/>
+                            <constraint firstItem="3Ss-of-tSZ" firstAttribute="top" secondItem="Deg-mT-cKV" secondAttribute="bottom" constant="7" id="lGi-bl-dVQ"/>
                             <constraint firstAttribute="trailing" secondItem="3Ss-of-tSZ" secondAttribute="trailing" id="ruC-11-zc2"/>
                         </constraints>
                     </view>
@@ -55,6 +54,10 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="99" height="89"/>
+            <connections>
+                <outlet property="nameView" destination="3Ss-of-tSZ" id="6wI-gJ-JD2"/>
+                <outlet property="picView" destination="Deg-mT-cKV" id="7Ob-RA-dpf"/>
+            </connections>
             <point key="canvasLocation" x="-105.5" y="1.5"/>
         </collectionViewCell>
     </objects>
